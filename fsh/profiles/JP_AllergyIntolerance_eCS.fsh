@@ -4,9 +4,8 @@ Id:             JP-AllergyIntolerance-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary"
 * ^status = #active
-* . ^mata.lastUpdated 1.. MS
-* . ^mata.profile 1.. MS
-* . ^mata.profile = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary"
+* meta.profile 1.. MS
+* meta.profile = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary"
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text ^definition = "本リソースをテキストで表現したものを入れてもよい。入れる場合には、以降のリソースからシステムにより自動生成されたものに限ること。"
 * text 0..1 MS
