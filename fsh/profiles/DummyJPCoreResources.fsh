@@ -1,4 +1,3 @@
-
 Profile:        JP_Condition_eClinicalSummary
 Parent:			JP_Condition
 Id:             JP-Condition-eClinicalSummary
