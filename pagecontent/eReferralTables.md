@@ -1344,17 +1344,17 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | ||url|1..1|uri|"http:// hl7.org/fhir/StructureDefinition<br>/iso21090-EN-representation" |拡張を識別するURL。固定値。|
 | ||valueCode|1..1|code |"IDE" |漢字表記であることを示す固定値。 |
 | |use | |1..1|code |"official"または"usual"|氏名が正式名称であることを明示するために、NameUseバリューセット（http:// hl7.org/fhir/ValueSet/name-use）より「official」または「usual」を必須で設定する。|
-| |text| |1..1|string |"東京　太郎"|氏名全体の文字列をtext要素に入れる。氏名の姓と名が分離できない場合は本要素のみを使用する。姓と名の間には原則として半角空白を1個挿入する。|
+| |text| |1..1|string |"東京 太郎"|氏名全体の文字列をtext要素に入れる。氏名の姓と名が分離できない場合は本要素のみを使用する。姓と名の間には原則として半角空白を1個挿入する。|
 | |family| |0..1|string |"東京"|氏名の姓。 |
-| |given | |0..\* |string |"太郎"|氏名の名。ミドルネームがある場合には、ミドルネーム、名の順で原則として全角空白をいれて連結する文字列とする。 |
+| |given | |0..\* |string |"太郎"|氏名の名。ミドルネームがある場合には、ミドルネーム、名の順で原則として半角空白をいれて連結する文字列とする。 |
 |name || |0..1\*|HumanName||よみ（カタカナ） |
 | |extension | |1..1\*|Extension||氏名が漢字表記かカナ表記かを区別するための拡張「iso21090-EN-representation」。 |
 | ||url|1..1|uri|"http:// hl7.org/fhir/StructureDefinition<br>/iso21090-EN-representation" |拡張を識別するURL。固定値。|
 | ||valueCode|1..1|code |"SYL" |カナ表記であることを示す固定値。 |
-| |use | |1..1|code |"official"|氏名が正式名称であることを明示するために、NameUseバリューセット（http:// hl7.org/fhir/ValueSet/name-use）より「official」を必須で設定する。|
-| |text| |1..1|string |トウキョウ　タロウ|カナ氏名全体の文字列をtext要素に入れる。氏名の姓と名が分離できない場合は本要素のみを使用する。カタカナはJIS X 0208のカタカナ（全角カナ）みとし、JIS X 0201のカタカナ（半角カナ）は使用してはならない。姓と名の間には原則として全角空白を1個挿入する。|
+| |use | |1..1|code |"official"または"usual"|氏名が正式名称であることを明示するために、NameUseバリューセット（http:// hl7.org/fhir/ValueSet/name-use）より「official」または「usual」を必須で設定する。|
+| |text| |1..1|string |トウキョウ　タロウ|カナ氏名全体の文字列をtext要素に入れる。氏名の姓と名が分離できない場合は本要素のみを使用する。カタカナはJIS X 0208のカタカナ（全角カナ）みとし、JIS X 0201のカタカナ（半角カナ）は使用してはならない。姓と名の間には原則として半角空白を1個挿入する。|
 | |family| |1..1|string |トウキョウ|カナ氏名の姓。 |
-| |given | |1..1\*|string |タロウ|カナ氏名の名。ミミドルネームがある場合には、ミドルネーム、名の順で原則として全角空白をいれて連結する文字列とする。 |
+| |given | |1..1\*|string |タロウ|カナ氏名の名。ミミドルネームがある場合には、ミドルネーム、名の順で原則として半角空白をいれて連結する文字列とする。 |
 |telecom|| |0..\* |ContactPoint ||患者連絡先電話番号。複数を繰り返せる。 |
 | |system| |0..1|uri|"phone" |連絡手段 phone \| fax \| email \| pager \| url \| sms \| other |
 | |value | |1..1|string |"090-9090-123"|電話番号 |
@@ -1487,18 +1487,18 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||extension | |1..1\*|Extension | |氏名が漢字表記かカナ表記かを区別するための拡張「iso21090-EN-representation」。 |
 |||url|1..1|uri |"http:// hl7.org/fhir/StructureDefinition<br>/iso21090-EN-representation"|拡張を識別するURL。固定値。|
 |||valueCode|1..1|code|"IDE"|漢字表記であることを示す固定値。 |
-||use | |1..1|code|"official" |氏名が正式名称であることを明示するために、NameUseバリューセット（http:// hl7.org/fhir/ValueSet/name-use）より「official」を必須で設定する。|
-||text| |1..1|string|"東京　太郎" |氏名全体の文字列をtext要素に入れる。氏名の姓と名が分離できない場合は本要素のみを使用する。姓と名の間には原則として全角空白を1個挿入する。|
+||use | |1..1|code |"official"または"usual"|氏名が正式名称であることを明示するために、NameUseバリューセット（http:// hl7.org/fhir/ValueSet/name-use）より「official」または「usual」を必須で設定する。|
+||text| |1..1|string|"東京　太郎" |氏名全体の文字列をtext要素に入れる。氏名の姓と名が分離できない場合は本要素のみを使用する。姓と名の間には原則として半角空白を1個挿入する。|
 ||family| |0..1|string|"東京" |氏名の姓。 |
-||given | |0..\* |string|"太郎" |氏名の名。ミドルネームがある場合には、ミドルネーム、名の順で原則として全角空白をいれて連結する文字列とする。 |
+||given | |0..\* |string|"太郎" |氏名の名。ミドルネームがある場合には、ミドルネーム、名の順で原則として半角空白をいれて連結する文字列とする。 |
 |name|| |0..1\*|HumanName | |よみ（カタカナ） |
 ||extension | |1..1\*|Extension | |氏名が漢字表記かカナ表記かを区別するための拡張「iso21090-EN-representation」。 |
 |||url|1..1|uri |"http:// hl7.org/fhir/StructureDefinition<br>/iso21090-EN-representation"|拡張を識別するURL。固定値。|
 |||valueCode|1..1|code|"SYL"|カナ表記であることを示す固定値。 |
-||use | |1..1|code|"official" |氏名が正式名称であることを明示するために、NameUseバリューセット（http:// hl7.org/fhir/ValueSet/name-use）より「official」を必須で設定する。|
-||text| |1..1|string|トウキョウタロウ |カナ氏名全体の文字列をtext要素に入れる。氏名の姓と名が分離できない場合は本要素のみを使用する。カタカナはJIS X 0208のカタカナ（全角カナ）みとし、JIS X 0201のカタカナ（半角カナ）は使用してはならない。姓と名の間には原則として全角空白を1個挿入する。|
+| |use | |1..1|code |"official"または"usual"|氏名が正式名称であることを明示するために、NameUseバリューセット（http:// hl7.org/fhir/ValueSet/name-use）より「official」または「usual」を必須で設定する。|
+||text| |1..1|string|トウキョウタロウ |カナ氏名全体の文字列をtext要素に入れる。氏名の姓と名が分離できない場合は本要素のみを使用する。カタカナはJIS X 0208のカタカナ（全角カナ）みとし、JIS X 0201のカタカナ（半角カナ）は使用してはならない。姓と名の間には原則として半角空白を1個挿入する。|
 ||family| |1..1|string|トウキョウ |カナ氏名の姓。 |
-||given | |1..1\*|string|タロウ |カナ氏名の名。ミミドルネームがある場合には、ミドルネーム、名の順で原則として全角空白をいれて連結する文字列とする。 |
+||given | |1..1\*|string|タロウ |カナ氏名の名。ミミドルネームがある場合には、ミドルネーム、名の順で原則として半角空白をいれて連結する文字列とする。 |
 |telecom || |0..\* |ContactPoint| |関係者連絡先電話番号。複数を繰り返せる。 |
 ||system| |1..1|uri |"phone"|連絡手段 phone \| fax \| email \| pager \| url \| sms \| other |
 ||value | |1..1|string|"090-9090-123" |電話番号 |
