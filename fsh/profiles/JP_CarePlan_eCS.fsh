@@ -10,7 +10,11 @@ Parent:			JP_CarePlan
 Id:             JP-CarePlan-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_CarePlan_eClinicalSummary"
-* ^status = #draft
+* ^status = #active
+* ^date = "2023-03-31"
+
+* meta.lastUpdate 1.. MS
+
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text 0..1 MS
 * text.status ^short = "generated"

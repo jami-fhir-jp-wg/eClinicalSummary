@@ -7,7 +7,9 @@ Id: JP-Encounter-eClinicalSummary
 Description: "診療情報提供では、紹介理由を記述するEncouter情報　JP_Encounterの派生プロファイル。診療サマリーではサマリー対象となる受診や入院に関する情報。"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary"
 * ^status = #active
-* ^date = "2022-11-07"
+* ^date = "2023-03-31"
+* meta.lastUpdate 1.. MS
+
 * status = #finished (exactly)
 * status ^definition = "finished の固定値を設定する。"
 * status MS

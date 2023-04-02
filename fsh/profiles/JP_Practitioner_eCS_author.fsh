@@ -3,7 +3,10 @@ Parent: JP_Practitioner_eClinicalSummary
 Id: JP-Practitioner-eClinicalSummary-author
 Description: "処方を作成した医師情報　JP_Practitionerの派生プロファイル"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eClinicalSummary_author"
-* ^status = #draft
+* ^status = #active
+* ^date = "2023-03-31"
+* meta.lastUpdate 1.. MS
+
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^short = "generated| extensions | additional | empty"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"

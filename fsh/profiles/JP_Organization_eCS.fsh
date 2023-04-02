@@ -8,10 +8,13 @@ Expression: "(telecom.where(value.exists())).exists()"
 Profile: JP_Organization_eClinicalSummary
 Parent: JP_Organization
 Id: JP-Organization-eClinicalSummary
-Description: "処方を発行した医療機関の情報　JP_Organizationの派生プロファイル"
+Description: "医療機関の情報　JP_Organizationの派生プロファイル"
 //* obeys checkPhoneNumberExists
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary"
 * ^status = #active
+* ^date = "2023-03-31"
+* meta.lastUpdate 1.. MS
+
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^short = "generated| extensions | additional | empty"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"

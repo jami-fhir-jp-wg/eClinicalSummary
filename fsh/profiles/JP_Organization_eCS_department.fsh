@@ -18,6 +18,9 @@ Description: "医療機関の診療科情報　JP_Organizationの派生プロフ
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department"
 
 * ^status = #active
+* ^date = "2023-03-31"
+* meta.lastUpdate 1.. MS
+
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式。"
