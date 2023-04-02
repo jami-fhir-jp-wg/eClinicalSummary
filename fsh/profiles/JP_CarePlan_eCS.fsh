@@ -13,7 +13,7 @@ Description:    "Derived Profile from JP-Core"
 * ^status = #active
 * ^date = "2023-03-31"
 
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text 0..1 MS

@@ -19,7 +19,7 @@ Description: "医療機関の診療科情報　JP_Organizationの派生プロフ
 
 * ^status = #active
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"

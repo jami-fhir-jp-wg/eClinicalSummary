@@ -32,7 +32,7 @@ Id: JP-Practitioner-eClinicalSummary
 Description: "処方を作成した医師情報　JP_Practitionerの派生プロファイル"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eClinicalSummary"
 * ^status = #draft
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^short = "generated| extensions | additional | empty"

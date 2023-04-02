@@ -8,7 +8,7 @@ Description: "診療情報提供では、紹介理由を記述するEncouter情�
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary"
 * ^status = #active
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 * status = #finished (exactly)
 * status ^definition = "finished の固定値を設定する。"

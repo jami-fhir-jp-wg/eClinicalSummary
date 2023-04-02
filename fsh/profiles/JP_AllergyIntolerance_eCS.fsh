@@ -5,7 +5,7 @@ Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary"
 * ^status = #active
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text ^definition = "本リソースをテキストで表現したものを入れてもよい。入れる場合には、以降のリソースからシステムにより自動生成されたものに限ること。"

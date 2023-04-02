@@ -5,7 +5,7 @@ Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Condition_eClinicalSummary"
 * ^status = #active
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 Profile:        JP_Observation_Common_eClinicalSummary
 Parent:			JP_Observation_Common
@@ -13,7 +13,7 @@ Id:             JP-Observation-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Observation_Common_eClinicalSummary"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_DocumentReference_CDAdocument
@@ -22,7 +22,7 @@ Id:             JP-DocumentReference-CDAdocument
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_DocumentReference_CDAdocument"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_DocumentReference
@@ -31,7 +31,7 @@ Id:             JP-DocumentReference
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_DocumentReference"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_DocumentReference_eClinicalSummary
@@ -40,7 +40,7 @@ Id:             JP-DocumentReference-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_DocumentReference_eClinicalSummary"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_FamilyMemberHistory
@@ -49,7 +49,7 @@ Id:             JP-FamilyMemberHistory-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_FamilyMemberHistory_eClinicalSummary"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_Immunization
@@ -58,7 +58,7 @@ Id:             JP-Immunization
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Immunization"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_Immunization_eClinicalSummary
@@ -67,7 +67,7 @@ Id:             JP-Immunization-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Immunization_eClinicalSummary"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_ImagingStudy_Radiology_eClinicalSummary
@@ -76,7 +76,7 @@ Id:             JP-ImagingStudy-Radiology-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ImagingStudy_Radiology_eClinicalSummary"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_MedicationStatement
@@ -85,7 +85,7 @@ Id:             JP-MedicationStatement
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationStatement"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_MedicationStatement_eClinicalSummary
@@ -94,7 +94,7 @@ Id:             JP-MedicationStatement-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_MedicationStatement_eClinicalSummary"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_Procedure_eClinicalSummary
@@ -103,7 +103,7 @@ Id:             JP-Procedure-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Procedure_eClinicalSummary"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_DeviceUseStatement
@@ -112,15 +112,15 @@ Id:             JP-DeviceUseStatement
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_DeviceUseStatement"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 Profile:        JP_DeviceUseStatement_eClinicalSummary
 Parent:			JP_DeviceUseStatement
 Id:             JP-DeviceUseStatement-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_DeviceUseStatement_eClinicalSummary"
-   * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* ^date = "2023-03-31"
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_Device
@@ -129,7 +129,7 @@ Id:             JP-Device
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Device"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_Device_eClinicalSummary
@@ -138,7 +138,7 @@ Id:             JP-Device-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Device_eClinicalSummary"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 
 Profile:        JP_Consent
@@ -151,7 +151,7 @@ Description:    "Derived Profile from JP-Core"
   * ^example[=].valueIdentifier.system = "http://jpfhir.jp/fhir/core/IdSystem/documentInstance-identifier"
   * ^example[=].valueIdentifier.value = "123456"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 Profile:        JP_Consent_eClinicalSummary
 Parent:			JP_Consent
@@ -163,7 +163,7 @@ Description:    "Derived Profile from JP-Core"
   * ^example[=].valueIdentifier.system = "http://jpfhir.jp/fhir/core/IdSystem/documentInstance-identifier"
   * ^example[=].valueIdentifier.value = "123456"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 Profile:        JP_ResearchSubject
 Parent:			ResearchSubject
@@ -171,7 +171,7 @@ Id:             JP-ResearchSubject
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ResearchSubject"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 Profile:        JP_ResearchSubject_eClinicalSummary
 Parent:			JP_ResearchSubject
@@ -179,7 +179,7 @@ Id:             JP-ResearchSubject-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_ResearchSubject_eClinicalSummary"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 Profile:        JP_ResearchStudy
 Parent:			ResearchStudy
@@ -187,7 +187,7 @@ Id:             JP-ResearchStudy
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ResearchStudy"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 Profile:        JP_ResearchStudy_eClinicalSummary
 Parent:			JP_ResearchStudy
@@ -195,7 +195,7 @@ Id:             JP-ResearchStudy-
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_ResearchStudy_eClinicalSummary"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 Profile:        JP_RelatedPerson
 Parent:			RelatedPerson
@@ -203,7 +203,7 @@ Id:             JP-RelatedPerson
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_RelatedPerson"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 Profile:        JP_RelatedPerson_eClinicalSummary
 Parent:			JP_RelatedPerson
@@ -211,7 +211,7 @@ Id:             JP-RelatedPerson-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_RelatedPerson_eClinicalSummary"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 Profile:        JP_Binary
 Parent:			Binary
@@ -219,4 +219,4 @@ Id:             JP-Binary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Binary"
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS

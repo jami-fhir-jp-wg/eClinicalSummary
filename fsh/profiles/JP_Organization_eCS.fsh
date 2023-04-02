@@ -13,7 +13,7 @@ Description: "医療機関の情報　JP_Organizationの派生プロファイル
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary"
 * ^status = #active
 * ^date = "2023-03-31"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^short = "generated| extensions | additional | empty"
