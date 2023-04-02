@@ -15,7 +15,6 @@ Description:    "Derived Profile from JP-Core"
 * ^date = "2023-03-31"
 * meta.lastUpdated 1.. MS
 
-
 Profile:        JP_DocumentReference_CDAdocument
 Parent:			JP_DocumentReference
 Id:             JP-DocumentReference-CDAdocument
