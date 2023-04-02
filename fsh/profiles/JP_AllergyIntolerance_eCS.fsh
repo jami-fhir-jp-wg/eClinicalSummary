@@ -1,3 +1,4 @@
+
 Profile:        JP_AllergyIntolerance_eClinicalSummary
 Parent:			JP_AllergyIntolerance
 Id:             JP-AllergyIntolerance-eClinicalSummary
