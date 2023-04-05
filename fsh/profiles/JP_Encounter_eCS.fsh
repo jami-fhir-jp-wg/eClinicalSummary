@@ -1,6 +1,4 @@
 
-
-
 Profile: JP_Encounter_eClinicalSummary
 Parent: JP_Encounter
 Id: JP-Encounter-eClinicalSummary
