@@ -10,7 +10,6 @@ Description:    "Derived Profile from JP-Core"
 
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text ^definition = "本リソースをテキストで表現したものを入れてもよい。入れる場合には、以降のリソースからシステムにより自動生成されたものに限ること。"
-* text 0..1 MS
 * text.status ^short = "generated"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.status = #generated

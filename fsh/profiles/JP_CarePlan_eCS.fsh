@@ -16,10 +16,10 @@ Description:    "Derived Profile from JP-Core"
 * meta.lastUpdated 1.. MS
 
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
-* text 0..1 MS
 * text.status ^short = "generated"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.status = #generated
+* text.div MS
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式"
 * identifier 0..1 MS
 * identifier.system 1..1 MS
