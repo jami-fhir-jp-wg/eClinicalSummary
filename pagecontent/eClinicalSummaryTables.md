@@ -100,6 +100,8 @@ content: "　　"counter(sub-sub-section) "）";
 
 なお、codingの多重度の最小値が0（すなわち省略可能）の場合には、コードによる記述をせず、テキストだけで記述することも許されている。
 
+<br><br><br>
+
 # <a id="tbl-1">**表1　AllergyIntoleranceリソース　アレルギー情報**</a>
 
 
@@ -168,6 +170,7 @@ content: "　　"counter(sub-sub-section) "）";
 || |time||0..1|dateTime| |この追加的な情報が作成された日時。 |
 || |text||1..1|markdown| |追加的な情報の内容。markdown形式のテキストが使用できる。データとして1Mバイト以内であること。 |
 
+<br><br><br>
 
 # <a id="tbl-2">**表2 Binaryリソース　 バイナリーデータ情報** </a>
 
@@ -180,6 +183,7 @@ content: "　　"counter(sub-sub-section) "）";
 |securityContext| |0..1|Reference(Any)||アクセス制御を実施するときにプロキシとして使用する別のリソースを指定。通常不要。|
 |data | |1..1|base64Binary||実際のコンテンツ、base64でエンコード。コンテンツタイプ自体が元々base64エンコーディングである場合、2回base64エンコードされることになる。コンテンツのbase64を解除して作成されるものは、Mime-typeコードで指定されたコンテンツタイプである必要がある。|
 
+<br><br><br>
 
 # <a id="tbl-3">**表3　　Bundleリソース　文書情報** </a>
 
@@ -197,6 +201,7 @@ Bundleリソースに出現するentry要素は以下のような構造（fullUr
 |entry|||1..1||**Organization**リソース|文書作成医療機関情報エントリ|
 |-----|--|------|----|---|------------------------------------------------------------------------|---|
 
+<br><br><br>
 
 Bundleリソース
 
@@ -243,7 +248,7 @@ Bundleリソース
 ||data | |1..1|base64Binary|"dCjftJeZ4CVP-mB92K28uhbUJU1p1r_wW1gFWFODjXk"|署名データ。値は例示。|
 
 
-
+<br><br><br>
 
 # <a id="tbl-4">**表4　 　CarePlanリソース　診療方針指示情報**</a>
 
@@ -275,7 +280,7 @@ Bundleリソース
 |careTeam| | | |0..\* |Reference(CareTeam) | |このプランに関わるケアチーム情報への参照のリスト。当面未使用。 |
 
 
-
+<br><br><br>
 
 # <a id="tbl-5">**表5　　Compositionリソース　文書構成情報**</a>
 
@@ -283,7 +288,7 @@ Bundleリソース
 Compositionリソースに出現するsection要素は以下のような構造をとる。
 
 |section| | | |0..1 |BackboneElement|
-|--|------|----|--|-----|-----|
+|---|------|----|---|-----|-----|
 | |title| | |0..1 |string |
 | |code | | |0..1 |CodeableConcept|
 | | |coding | |0..1 |Coding |
@@ -301,12 +306,15 @@ Compositionリソースに出現するsection要素は以下のような構造�
 しかし、表を見やすくするため、この文書では、これを次のように1行で省略表記する。
 多重度の記載は、1段目にsection要素自体の多重度、2段目に参照リソースの多重度（上表nn.4のsectoin.entryの多重度）を転記している。
 
+
 |section||||0..\*1..\*|参照リソース名|"〇〇情報セクション"|簡単な説明|
-|--|--|--|--|-----|----|----------|-----|
+|---|---|---|---|-----|----|----------|-----|
 
 なお、sectionをネスト（入れ子）にする場合の親のsectionで参照リソースがない（entryがない）場合には、上記の参照リソース名を−とこの表に記述し、その不存在理由としてsectoin.emptyReason.coding.codeに" unavailable"を設定する。
 また、各section要素におけるentry以外の要素の記述仕様については、表2の後に掲載の「表_Compositino_sectionの情報構造」を参照すること。
 
+
+<br><br><br>
 
 # <a id="tbl-5-1">**表5-1　 Compositionリソース　(退院時サマリー)**</a>
 
@@ -377,7 +385,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |section | | | |0..\* |DocumentReference \| Binary |"添付情報セクション"<br>"attachmentSection" |添付情報ファイルがある場合にここの格納または参照情報を設定する。|
 |section | | | |0..\* |DocumentReference \| Binary |"PDFセクション"<br>"pdfSection" |文書情報全体を表示または印刷するためのPDFファイルがある場合にここの格納または参照情報を設定する。 |
 
-
+<br><br><br>
 
 # <a id="tbl-5-2">**表5-2　Compositionリソース　(診療情報提供書)**</a>
 
@@ -456,6 +464,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |section | | | |0..\* |DocumentReference \| Binary |"備考・連絡情報セクション"<br>"remarksCommunicationSection"|備考・連絡情報がある場合にここに格納または参照情報を設定する。|
 |section | | | |0..\* |DocumentReference \| Binary |"PDFセクション"<br>"pdfSection"|文書情報全体を表示または印刷するためのPDFファイルがある場合にここに格納または参照情報を設定する。 |
 
+<br><br><br>
 
 # <a id="tbl-5-3">**表5-3　Composition_sectionの情報構造**</a>
 *composition.section.**（または**composition.section.section.**）の子要素のうち要素名が**section**でない要素を、下記表の「要素**Lv1**」の位置に記載する。*
@@ -479,7 +488,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |section| | |0..1| | |sectionの下にsectionをネスト（階層化）する場合に使用する。セクションコード300のsectionにはサマリー本体（ボディー部）でのセクション構成」または「診療情報提供書本体（ボディー部）でのセクション構成」の表に示すネストするsectionが必ず出現する。|
 
 
-
+<br><br><br>
 
 # <a id="tbl-6">**表6　　Conditionリソース　患者状態情報**</a>
 
@@ -547,7 +556,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||text || |1..1|markdown||追加的な情報の内容。markdown形式のテキストが使用できる。データとして1Mバイト以内であること。|
 
 
-
+<br><br><br>
 
 # <a id="tbl-7">**表7　　Consentリソース　同意情報**</a>
 
@@ -577,6 +586,9 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | |verificationDate| | |0..1|dateTime ||確認がなされた日時。|
 
 ＊退院時サマリーに付与されている事前指示（Advanced Care Directive）情報においては、上記表の要素の範囲で記述する。
+
+
+<br><br><br>
 
 # <a id="tbl-8">**表8　　DeviceUseStatementリソース　医療機器使用歴情報**</a>
 
@@ -608,8 +620,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | |time || |0..1|dateTime | |この追加的な情報が作成された日時。|
 | |text || |1..1|markdown | |追加的な情報の内容。markdown形式のテキストが使用できる。データとして1Mバイト以内であること。|
 
-
-# 
+<br><br><br>
 
 # <a id="tbl-9">**表9　Deviceリソース　医療機器情報**</a>
 
@@ -662,6 +673,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |parent|| | |0..1|Reference(Device) | |親の医療機器がある場合にその情報への参照。|
 
 
+<br><br><br>
+
 # <a id="tbl-10">**表10　　　DiagnosticReportリソース　診断報告書情報**</a>
 
 |要素Lv1 |要素Lv2|要素Lv3|要素Lv4|多重度|型|値 |説明 |
@@ -703,7 +716,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||title| | |0..\* |string| |診断レポート添付情報のタイトル |
 
 
-
+<br><br><br>
 
 # <a id="tbl-11">**表11　　　DocumentReferenceリソース　 文書参照情報**</a>
 
@@ -724,6 +737,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |||reference|1..1|string| |関連するリソースのuri |
 
 
+<br><br><br>
 
 # <a id="tbl-12">**表12　　Encounterリソース　受診時情報（診療情報提供書）/入院詳細情報(退院時サマリー)**</a>
 
@@ -781,7 +795,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | ||start| |0..1|dateTime||所在期間の開始日時|
 | ||end| |0..1|dateTime||所在期間の終了日時|
 
-# 
+
+<br><br><br>
 
 # <a id="tbl-13">**表13　　FamilyMemberHistoryリソース　家族歴情報**</a>
 
@@ -839,6 +854,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |||text||1..1|markdown||追加的な情報の内容。markdown形式のテキストが使用できる。データとして1Mバイト以内であること。 |
 
 
+<br><br><br>
+
 # <a id="tbl-14">**表14　　ImagingStudyリソース　画像検査実施情報**</a>
 
 |要素Lv1 |要素Lv2|要素Lv3|要素Lv4|多重度|型 |値 |説明|
@@ -863,7 +880,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |interpreter | | | |0..\* |Reference(Practitioner \| PractitionerRole) | |画像診断医、読影医、解釈医などの情報への参照|
 
 
-
+<br><br><br>
 
 # <a id="tbl-15">**表15　　Immunizationリソース　ワクチン接種情報**</a>
 
@@ -906,7 +923,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||reported | | |0..1|boolean | |患者自身による報告のときtrue。|
 
 
-
+<br><br><br>
 
 # <a id="tbl-16">**表16　　MedicationRequestリソース　処方依頼情報**</a>
 
@@ -962,6 +979,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | ||text| |1..1|string|"患者からの強い要望により"|理由を表す文字列。値は例示。|
 
 
+<br><br><br>
 
 # <a id="tbl-16-1">**表 16-1 MedicationRequest．dosageInstruction処方情報の用法指示情報**</a>
 |要素 Lv1 |要素 Lv2 |要素 Lv3|要素Lv4|多重度|型 |値 |説明|
@@ -1040,6 +1058,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | | ||code |1..1|code |"d"|「日」を表すUCUM単位コード。|
 
 
+<br><br><br>
+
 # <a id="tbl-16-2">**表 16-2 Extension　（InstructionForDispense） 調剤指示拡張情報**</a>
 
 |要素Lv1|要素Lv2 |要素Lv3|要素Lv4|要素Lv5|多重度|型 |値|説明|
@@ -1052,6 +1072,9 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | || |code | |1..1|code |"C" |調剤指示コード。値は例示。|
 | || |display| |0..1|string |"粉砕指示"|コードの表示名。値は例示。|
 | ||text | | |1..1|string |"嚥下障害のため、上記粉砕指示"|処方オーダ時に選択または入力し、実際に処方箋に印字される指示内容の文字列。値は例示。|
+
+
+<br><br><br>
 
 # <a id="tbl-17">**表17　　MedicationStatementリソース　　服薬情報**</a>
 
@@ -1087,6 +1110,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | |text || |1..1|markdown||追加的な情報の内容。markdown形式のテキストが使用できる。データとして1Mバイト以内であること。|
 |dosage | || |0..1\*|Dosage||服薬指示情報の詳細。別表を参照のこと。|
 
+
+<br><br><br>
 
 # <a id="tbl-17-1">**表 17-1　MedicationStatement dosage　処方依頼情報の服薬用法情報**</a>
 
@@ -1154,6 +1179,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | |||code |1..1|code |"d" |「日」を表すUCUM単位コード。|
 
 
+<br><br><br>
+
 # <a id="tbl-18">**表18　　Observationリソース　　検査・観察情報**</a>
 
 |要素Lv1 |要素Lv2 |要素Lv3 |要素Lv4|多重度|型|値|説明 |
@@ -1220,6 +1247,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||interpretation|| |0..1\*|CodeableConcept ||Observation. interpretationと同じ。|
 ||referenceRange|| |0..1\*|BackboneElement ||Observation. referenceRangeと同じ。|
 
+<br><br><br>
+
 
 # <a id="tbl-19">**表19　　Organizationリソース　医療機関情報**</a>
 
@@ -1264,6 +1293,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||country||0..1|string|"JP"|住所が国内の場合「JP」固定。|
 
 
+<br><br><br>
+
 # <a id="tbl-20">**表20　　　Organizationリソース　診療科情報**<a>
 
 |要素Lv1 |要素Lv2|要素Lv3|多重度|型|値|説明|
@@ -1287,6 +1318,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |partOf| | |0..1|Reference ||医療機関を表す**Organization**リソースへの参照。|
 ||reference| |1..1|string|"urn:uuid:179f9f7f-e546-04c2-6888-a9e0b24e5720" |医療機関を表す**Organization**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。 |
 
+<br><br><br>
 
 # <a id="tbl-21">**表21　　Patientリソース　患者情報**</a>
 
@@ -1347,6 +1379,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | |language| |1..1|CodeableConcept|"urn:ietf:bcp:47"<br>"ja" |言語のコード記述。ja:日本語、en:英語、zh:中国語、ko:韓国語、fr:フランス語、など。[http://hl7.org/fhir/valueset-languages.html](http://hl7.org/fhir/valueset-languages.html)参照。|
 |generalPractitioner|| |0..\* |Reference(Organization \| Practitioner \| PractitionerRole)|Reference(Organization) |患者が自身で選択したかかりつけ医またはかかりつけ医療機関への参照 |
 
+<br><br><br>
 
 # <a id="tbl-22">**表22　　Practitionerリソース　　文書作成責任者情報/文書法的責任者情報**</a>
 
@@ -1374,6 +1407,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||family | | |0..1|string|"カナガワ"|カナ氏名の姓。|
 ||given| | |0..\* |string|"ハナコ"|カナ氏名の名。ミドルネームがある場合には、ミドルネーム、名の順で繰り返す。|
 
+<br><br><br>
 
 # <a id="tbl-23">**表23　　Procedureリソース　　入院中治療処置情報**</a>
 
@@ -1423,7 +1457,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |usedReference | | | |0..\* |Reference(Device \| Medication \| Substance) | |治療処置中に使用された（主要な）医療器材や薬品。当面未使用。 |
 |usedCode| | | |0..\* |CodeableConcept| |治療処置中に使用された（主要な）医療器材や薬品のコード情報。未使用。 |
 
-
+<br><br><br>
 
 # <a id="tbl-24">**表24　　RelatedPersonリソース　　患者関係者情報**</a>
 
@@ -1472,6 +1506,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |commucation || |0..1\*|BackboneElement | |関係者とコミュニケーションをとる際に使用する優先言語（日本語以外で明記したい場合に使用する）。 |
 ||language| |1..1|CodeableConcept |" urn:ietf:bcp:47"<br>"ja" |言語のコード記述。ja:日本語、en:英語、zh:中国語、ko:韓国語、fr:フランス語、など。[http://hl7.org/fhir/valueset-languages.html](http://hl7.org/fhir/valueset-languages.html)参照。|
 
+<br><br><br>
 
 # <a id="tbl-25">**表25　　ResearchStudyリソース　　研究対象情報**</a>
 
@@ -1498,6 +1533,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 
 ＊本リソース情報は、退院時サマリーや診療情報提供書に含められる研究対象情報から参照される必要最小限の要素だけで構成している。
 
+<br><br><br>
 
 # <a id="tbl-26">**表26　　ResearchSubjectリソース　　研究対象情報**</a>
 
