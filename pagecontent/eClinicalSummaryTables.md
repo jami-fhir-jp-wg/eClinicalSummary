@@ -1292,6 +1292,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 
 
 # <a id="tbl-21">**表21　　Patientリソース　患者情報**</a>
+
 |要素Lv1|要素Lv2 |要素Lv3|多重度|型 |値|説明 |
 |---------|----------|----|------|-----------------|----------------------------|----------------------------------------------------------------------|
 |resourceType || || |"Patient" |**Patient**リソースであることを示す|
@@ -1348,8 +1349,6 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |commucation|| |0..1\*|BackboneElement||患者とコミュニケーションをとる際に使用する優先言語（日本語以外で明記したい場合に使用する） |
 | |language| |1..1|CodeableConcept|"urn:ietf:bcp:47"<br>"ja" |言語のコード記述。ja:日本語、en:英語、zh:中国語、ko:韓国語、fr:フランス語、など。[http://hl7.org/fhir/valueset-languages.html](http://hl7.org/fhir/valueset-languages.html)参照。|
 |generalPractitioner|| |0..\* |Reference(Organization \| Practitioner \| PractitionerRole)|Reference(Organization) |患者が自身で選択したかかりつけ医またはかかりつけ医療機関への参照 |
-
-
 
 
 # <a id="tbl-22">**表22　　Practitionerリソース　　文書作成責任者情報/文書法的責任者情報**</a>
