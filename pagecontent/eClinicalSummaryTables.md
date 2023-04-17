@@ -76,8 +76,8 @@ content: "　　"counter(sub-sub-section) "）";
 
 </style>
 
-# **リソース記述に関する表**
-**退院時サマリーHL7 FHIR記述仕様　第1版<br>診療情報提供書HL7FHIR記述仕様　 第1版（共通）**
+# **リソース記述に関する表** 
+**退院時サマリーHL7 FHIR記述仕様　第1版<br>診療情報提供書HL7FHIR記述仕様　 第1版（共通）** R1.000
 
 **本表における****C****odeableConcept****型要素の略記法について**
 リソースに出現するCodeableConcept型の要素は以下のような構造をとる。
@@ -581,7 +581,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 # <a id="tbl-8">**表8　　DeviceUseStatementリソース　医療機器使用歴情報**</a>
 
 |要素Lv1|要素Lv2|要素Lv3 |要素Lv4|多重度|型 |値 |説明|
-|-----|--|-------|--|------|--------------------------|-----------------------------|----------------------------------------------------------------------------------------------------------||resourceType | || || |"DeviceUseStatement" |**DeviceUseStatement**リソースであることを示す|
+|-----|--|-------|--|------|--------------------------|-----------------------------|----------------------------------------------------------------------------------------------------------|
+|resourceType | || || |"DeviceUseStatement" |**DeviceUseStatement**リソースであることを示す|
 |meta | || |1..1|Meta | ||
 ||lastUpdated|||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
 | |profile|| |0..*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_DeviceUseStatement_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
