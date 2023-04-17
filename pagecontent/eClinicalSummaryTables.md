@@ -169,8 +169,6 @@ content: "　　"counter(sub-sub-section) "）";
 || |text||1..1|markdown| |追加的な情報の内容。markdown形式のテキストが使用できる。データとして1Mバイト以内であること。 |
 
 
-
-
 # <a id="tbl-2">**表2 Binaryリソース　 バイナリーデータ情報** </a>
 
 |要素Lv1|要素Lv2|多重度|型|値|説明|
@@ -181,8 +179,6 @@ content: "　　"counter(sub-sub-section) "）";
 |contentType| |1..1|code||Mime-type コード。https://www.iana.org/assignments/media-types/media-types.xhtml 参照。コード仕様："urn:ietf:bcp:13"|
 |securityContext| |0..1|Reference(Any)||アクセス制御を実施するときにプロキシとして使用する別のリソースを指定。通常不要。|
 |data | |1..1|base64Binary||実際のコンテンツ、base64でエンコード。コンテンツタイプ自体が元々base64エンコーディングである場合、2回base64エンコードされることになる。コンテンツのbase64を解除して作成されるものは、Mime-typeコードで指定されたコンテンツタイプである必要がある。|
-
-
 
 
 # <a id="tbl-3">**表3　　Bundleリソース　文書情報** </a>
@@ -584,10 +580,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 
 # <a id="tbl-8">**表8　　DeviceUseStatementリソース　医療機器使用歴情報**</a>
 
-| | || || | ||
-|-----|--|-------|--|------|--------------------------|-----------------------------|----------------------------------------------------------------------------------------------------------|
 |要素Lv1|要素Lv2|要素Lv3 |要素Lv4|多重度|型 |値 |説明|
-|resourceType | || || |"DeviceUseStatement" |**DeviceUseStatement**リソースであることを示す|
+|-----|--|-------|--|------|--------------------------|-----------------------------|----------------------------------------------------------------------------------------------------------||resourceType | || || |"DeviceUseStatement" |**DeviceUseStatement**リソースであることを示す|
 |meta | || |1..1|Meta | ||
 ||lastUpdated|||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
 | |profile|| |0..*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_DeviceUseStatement_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
@@ -1044,7 +1038,9 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | | ||system |1..1|uri|"http://unitsofmeasure.org"|UCUM単位コードを識別するURI。固定値。 |
 | | ||code |1..1|code |"d"|「日」を表すUCUM単位コード。|
 
+
 # <a id="tbl-16-2">**表 16-2 Extension　（InstructionForDispense） 調剤指示拡張情報**</a>
+
 |要素Lv1|要素Lv2 |要素Lv3|要素Lv4|要素Lv5|多重度|型 |値|説明|
 |----|----------|--|--|--|------|-----|--------------------------------------|------------------------|
 |extension|| | | |0..1|Extension||拡張「InstructionForDispense」。|
@@ -1226,7 +1222,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 
 # <a id="tbl-19">**表19　　Organizationリソース　医療機関情報**</a>
 
-|要素 Lv1|要素 Lv2 |要素 Lv3|多重度|型|値|説明|
+|要素Lv1|要素 Lv2 |要素 Lv3|多重度|型|値|説明|
 |-------|-----|---|------|----------|----------------------------------|------------------------|
 |resourceType| ||||"Organization"|**Organization**リソースであることを示す|
 |meta| ||1..1|Meta|||
@@ -1379,6 +1375,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 
 
 # <a id="tbl-23">**表23　　Procedureリソース　　入院中治療処置情報**</a>
+
 |要素Lv1 |要素Lv2|要素Lv3|要素Lv4|多重度|型 |値 |説明 |
 |--------|-------|--|--|------|-------------------------|--------------------------------|------------------------------------------------------------------------------------------------------|
 |resourceType| | | || |"Procedure"|**Procedure**リソースであることを示す|
@@ -1476,6 +1473,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 
 
 # <a id="tbl-25">**表25　　ResearchStudyリソース　　研究対象情報**</a>
+
 |要素Lv1|要素Lv2|要素Lv3|要素Lv4|多重度|型|値|説明 |
 |------|--|--|--|------|------------|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 |resourceType | | | |||"ResearchStudy" |**ResearchStudy**リソースであることを示す|
