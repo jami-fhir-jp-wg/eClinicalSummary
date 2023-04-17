@@ -77,7 +77,7 @@ content: "　　"counter(sub-sub-section) "）";
 </style>
 
 # **リソース記述に関する表** 
-**退院時サマリーHL7 FHIR記述仕様　第1版<br>診療情報提供書HL7FHIR記述仕様　 第1版（共通）** R1.000
+**退院時サマリーHL7 FHIR記述仕様　第1版<br>診療情報提供書HL7FHIR記述仕様　 第1版（共通）** R1.001
 
 **本表における****C****odeableConcept****型要素の略記法について**
 リソースに出現するCodeableConcept型の要素は以下のような構造をとる。
@@ -200,6 +200,8 @@ Bundleリソースに出現するentry要素は以下のような構造（fullUr
 
 |entry|||1..1||**Organization**リソース|文書作成医療機関情報エントリ|
 |-----|--|------|----|---|------------------------------------------------------------------------|---|
+||||||||
+
 
 <br><br><br>
 
@@ -309,6 +311,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 
 |section||||0..\*1..\*|参照リソース名|"〇〇情報セクション"|簡単な説明|
 |---|---|---|---|-----|----|----------|-----|
+|||||||||
+
 
 なお、sectionをネスト（入れ子）にする場合の親のsectionで参照リソースがない（entryがない）場合には、上記の参照リソース名を−とこの表に記述し、その不存在理由としてsectoin.emptyReason.coding.codeに" unavailable"を設定する。
 また、各section要素におけるentry以外の要素の記述仕様については、表2の後に掲載の「表_Compositino_sectionの情報構造」を参照すること。
@@ -982,7 +986,9 @@ Compositionリソースに出現するsection要素は以下のような構造�
 <br><br><br>
 
 # <a id="tbl-16-1">**表 16-1 MedicationRequest．dosageInstruction処方情報の用法指示情報**</a>
-|要素 Lv1 |要素 Lv2 |要素 Lv3|要素Lv4|多重度|型 |値 |説明|
+
+
+|要素Lv1 |要素 Lv2 |要素 Lv3|要素Lv4|多重度|型 |値 |説明|
 |------|--------|----|--|------|-----|------------------------------------|--------------------------------------------------|
 |extension| || |0..1\*|Extension| |投与開始日を明示したい場合に使用する拡張「PeriodOfUse」。詳細は処方情報HL７FHIR記述仕様を参照。 |
 | |url|| |1..1\*|uri|"http://jpfhir.jp/fhir<br>/core/Extension/StructureDefinition<br>/JP_MedicationDosage_PeriodOfUse"|拡張を識別するURL。固定値。 |
