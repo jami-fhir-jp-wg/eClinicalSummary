@@ -361,10 +361,10 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||period | | |1..1|Period | ||
 || |start| |1..1|dateTime |"2020-08-21" |入院日。ISO8601に準拠yyyy-mm-dd形式で記述する。 |
 || |end| |1..1|dateTime |"2020-09-02" |退院日。ISO8601に準拠yyyy-mm-dd形式で記述する。 |
-|section | | | |0..1\*|DocumentRefrence |"CDA参照セクション" |退院時サマリー全体を記述した文書ファイルへの参照。既存の厚労省標準CDA規約で作成されたXMLファイルをそのまま参照したい場合、この要素を使用する。他の場所に保存されているFHIRドキュメントを参照する場合にもこの要素を用いる。この要素が出現した場合、以降のセクションは、"添付情報セクション"を除き、省略する。|
-|section | | | |0..1\*|−|"構造情報セクション"|退院時サマリーをFHIRリソースの組み合わせにより記述する場合にこのセクションを記述する。|
-||section| | |1..1\*|Encounter|"入院詳細セクション"<br>"admissionDetailsSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。 |
-||section| | |1..\* |Condition|"入院時診断セクション"<br>"admissionDiagnosesSection" ||
+|section | | | |0..1\*|DocumentRefrence |"CDA参照セクション" |退院時サマリー全体を記述した文書ファイルへの参照。既存の厚労省標準CDA規約で作成されたXMLファイルをそのまま参照したい場合、この要素を使用する。他の場所に保存されているFHIRドキュメントを参照する場合にもこの要素を用いる。この要素が出現した場合、以降のセクションは、"添付情報セクション"を除き、出現してはならない。|
+|section | | | |0..1\*|−|"構造情報セクション"|退院時サマリーをFHIRリソースの組み合わせにより記述する場合にこのセクションを記述する。この要素が出現した場合、"CDA参照セクション"は出現してはならない。|
+||section| | |0..1\*|Encounter|"入院詳細セクション"<br>"admissionDetailsSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。"構造情報セクション"が存在する場合、このセクションは必須。 |
+||section| | |0..\* |Condition|"入院時診断セクション"<br>"admissionDiagnosesSection" |"構造情報セクション"が存在する場合、このセクションは必須。|
 ||section| | |0..\* |AllergyIntolerance |"アレルギー・不耐性反応セクション"<br>"allergiesIIntoleranceSection"||
 ||section| | |0..\* |Condition|"入院時主訴セクション"<br>"chiefComplaintSection" ||
 ||section| | |0..1\*|Encounter|"入院理由セクション"<br>"reasonForVisitSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。 |
@@ -374,9 +374,9 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||section| | |0..\* |Observation|"入院時社会歴セクション"<br>"socialHistorySection"||
 ||section| | |0..\* |Observation|"入院時身体所見セクション"<br>"admissinoPhysicalStatusSection"||
 ||section| | |0..\* |FamilyMemberHistory|"入院時家族歴セクション"<br>"familiyHistorySection" ||
-||section| | |1..\* |DocumentReference |"入院中経過セクション"<br>"hospitalCourseSection" ||
-||section| | |1..1\*|Encounter|"入院時または退院時の詳細セクション"<br>"dischargeDetailsSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。 |
-||section| | |1..\* |Condition |"退院時診断セクション"<br>"dischargeDiagnosesSection" ||
+||section| | |0..\* |DocumentReference |"入院中経過セクション"<br>"hospitalCourseSection" |"構造情報セクション"が存在する場合、このセクションは必須。|
+||section| | |0..1\*|Encounter|"入院時または退院時の詳細セクション"<br>"dischargeDetailsSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。"構造情報セクション"が存在する場合、このセクションは必須。 |
+||section| | |0..\* |Condition |"退院時診断セクション"<br>"dischargeDiagnosesSection" |"構造情報セクション"が存在する場合、このセクションは必須。|
 ||section| | |0..\* |MedicationRequest ｜Bundle(電子処方箋) |"入院時または退院時の投薬指示セクション"<br>"dischargeMedicationSection" ||
 ||section| | |0..\* |CarePlan |"入院時または退院時の方針指示セクション"<br>"dischargeInstructionSection" ||
 ||section| | |0..\* |Observation|"入院時または退院時の身体所見セクション"<br>"dischargePhysicalSection"||
@@ -443,11 +443,11 @@ Compositionリソースに出現するsection要素は以下のような構造�
 || | | |0..1\*|Organization | |紹介元診療科|
 || | | |0..1\*|Practitioner | |紹介元医師|
 |section | | | |0..1\*|DocumentRefrence |"CDA参照セクション"<br>"cdaSection"|既存の厚労省標準CDA規約で作成されたXMLファイルをそのまま参照したい場合、この要素を使用する。他の場所に保存されているFHIRドキュメントを参照する場合にもこの要素を用いる。この要素が出現した場合、以降のセクションは、"添付情報セクション"と"PDFセクション"を除き、出現してはならない。 |
-|section | | | |0..1\*|−|"構造情報セクション"<br>"compositionSection" |退院時サマリーをFHIRリソースの組み合わせにより記述する場合にこのセクションを記述する。|
-||section| | |1..1\*|Encounter|“紹介目的セクション"<br>"admissionDetailsSection”|紹介先に外来受診あるいは入院を意図した情報をその理由とともに記述する。|
-||section| | |1..\* |Condition|“傷病名・主訴セクション"<br>"admissionDiagnosesSection”|現在の傷病名や主訴を記述する。|
-||section| | |1..\* |Condition|“現病歴セクション“<br>“presentIllnessSection”|現在までの傷病名と経過を記述する。|
-||section| | |1..\* |Condition|“既往歴セクション“<br>“pastIllnessSection” |過去の傷病名を記述する。|
+|section | | | |0..1\*|−|"構造情報セクション"<br>"compositionSection" |診療情報提供書をFHIRリソースの組み合わせにより記述する場合にこのセクションを記述する。この要素が出現した場合、"CDA参照セクション"は出現してはならない。|
+||section| | |0..1\*|Encounter|“紹介目的セクション"<br>"admissionDetailsSection”|紹介先に外来受診あるいは入院を意図した情報をその理由とともに記述する。"構造情報セクション"が存在する場合、このセクションは必須。|
+||section| | |0..\* |Condition|“傷病名・主訴セクション"<br>"admissionDiagnosesSection”|現在の傷病名や主訴を記述する。"構造情報セクション"が存在する場合、このセクションは必須。|
+||section| | |0..\* |Condition|“現病歴セクション“<br>“presentIllnessSection”|現在までの傷病名と経過を記述する。"構造情報セクション"が存在する場合、このセクションは必須。|
+||section| | |0..\* |Condition|“既往歴セクション“<br>“pastIllnessSection” |過去の傷病名を記述する。|
 ||section| | |0..\* |AllergyIntolerance |“アレルギー・不耐性反応セクション"<br>"allergiesIIntoleranceSection” |アレルギー情報を記述する。|
 ||section| | |0..\* |FamilyMemberHistory|“家族歴セクション“<br>“familiyHistorySection“|家族歴を記述する。|
 ||section| | |0..\* |Observation|“身体所見セクション“<br>“admissinoPhysicalStatusSection“ |現在の身体所見を記述する。|
@@ -459,7 +459,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||section| | |0..\* |Procedure|“処置セクション“<br>“treatmentProcedureSection“|処置治療歴を記述する。|
 ||section| | |0..\* |MedicationRequest ｜Bundle(電子処方箋) |“投薬指示セクション“<br>“medicationSection“|現在の投薬状況を記録する。|
 ||section| | |0..\* |Observation \| ImagingStudy \| DiagnosticReport \| Bundle (報告書)|“検査結果セクション“<br>“examsStudySection“|主要な検査結果、画像診断報告書、各種検査報告書を記述する。|
-||section| | |1..\* |ClinicalImpression |“臨床経過セクション“<br>“clinicalCourseSection“|これまでの臨床経過を叙述的に記述する。|
+||section| | |0..\* |DocumentReference |“臨床経過セクション“<br>“clinicalCourseSection“|これまでの臨床経過を叙述的に記述する。|
 ||section| | |0..\* |CarePlan |“診療方針指示セクション“<br>“clinicalInstructionSection“ |現在の治療方針を記述する。|
 ||section| | |0..\* |DeviceUseStatement |“医療機器セクション“<br>“medicalDeviceSection“ |使用中の医療機器（デバイス）の情報を記述する。|
 ||section| | |0..\* |Consent|“事前指示セクション“<br>“advanceDirectiveSection“|事前指示を（アドヴァンスディレクティブ）があれば記述する。|
