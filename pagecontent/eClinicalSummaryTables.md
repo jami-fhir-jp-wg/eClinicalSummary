@@ -240,7 +240,7 @@ Bundleリソース
 |entry | | |0..\* |BackboneElement |**DocumentReference**リソース|添付文書情報、PDF情報エントリ |
 |entry | | |0..\* |BackboneElement |**Related****Peson**リソース |関連する親族などの情報を記述するエントリー|
 |entry | | |0..\* |BackboneElement |**Binary**リソース |備考情報があれば記述する。添付データ情報エントリ|
-|signature | | |1..1|| |本書全体に対する署名情報|
+|signature | | |1..1|| |本書全体に対する署名情報。本書全体ではなく特定のセクション部分を除いた対象に対する署名のこともあり、運用ルールで定める。|
 ||type | |1..1\*|Coding| |バリューセット SignatureTypeCodes（http://hl7.org/fhir/ValueSet/signature-type） から、文書の作成者の署名であることを意味する"1.2.840.10065.1.12.1.1" を指定。|
 || |system |1..1|uri |"urn:iso-astm:E1762-95:2013" |固定値|
 || |code |1..1|code|"1.2.840.10065.1.12.1.1" |固定値|
@@ -363,22 +363,22 @@ Compositionリソースに出現するsection要素は以下のような構造�
 || |end| |1..1|dateTime |"2020-09-02" |退院日。ISO8601に準拠yyyy-mm-dd形式で記述する。 |
 |section | | | |0..1\*|DocumentRefrence |"CDA参照セクション" |退院時サマリー全体を記述した文書ファイルへの参照。既存の厚労省標準CDA規約で作成されたXMLファイルをそのまま参照したい場合、この要素を使用する。他の場所に保存されているFHIRドキュメントを参照する場合にもこの要素を用いる。この要素が出現した場合、以降のセクションは、"添付情報セクション"を除き、出現してはならない。|
 |section | | | |0..1\*|−|"構造情報セクション"|退院時サマリーをFHIRリソースの組み合わせにより記述する場合にこのセクションを記述する。この要素が出現した場合、"CDA参照セクション"は出現してはならない。|
-||section| | |0..1\*|Encounter|"入院詳細セクション"<br>"admissionDetailsSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。"構造情報セクション"が存在する場合、このセクションは必須。 |
-||section| | |0..\* |Condition|"入院時診断セクション"<br>"admissionDiagnosesSection" |"構造情報セクション"が存在する場合、このセクションは必須。|
+||section| | |1..1\*|Encounter|"入院時詳細セクション"<br>"admissionDetailsSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。<br>"構造情報セクション"が存在する場合、このセクションは必須。 |
+||section| | |1..\* |Condition|"入院時診断セクション"<br>"admissionDiagnosesSection" |"構造情報セクション"が存在する場合、このセクションは必須。|
 ||section| | |0..\* |AllergyIntolerance |"アレルギー・不耐性反応セクション"<br>"allergiesIIntoleranceSection"||
-||section| | |0..\* |Condition|"入院時主訴セクション"<br>"chiefComplaintSection" ||
-||section| | |0..1\*|Encounter|"入院理由セクション"<br>"reasonForVisitSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。 |
-||section| | |0..\* |Condition|"現病歴セクション"<br>"presentIllnessSection" ||
+||section| | |1..\* |Condition|"主訴セクション"<br>"chiefComplaintSection" |"構造情報セクション"が存在する場合、このセクションは必須。 |
+||section| | |1..1\*|Encounter|"入院理由セクション"<br>"reasonForVisitSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。<br>"構造情報セクション"が存在する場合、このセクションは必須。  |
+||section| | |1..\* |Condition|"現病歴セクション"<br>"presentIllnessSection" |"構造情報セクション"が存在する場合、このセクションは必須。 |
 ||section| | |0..\* |Condition|"既往歴セクション"<br>"pastIllnessSection"||
 ||section| | |0..\* |MedicationStatement|"入院時服薬セクション"<br>"admissionMedicationsSection" ||
-||section| | |0..\* |Observation|"入院時社会歴セクション"<br>"socialHistorySection"||
+||section| | |0..\* |Observation|"社会歴・生活習慣セクション"<br>"socialHistorySection"||
 ||section| | |0..\* |Observation|"入院時身体所見セクション"<br>"admissinoPhysicalStatusSection"||
-||section| | |0..\* |FamilyMemberHistory|"入院時家族歴セクション"<br>"familiyHistorySection" ||
-||section| | |0..\* |DocumentReference |"入院中経過セクション"<br>"hospitalCourseSection" |"構造情報セクション"が存在する場合、このセクションは必須。|
-||section| | |0..1\*|Encounter|"入院時または退院時の詳細セクション"<br>"dischargeDetailsSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。"構造情報セクション"が存在する場合、このセクションは必須。 |
-||section| | |0..\* |Condition |"退院時診断セクション"<br>"dischargeDiagnosesSection" |"構造情報セクション"が存在する場合、このセクションは必須。|
-||section| | |0..\* |MedicationRequest ｜Bundle(電子処方箋) |"入院時または退院時の投薬指示セクション"<br>"dischargeMedicationSection" ||
-||section| | |0..\* |CarePlan |"入院時または退院時の方針指示セクション"<br>"dischargeInstructionSection" ||
+||section| | |0..\* |FamilyMemberHistory|"家族歴セクション"<br>"familiyHistorySection" ||
+||section| | |1..\* |DocumentReference |"入院中経過セクション"<br>"hospitalCourseSection" |"構造情報セクション"が存在する場合、このセクションは必須。|
+||section| | |1..1\*|Encounter|"退院時詳細セクション"<br>"dischargeDetailsSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。<br>"構造情報セクション"が存在する場合、このセクションは必須。 |
+||section| | |1..\* |Condition |"退院時診断セクション"<br>"dischargeDiagnosesSection" |"構造情報セクション"が存在する場合、このセクションは必須。|
+||section| | |1..\* |MedicationRequest ｜Bundle(電子処方箋) |"退院時投薬指示セクション"<br>"dischargeMedicationSection" |"構造情報セクション"が存在する場合、このセクションは必須。|
+||section| | |1..\* |CarePlan |"退院時方針指示セクション"<br>"dischargeInstructionSection" |"構造情報セクション"が存在する場合、このセクションは必須。|
 ||section| | |0..\* |Observation|"入院時または退院時の身体所見セクション"<br>"dischargePhysicalSection"||
 ||section| | |0..\* |Procedure|"入院中治療セクション"<br>"hospitalProcedureSection"||
 ||section| | |0..\* |Observation \| ImagingStudy \| DiagnosticReport \| Bundle (報告書)|"入院中検査結果セクション"<br>"hospitalStudySection"||
@@ -444,9 +444,9 @@ Compositionリソースに出現するsection要素は以下のような構造�
 || | | |0..1\*|Practitioner | |紹介元医師|
 |section | | | |0..1\*|DocumentRefrence |"CDA参照セクション"<br>"cdaSection"|既存の厚労省標準CDA規約で作成されたXMLファイルをそのまま参照したい場合、この要素を使用する。他の場所に保存されているFHIRドキュメントを参照する場合にもこの要素を用いる。この要素が出現した場合、以降のセクションは、"添付情報セクション"と"PDFセクション"を除き、出現してはならない。 |
 |section | | | |0..1\*|−|"構造情報セクション"<br>"compositionSection" |診療情報提供書をFHIRリソースの組み合わせにより記述する場合にこのセクションを記述する。この要素が出現した場合、"CDA参照セクション"は出現してはならない。|
-||section| | |0..1\*|Encounter|“紹介目的セクション"<br>"admissionDetailsSection”|紹介先に外来受診あるいは入院を意図した情報をその理由とともに記述する。"構造情報セクション"が存在する場合、このセクションは必須。|
-||section| | |0..\* |Condition|“傷病名・主訴セクション"<br>"admissionDiagnosesSection”|現在の傷病名や主訴を記述する。"構造情報セクション"が存在する場合、このセクションは必須。|
-||section| | |0..\* |Condition|“現病歴セクション“<br>“presentIllnessSection”|現在までの傷病名と経過を記述する。"構造情報セクション"が存在する場合、このセクションは必須。|
+||section| | |1..1\*|Encounter|“紹介目的セクション"<br>"admissionDetailsSection”|紹介先に外来受診あるいは入院を意図した情報をその理由とともに記述する。<br>"構造情報セクション"が存在する場合、このセクションは必須。|
+||section| | |1..\* |Condition|“傷病名・主訴セクション"<br>"admissionDiagnosesSection”|現在の傷病名や主訴を記述する。commonTablesFHIR_V113_wHistory.docx"構造情報セクション"が存在する場合、このセクションは必須。|
+||section| | |1..\* |Condition|“現病歴セクション“<br>“presentIllnessSection”|現在までの傷病名と経過を記述する。commonTablesFHIR_V113_wHistory.docx"構造情報セクション"が存在する場合、このセクションは必須。|
 ||section| | |0..\* |Condition|“既往歴セクション“<br>“pastIllnessSection” |過去の傷病名を記述する。|
 ||section| | |0..\* |AllergyIntolerance |“アレルギー・不耐性反応セクション"<br>"allergiesIIntoleranceSection” |アレルギー情報を記述する。|
 ||section| | |0..\* |FamilyMemberHistory|“家族歴セクション“<br>“familiyHistorySection“|家族歴を記述する。|
@@ -1193,7 +1193,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |------|----------|-------|--|------|-----------------------------|----------------------------|---------------------------------------------------------------------------------------------------------------|
 |resourceType||| |||"Observation" |**Observation**リソースであることを示す|
 |meta||| |1..1|Meta|| |
-||profile || |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Observation_Common_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は、検査種別によってJP_Core v1.1の該当プロファイルに合わせる。|
+||profile || |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Observation_Common_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。設定する値は、検査結果のカテゴリーごとにJP-Coreの該当プロファイルURLとすること。|
 |text||| |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。 |
 ||status|| |1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。 |
 ||div || |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; |値は例示。 |
