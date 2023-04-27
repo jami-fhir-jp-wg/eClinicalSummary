@@ -365,7 +365,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |section | | | |0..1\*|−|"構造情報セクション"|退院時サマリーをFHIRリソースの組み合わせにより記述する場合にこのセクションを記述する。この要素が出現した場合、"CDA参照セクション"は出現してはならない。|
 ||section| | |1..1\*|Encounter|"入院時詳細セクション"<br>"admissionDetailsSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。<br>"構造情報セクション"が存在する場合、このセクションは必須。 |
 ||section| | |1..\* |Condition|"入院時診断セクション"<br>"admissionDiagnosesSection" |"構造情報セクション"が存在する場合、このセクションは必須。|
-||section| | |0..\* |AllergyIntolerance |"アレルギー・不耐性反応セクション"<br>"allergiesIIntoleranceSection"||
+||section| | |0..\* |AllergyIntolerance |"アレルギー・不耐性反応セクション"<br>"allergyIntoleranceSection"||
 ||section| | |1..\* |Condition|"主訴セクション"<br>"chiefComplaintSection" |"構造情報セクション"が存在する場合、このセクションは必須。 |
 ||section| | |1..1\*|Encounter|"入院理由セクション"<br>"reasonForVisitSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。<br>"構造情報セクション"が存在する場合、このセクションは必須。  |
 ||section| | |1..\* |Condition|"現病歴セクション"<br>"presentIllnessSection" |"構造情報セクション"が存在する場合、このセクションは必須。 |
@@ -448,7 +448,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||section| | |1..\* |Condition|“傷病名・主訴セクション"<br>"admissionDiagnosesSection”|現在の傷病名や主訴を記述する。commonTablesFHIR_V113_wHistory.docx"構造情報セクション"が存在する場合、このセクションは必須。|
 ||section| | |1..\* |Condition|“現病歴セクション“<br>“presentIllnessSection”|現在までの傷病名と経過を記述する。commonTablesFHIR_V113_wHistory.docx"構造情報セクション"が存在する場合、このセクションは必須。|
 ||section| | |0..\* |Condition|“既往歴セクション“<br>“pastIllnessSection” |過去の傷病名を記述する。|
-||section| | |0..\* |AllergyIntolerance |“アレルギー・不耐性反応セクション"<br>"allergiesIIntoleranceSection” |アレルギー情報を記述する。|
+||section| | |0..\* |AllergyIntolerance |“アレルギー・不耐性反応セクション"<br>"allergyIntoleranceSection” |アレルギー情報を記述する。|
 ||section| | |0..\* |FamilyMemberHistory|“家族歴セクション“<br>“familiyHistorySection“|家族歴を記述する。|
 ||section| | |0..\* |Observation|“身体所見セクション“<br>“admissinoPhysicalStatusSection“ |現在の身体所見を記述する。|
 ||section| | |0..\* |ConditionObservation |“感染症情報セクション"<br>"infectiousDiseaseInformationSection" |感染症の保有状況、および検査結果を記述する。|
