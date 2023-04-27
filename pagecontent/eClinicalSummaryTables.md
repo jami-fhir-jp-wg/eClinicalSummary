@@ -386,7 +386,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||section| | |0..\* |Immunization |"予防接種歴セクション"<br>"immunizationSection" ||
 ||section| | |0..\* |Consent|"事前指示セクション"<br>"advanceDirectiveSection" ||
 ||section| | |0..\* |ResearchSubject|"臨床研究参加セクション"<br>"researchParticipationSection"||
-|section | | | |0..\* |DocumentReference \| Binary |"添付情報セクション"<br>"attachmentSection" |添付情報ファイルがある場合にここの格納または参照情報を設定する。|
+|section | | | |0..\* |DocumentReference \| Binary  \| Bundle |"添付情報セクション"<br>"attachmentSection" |添付情報ファイルがある場合にここの格納または参照情報を設定する。|
 |section | | | |0..\* |DocumentReference \| Binary |"PDFセクション"<br>"pdfSection" |文書情報全体を表示または印刷するためのPDFファイルがある場合にここの格納または参照情報を設定する。 |
 
 <br><br><br>
@@ -464,7 +464,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||section| | |0..\* |DeviceUseStatement |“医療機器セクション“<br>“medicalDeviceSection“ |使用中の医療機器（デバイス）の情報を記述する。|
 ||section| | |0..\* |Consent|“事前指示セクション“<br>“advanceDirectiveSection“|事前指示を（アドヴァンスディレクティブ）があれば記述する。|
 ||section| | |0..\* |ResearchSubject|“臨床研究参加セクション“<br>“researchParticipationSection“ |臨床研究への参加状況を記述する。|
-|section | | | |0..\* |DocumentReference \| Binary |"添付情報セクション"<br>"attachmentSection"|添付情報ファイルがある場合にここに格納または参照情報を設定する。|
+|section | | | |0..\* |DocumentReference \| Binary  \| Bundle |"添付情報セクション"<br>"attachmentSection"|添付情報ファイルがある場合にここに格納または参照情報を設定する。|
 |section | | | |0..\* |DocumentReference \| Binary |"備考・連絡情報セクション"<br>"remarksCommunicationSection"|備考・連絡情報がある場合にここに格納または参照情報を設定する。|
 |section | | | |0..\* |DocumentReference \| Binary |"PDFセクション"<br>"pdfSection"|文書情報全体を表示または印刷するためのPDFファイルがある場合にここに格納または参照情報を設定する。 |
 
