@@ -9,7 +9,7 @@ Alias: $practitioner-certificate-category = http://jpfhir.jp/fhir/core/CodeSyste
 //Alias: $practitioner-role-category = http://jpfhir.jp/fhir/Common/CodeSystem/practitioner-role-category
 Alias: $prescription-category = http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-category
 Alias: $prescription-section = http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-section
-Alias: $route-codes = http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes
+Alias: $route-codes = http://jpfhir.jp/fhir/core/CodeSystem/route-codes
 Alias: $v3-ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
 
 
