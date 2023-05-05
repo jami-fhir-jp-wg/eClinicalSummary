@@ -1,4 +1,3 @@
-
 Profile:        JP_FamilyMemberHistory_eClinicalSummary
 Parent:			JP_FamilyMemberHistory
 Id:             JP-FamilyMemberHistory-eClinicalSummary
@@ -58,8 +57,20 @@ Description:    "Derived Profile from JP-Core"
 * note ^definition = "この家族に関する一般的な情報のテキスト記述。"
 
 * condition 0..* MS
-* condition ^short = "家族が持っていた重要な状態（または状態）。複数記述できる。"
-* condition ^definition = "家族が持っていた重要な状態（または状態）。複数記述できる。"
+* condition ^short = "家族が持っていた重要な健康状態（家族歴に記述すべき疾病等。複数記述できる。"
+* condition ^definition = "家族が持っていた重要な健康状態（家族歴に記述すべき疾病等）。複数記述できる。"
+* condition.code 0..1 MS
+* condition.code ^short = "疾病コード情報またはテキスト情報"
+* condition.code ^definition = "疾病コード情報またはテキスト情報"
+* condition.code.coding 0..1 MS
+* condition.code.text 0..1 MS
+* condition.code.text ^short = "疾病のテキスト情報（コードにより十分表現できない場合などに使用）"
+* condition.code.text ^definition = "疾病のテキスト情報（コードにより十分表現できない場合などに使用）"
+
+* condition.onsetAge 0..1 MS
+* condition.onsetAge ^short = "その家族における疾病の（発症）年齢。"
+* condition.onsetAge ^definition = "その家族における疾病の（発症）年齢。"
+
 
 
 
