@@ -59,7 +59,7 @@ Description:    "Derived Profile from JP-Core"
 * condition 0..* MS
 * condition ^short = "家族が持っていた重要な健康状態（家族歴に記述すべき疾病等。複数記述できる。"
 * condition ^definition = "家族が持っていた重要な健康状態（家族歴に記述すべき疾病等）。複数記述できる。"
-* condition.code 0..1 MS
+* condition.code 1..1 MS
 * condition.code ^short = "疾病コード情報またはテキスト情報"
 * condition.code ^definition = "疾病コード情報またはテキスト情報"
 * condition.code.coding 0..1 MS
