@@ -43,15 +43,6 @@ Description:    "Derived Profile from JP-Core"
 * meta.lastUpdated 1.. MS
 
 
-Profile:        JP_FamilyMemberHistory
-Parent:			FamilyMemberHistory
-Id:             JP-FamilyMemberHistory-eClinicalSummary
-Description:    "Derived Profile from JP-Core"
-* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_FamilyMemberHistory_eClinicalSummary"
-* ^date = "2023-03-31"
-* meta.lastUpdated 1.. MS
-
-
 Profile:        JP_Immunization
 Parent:			Immunization
 Id:             JP-Immunization
