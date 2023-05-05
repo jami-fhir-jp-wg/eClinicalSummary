@@ -11,7 +11,7 @@ Description:    "Derived Profile from JP-Core"
 * dataAbsentReason 0..1 MS      //この家族の情報がとれない理由コード
 * dataAbsentReason ^short = "家族の情報がとれない理由コード"
 * dataAbsentReason ^definition = "家族の情報がとれない理由コード"
-* dataAbsentReason from "http://jpfhir.jp/fhir/ValueSet/JP_FamilyMemberHistory_eClinicalSummary_DataAbsentReason"
+* dataAbsentReason from http://hl7.org/fhir/ValueSet/history-absent-reason
 
 * patient 1..1 MS
 * patient ^short = "対象となる患者リソースへの参照。"
@@ -34,31 +34,24 @@ Description:    "Derived Profile from JP-Core"
 * relationship.coding.system 1..1 MS
 * relationship.coding.system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode" (exactly)
 * relationship.coding.code 1..1 MS
-* relationship.coding.text 0..1 MS
+* relationship.coding.display 0..1 MS
 
 * sex 0..1 MS
 * sex.coding 1..1 MS
 * sex.coding.system 1..1 MS
 * sex.coding.system = "http://hl7.org/fhir/administrative-gender" (exactly)
-* sex.coding.code 1..1 MS   // male | female | other | unknown
+* sex.coding.display 0..1 MS   // male | female | other | unknown
 
-* born  0..1 MS
-* born ^short = "この家族の（おおよその）生年月日。"
-* born ^definition = "この家族の（おおよその）生年月日。"
-
-* age 0..1 MS
-* age ^short = "この家族の年齢。"
-* age ^definition = "この家族の年齢。"
-* age.ageAge 0..1 MS
-* age.ageRange 0..1 MS
-* age.ageString 0..1 MS
+* age[x] 0..1 MS
+* age[x] ^short = "この家族の年齢。"
+* age[x] ^definition = "この家族の年齢。"
 
 * estimatedAge  0..1 MS
 * estimatedAge ^short = "上記年齢は（計算やアルゴリズムによる）推定値によるものであれば true、それ以外は false。"
 
-* deceased  0..1 MS
-* deceased ^short = "この家族が死亡しているかどうか。"
-* deceased ^definition = "家族が死亡している場合に、その真偽、年齢、時期などのいずれかひとつの要素で記述する。"
+* deceased[x]  0..1 MS
+* deceased[x] ^short = "この家族が死亡しているかどうか。"
+* deceased[x] ^definition = "家族が死亡している場合に、その真偽、年齢、時期などのいずれかひとつの要素で記述する。"
 
 * note 0..* MS
 * note ^short = "この家族に関する一般的な情報のテキスト記述。"
