@@ -1,4 +1,4 @@
-name: Ohe-testing
+name: Ohe-Develp and  Dispatch
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
     branches: [ develop1.0 ]
     
 jobs:
-  turn:
+  turn1:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,15 +21,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: ssh key generate
-      run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
-      env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_TO_JPFHIR }}
-    - name: rsync remote-site-deploy
-      run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 8022" --delete ./output ./fsh-generated r2217734@www41.onamae.ne.jp:/home/r2217734/public_html/jpfhir.jp/eMunicipalCheckup/ --exclude .htaccess
+      run: |
+          echo "starting"
+          echo "secrets.PERSONAL_TOKEN " ${{ secrets.PERSONAL_TOKEN }}
+          echo "secrets.PERSONAL_TOKEN2 " ${{ secrets.PERSONAL_TOKEN2 }}
+          curl -vv -H "Authorization: token ${{ secrets.PERSONAL_TOKEN }}" -H "Accept: application/vnd.github.everest-preview+json" "https://api.github.com/repos/jami-fhir-jp-wg/eReferral/dispatches" --data '{"event_type": "update", "client_payload": {"ref": "develop1.0"}}'
+          curl -vv -H "Authorization: token ${{ secrets.PERSONAL_TOKEN }}" -H "Accept: application/vnd.github.everest-preview+json" "https://api.github.com/repos/jami-fhir-jp-wg/eDischargeSummary/dispatches" --data '{"event_type": "update", "client_payload": {"ref": "develop1.0"}}'
 
     - name: Setup npm
       uses: actions/setup-node@v2
-      with: 
+      with:
         check-latest: true
     - name: Setup Sushi
       run: |
