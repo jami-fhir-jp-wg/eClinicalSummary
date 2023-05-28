@@ -79,9 +79,12 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
   no-validate:
     - '*/hl7.fhir.jp.core'
   special-url:
-    - http://jpfhir.jp/fhir/clinicalCoreSet/StructureDefinition/JP_Observation_LabResult_CCS
     - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Patient_eCS_Contained
     - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Patient_eClinicalSummary
+    - http://jpfhir.jp/fhir/clinicalCoreSet/StructureDefinition/JP_Observation_LabResult_eCS
+    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eCS
+    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eCS_Contained
+
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
 # │  resource. These properties are less commonly needed than those above.                         │

@@ -87,3 +87,16 @@ Description: "処方を発行した医療機関の情報　JP_Organizationの派
 * address ^short = "医療機関住所 診療情報提供書の発行組織では必須"
 * address ^definition = "医療機関住所 診療情報提供書の発行組織では必須"
 */
+
+//--- Profile for conatained resource within other resources
+Profile: JP_Organization_eCS_Contained
+Parent: JP_Organization_eCS
+Id: JP-Organization-eCS-Contained
+Title: "JP_Organization_eCS_Contained"
+Description: "診療情報コアサマリー埋め込み用 Organizationリソース(医療機関情報)プロファイル　　（JP_Organizaion_eClinicalSummaryの派生プロファイル）"
+* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eCS_Contained"
+* ^status = #active
+* ^date = "2023-03-31"
+* implicitRules ..0
+* text ..0
+* contained ..0
