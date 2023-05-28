@@ -121,10 +121,10 @@ and localUncoded 0..1 MS
 
 // OUL^R22.PID
 * subject 1..1   MS   // MS 追加
-* subject only Reference(JP_Patient)
+* subject only Reference(JP_Patient_eCS_Contained)
 * subject ^short = "検体検査の対象となる患者。"
 * subject ^definition = "検体検査の対象となる患者。"
-* subject ^comment = "Containedリソースに含まれる患者リソースをリソース内で参照する。"
+* subject ^comment = "Containedリソースに含まれる患者リソースのid(identifierではなく)をリソース内で#を最初いにつけて参照する。（患者リソースのid を　123 とすると、　{\"reference\" : \"#123\" }のようになる。）"
 
 // OUL^R22.PV1
 * encounter    MS   // MS 追加

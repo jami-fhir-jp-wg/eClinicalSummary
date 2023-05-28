@@ -144,3 +144,23 @@ Description: "診療情報提供では、紹介理由を記述するEncouter情�
 * location.period.end 0..1 MS
 
 
+
+Profile: JP_Encounter_eCS_Contained
+Parent: JP_Encounter
+Id: JP-Encounter-eCS-Contained
+Description: "診療情報コアサマリー埋め込み用 Encouterリソース(受診や入院に関する情報)プロファイル　　（JP_Encounter_eClinicalSummaryの派生プロファイル）"
+* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eCS_Contained"
+* ^status = #active
+* ^date = "2023-03-31"
+* id 1..1
+* meta ..0
+* implicitRules ..0
+* text ..0
+* contained ..0
+* identifier 1.. 
+* identifier.id ..0
+* identifier.extension ..0
+* identifier.use ..0
+* identifier.type ..0
+* identifier.period ..0
+* identifier.assigner ..0

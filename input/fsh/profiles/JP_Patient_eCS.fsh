@@ -64,6 +64,8 @@ Description: "診療情報コアサマリー埋め込み用 Patientリソース(
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Patient_eCS_Contained"
 * ^status = #active
 * ^date = "2023-03-31"
+* id 1..1
+* meta ..0
 * implicitRules ..0
 * text ..0
 * contained ..0
