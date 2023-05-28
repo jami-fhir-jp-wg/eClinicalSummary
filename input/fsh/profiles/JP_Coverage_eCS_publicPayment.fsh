@@ -1,8 +1,8 @@
-Profile: JP_Coverage_ePrescriptionData_publicPayment
+Profile: JP_Coverage_eCS_publicPayment
 Parent: JP_Coverage
-Id: JP-Coverage-ePrescriptionData-publicPayment
-Description: "処方の公費負担情報　JP_Coverageの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_ePrescriptionData_publicPayment"
+Id: JP-Coverage-eCS-publicPayment
+Description: "公費負担情報　JP_Coverageの派生プロファイル"
+* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_eCS_publicPayment"
 * ^status = #draft
 * text ^short = "このリソースのショートサマリーで人が読んでわかるテキスト表現"
 * text ^definition = "このリソースのショートサマリーで人が読んでわかるテキスト表現"
@@ -20,7 +20,7 @@ Description: "処方の公費負担情報　JP_Coverageの派生プロファイ�
 * extension[insuredPersonSubNumber] 0..0
 * status = #active (exactly)
 * status ^short = "リソースインスタンスのステータス"
-* status ^definition = "リソースインスタンスのステータス。固定値active。処方箋発行時に真に有効な保険かどうかは意味しない。"
+* status ^definition = "リソースインスタンスのステータス。固定値active。真に有効な保険かどうかは意味しない。"
 * type ^short = "保険種別コード"
 * type 1.. MS
 * type from http://jpfhir.jp/fhir/Common/ValueSet/mhlw-ePreCDA-insuranceCategory
@@ -58,7 +58,7 @@ Description: "処方の公費負担情報　JP_Coverageの派生プロファイ�
 * period.end ^definition = "公費受給者証の有効期間の終了日。資格喪失日。ISO8601に準拠してyyyy_mm_dd形式で指定する。"
 * period.end MS
 * payor 1..1 MS
-* payor only Reference(JP_Organization_ePrescriptionData_coveragePayer)
+* payor only Reference(JP_Organization_eCS_coveragePayer)
 * payor ^short = "公費負担者情報"
 * payor ^definition = "公費負担者を表すOrganizationリソースへの参照"
 * class ..0

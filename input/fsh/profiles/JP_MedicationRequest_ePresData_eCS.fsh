@@ -1,12 +1,39 @@
 Profile: JP_MedicationRequest_ePres_eCS
 Parent: JP_MedicationRequest
-Id: JP-MedicationRequest-ePrescriptionData-eCS
+Id: JP-MedicationRequest-ePres-eCS
 Description: "処方オーダ情報　JP_MedicationRequestの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData-eCS"
+* ^url = $JP_MedicationRequest_ePres_eCS
 * ^status = #draft
+* ^date = "2023-05-27"
+* . ^short = "診療情報コアサマリーにおける処方情報の格納に使用する"
+* . ^definition = "診療情報コアサマリー・厚労省6情報などにおける処方情報の格納に使用する"
+
+// Patinet、Specimen、オーダ医療機関、は最低限の情報をContainedリソースとして記述する
+* contained ^slicing.discriminator.type = #profile
+* contained ^slicing.discriminator.path = "$this"
+* contained ^slicing.rules = #open
+* contained contains patient 1..1
+    and encounter 0..1
+    and organization 0..1
+    and author 0..1
+    and order 0..1
+
+* contained[patient] only  JP_Patient_eCS_Contained
+* contained[organization] only  JP_Organization_eCS_Contained
+* contained[encounter] only  JP_Encounter_eCS_Contained
+* contained[author] only  JP_Practitioner_eCS_Contained
+* contained[order] only  JP_ServiceRequest_eCS_Contained
+
+* meta.lastUpdated 0.. MS
+* meta.lastUpdated ^short = "最終更新日"
+* meta.lastUpdated ^definition = "この患者情報の内容がサーバ上で最後に格納または更新された日時、またはこのFHIRリソースが生成された日時"
+* meta.profile 1.. MS
+* meta.profile = $JP_MedicationRequest_ePres_eCS
+
 * identifier[rpNumber] 1..1 MS
 * identifier[orderInRp] 1..1 MS
 * identifier[requestIdentifier] ..0 MS
+
 * medication[x] ^definition = "医薬品コードと医薬品名称。coding要素を繰り返すことでHOT9 やYJコードなど複数のコード体系で医薬品コード並記することが可能。\r\n本仕様では、処方オーダ時に選択または入力し、実際に処方箋に印字される文字列を必ずtext要素に格納した上で、それをコード化した情報を1個以上のcoding 要素に記述する。\r\n日本では同じ用法の複数の薬剤をひとつの処方区分とすることがある。複数の薬剤を表記するMedication Resourceのインスタンスを参照する。"
 * medication[x] MS
 * medication[x].coding ^slicing.discriminator.type = #value
@@ -54,23 +81,21 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * subject 1..1   MS   // MS 追加
 * subject only Reference(JP_Patient_eCS_Contained)
 * subject ^short = "処方対象となる患者。"
-* subject ^definition = "処方対象となる患者。"
+* subject ^definition = "処方対象となる患者情報を表すPatientリソース（Containedリソース）への参照"
 * subject ^comment = "Containedリソースに含まれる患者リソースをリソース内で参照する。"
 
 * encounter 0..1 MS
 * encounter only  Reference(JP_Encounter_eCS_Contained)
 * encounter ^short = "処方を発行した受診情報（入外区分など）"
-* encounter ^definition = "処方を発行した受診情報（入外区分など）"
+* encounter ^definition = "処方を発行した受診情報（入外区分など）を表すEncounterリソース（Containedリソース）への参照"
 * encounter ^comment = "Containedリソースに含まれるEncounterリソースをリソース内で参照する。なくてもよい。"
-
-
 
 * supportingInformation ..0
 
 * requester 0.. MS
 * requester only Reference(JP_Practitioner_eCS_Contained)
 * requester ^short = "処方者"
-* requester ^definition = "処方対象者"
+* requester ^definition = "処方者を表すPractitionerリソース（Containedリソース）への参照"
 * requester ^comment = "Containedリソースに含まれるPractitioner（医療者）リソースをこのリソース内で参照する。"
 
 * performer ..0
@@ -83,11 +108,14 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 
 * basedOn 0.. MS
 * basedOn only Reference(JP_ServiceRequest_eCS_Contained)
+* requester ^short = "処方オーダ情報"
+* requester ^definition = "処方オーダ番号等の一意識別子を含むServiceRequestリソース（Containedリソース）への参照"
+* requester ^comment = "Containedリソースに含まれるServiceRequest（処方オーダー情報）リソースをこのリソース内で参照する。"
 
 * groupIdentifier ..0
 * courseOfTherapyType ..0
 
-* insurance ..0
+* insurance ..0 // 個々の処方情報に保険情報はいれないこととする
 
 * note ..1 MS
 * note ^comment = "単一の薬剤に対する調剤者に対する指示は、本要素ではなく、MedicationRequestリソースのdispenseRequest要素に対して本文書で定義した拡張「InstructionForDispense」（http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_DispenseRequest_InstructionForDispense）を使用する。\r\nまた処方箋全体の備考や指示は、Communicationリソースに記述する。\r\n患者に対する補足指示や注意や、不均等投与指示などは、 dosageInstruction.additionalInstructionで記述する。\r\n本要素は、それらでは伝えられない薬剤単位の備考や指示を記述する。"
@@ -139,7 +167,7 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * dosageInstruction.timing.code ^definition = "服用タイミングなどを表す用法をJAMI標準用法コード16桁コードで記述する。"
 * dosageInstruction.timing.code.coding 1..1 MS
 * dosageInstruction.timing.code.coding ^definition = "JAMI １６桁用法コードでの記述を必須としており、そのコードに対応する用法文字列は、 display要素に記述されるため、text要素と併用すると不一致があった場合に混乱するためtext要素は記述しない。"
-* dosageInstruction.timing.code.coding.system = "urn:oid:1.2.392.200250.2.2.20.20" (exactly)
+* dosageInstruction.timing.code.coding.system = "urn:oid:1.2.392.200250.2.2.20" (exactly)
 * dosageInstruction.timing.code.coding.system MS
 * dosageInstruction.timing.code.coding.code ^short = "JAMI標準用法コード"
 * dosageInstruction.timing.code.coding.code MS

@@ -1,8 +1,8 @@
-Profile: JP_Organization_ePrescriptionData_coveragePayer
+Profile: JP_Organization_eCS_coveragePayer
 Parent: JP_Organization
-Id: JP-Organization-ePrescriptionData-coveragePayer
-Description: "処方に適用される保険の保険者または公費の公費受給者　JP_Organizationの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_coveragePayer"
+Id: JP-Organization-eCS-coveragePayer
+Description: "処方など医療サービスに適用される保険の保険者または公費の公費受給者　JP_Organizationの派生プロファイル"
+* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_eCS_coveragePayer"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^definition = "固定値.テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"

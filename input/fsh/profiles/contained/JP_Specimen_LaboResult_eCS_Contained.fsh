@@ -1,10 +1,24 @@
+
+//-------------------------------
+//--- Profile for conatained resource within other resources
+//-------------------------------
+
 Profile:        JP_Specimen_LaboResult_eCS_Contained
 Parent:         JP_Specimen
 Id:             JP-Specimen-eCS
 Description:    "診療情報コアサマリー埋め込み用 Specimenリソース（検体検査の検体情報 ）プロファイル "
-* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Specimen_eCS_Contained"
-
+* ^url = $JP_Specimen_LaboResult_eCS_Contained
 * ^status = #active
+* ^date = "2023-05-27"
+* . ^short = "診療情報コアサマリーにおける検体検査結果リソースへの埋め込み用の検体材料情報の格納に使用する。"
+* . ^definition = "診療情報コアサマリー・厚労省6情報などにおける検体検査結果リソースへの埋め込み用の検体材料情報の格納に使用する。"
+* . ^comment = "Contaiedリソースであるため、これ自身はContainedリソースを持てない。"
+* id 1..1
+* meta.profile = $JP_Specimen_LaboResult_eCS_Contained
+* implicitRules ..0
+* text ..0
+* contained ..0
+
 
 * type 1..1 MS
 * type ^short = "検体の材料コード。JLAC10材料コード（必須）とローカル材料コードを設定する。"

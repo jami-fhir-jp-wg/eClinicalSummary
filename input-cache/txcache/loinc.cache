@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "5792-7"
+}, "valueSet" :{
+  "resourceType" : "ValueSet"
+}, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
+v: {
+  "severity" : "error",
+  "error" : "Error from server: Fatal:[Request has parameter url of type string but method expects type uri.]\r\n",
+  "class" : "SERVER_ERROR"
+}
+-------------------------------------------------------------------------------------

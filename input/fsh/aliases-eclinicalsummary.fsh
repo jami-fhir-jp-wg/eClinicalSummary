@@ -1,7 +1,34 @@
 Alias: $JP_Patient_eClinicalSummary = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Patient_eClinicalSummary
-Alias: $JP_Observation_LabResult_eCS = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Observation_LabResult_eClinicalSummary"
+Alias: $JP_Observation_LabResult_eCS = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Observation_LabResult_eClinicalSummary
 
+Alias: $JP_Observation_LabResult_eCS_Contained = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Observation_LabResult_eCS_Contained
+
+Alias: $JP_Practitioner_eCS = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eClinicalSummary
+
+Alias: $JP_Patient_eCS_Contained = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Patient_eCS_Contained
+
+Alias: $JP_Specimen_LaboResult_eCS_Contained = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Specimen_eCS_Contained
+
+Alias: $JP_Encounter_eCS_Contained = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eCS_Contained
+
+Alias: $JP_Practitioner_eCS_Contained = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eCS_Contained
+
+Alias: $JP_ServiceRequest_eCS_Contained = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_ServiceRequest_eCS_Contained
+
+Alias: $JP_PractitionerRole_eCS_author = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_PractitionerRole_eClinicalSummary_author
+
+Alias: $JP_Practitioner_eCS_author = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eClinicalSummary_author
+
+Alias: $JP_Organization_eCS_department = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department
+
+Alias: $JP_Organization_eCS_department_Contained = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department_Contained
+//////
 Alias: $communication-category = http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category
+
+Alias: $JP_MedicationRequest_ePres_eCS = http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData-eCS
+
+Alias: $JP_Organization_eCS_Contained = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eCS_Contained
+
 Alias: $composition-clinicaldocument-versionNumber = http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber
 Alias: $coverage-copay-type = http://terminology.hl7.org/CodeSystem/coverage-copay-type
 Alias: $doc-typecodes = http://jpfhir.jp/fhir/Common/CodeSystem/doc-typecodes
@@ -37,5 +64,7 @@ Alias: $JP_ObservationLabResultLocalUncoded_CS = http://jpfhir.jp/fhir/clinicalC
 // from jp-core v1.1.2
 Alias: $JP_SimpleObservationCategory_VS = http://jpfhir.jp/fhir/core/ValueSet/JP_SimpleObservationCategory_VS
 Alias: $observation-category = $JP_SimpleObservationCategory_VS
+
+Alias: $observation-category-cs = http://terminology.hl7.org/CodeSystem/v3-ObservationCategory
 
 Alias: $JP_CCS_ObsLabResultCode_VS = JP_CCS_ObsLabResult_UnknownCode_CS#99999999999999999

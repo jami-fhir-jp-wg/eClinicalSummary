@@ -1,20 +1,15 @@
 
-Invariant: checkPhoneNumberExists
-Description: "【telecomに電話番号が最低ひとつ記述されている】"
-Severity: #error
-Expression: "(telecom.where(value.exists())).exists()"
-
-
 Profile: JP_Organization_eCS
 Parent: JP_Organization
 Id: JP-Organization-eCS
 Title: "JP_Organization_eCS"
-Description: "診療情報コアサマリー用　Organizationリソース（医療機関の情報）プロファイル　（JP_Organizationの派生プロファイル）"
+Description: "診療情報コアサマリー用　Organizationリソース（医療機関等組織情報）プロファイル　（JP_Organizationの派生プロファイル）"
 //* obeys checkPhoneNumberExists
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary"
 * ^status = #active
 * ^date = "2023-03-31"
-* meta.lastUpdated 1.. MS
+* . ^short = "診療情報コアサマリーにおける検体検査結果の格納に使用する"
+* . ^definition = "診療情報コアサマリー・厚労省6情報などにおける検体検査結果の格納に使用する"
 
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^short = "generated| extensions | additional | empty"
@@ -88,15 +83,3 @@ Description: "処方を発行した医療機関の情報　JP_Organizationの派
 * address ^definition = "医療機関住所 診療情報提供書の発行組織では必須"
 */
 
-//--- Profile for conatained resource within other resources
-Profile: JP_Organization_eCS_Contained
-Parent: JP_Organization_eCS
-Id: JP-Organization-eCS-Contained
-Title: "JP_Organization_eCS_Contained"
-Description: "診療情報コアサマリー埋め込み用 Organizationリソース(医療機関情報)プロファイル　　（JP_Organizaion_eClinicalSummaryの派生プロファイル）"
-* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eCS_Contained"
-* ^status = #active
-* ^date = "2023-03-31"
-* implicitRules ..0
-* text ..0
-* contained ..0

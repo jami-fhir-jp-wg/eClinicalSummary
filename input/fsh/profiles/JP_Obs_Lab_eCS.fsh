@@ -2,10 +2,6 @@
 //   Profile 定義 FHIR臨床コア情報 Clinical-coreセット
 //   検体検査結果 リソースタイプ:Observation
 //   親プロファイル:JP_Observation_LabResult
-//   このプロファイルはグループ化された検査項目を子供に持たず、
-//   個々のひと組みの検査項目と結果だけを格納する.
-//   バッテリ検査項目で、それ自体に検査結果がないObservation
-//   は別のプロファイル　JP_Observation_LabBaterry_CCS　とする。
 // ==================================================
 Profile: JP_Observation_LabResult_eCS
 Parent: JP_Observation_LabResult
@@ -22,18 +18,25 @@ Description: "診療情報コアサマリー用　Observationリソース（検�
 * contained ^slicing.discriminator.type = #profile
 * contained ^slicing.discriminator.path = "$this"
 * contained ^slicing.rules = #open
-* contained contains patient 1..1
-* contained contains specimen 1..1
-* contained contains organization 1..1
+* contained contains patient 0..1
+    and specimen 0..
+    and order 0..
+    and organization 0..
+    and department 0..
+    and childObsLaboResult 0..
+
 * contained[patient] only  JP_Patient_eCS_Contained
 * contained[specimen] only  JP_Specimen_LaboResult_eCS_Contained
-// * contained[organization] only  JP_Organizaion_CCS
+* contained[order] only  JP_ServiceRequest_eCS_Contained
+* contained[organization] only  JP_Organization_eCS_Contained
+* contained[department] only  JP_Organization_eCS_department_Contained
+* contained[childObsLaboResult] only  JP_Observation_LabResult_eCS_Contained
 
 * meta.lastUpdated 0.. MS
 * meta.lastUpdated ^short = "最終更新日"
 * meta.lastUpdated ^definition = "この患者情報の内容がサーバ上で最後に格納または更新された日時、またはこのFHIRリソースが生成された日時"
 * meta.profile 1.. MS
-* meta.profile = $JP_Observation_LabResult_eCS (exactly)
+* meta.profile = $JP_Observation_LabResult_eCS
 
 * identifier 1..* MS
 * identifier ^short = "当該検査項目に対して、施設内で割り振られる一意の識別子"
@@ -56,7 +59,7 @@ Description: "診療情報コアサマリー用　Observationリソース（検�
 * basedOn 0..1   MS
 * basedOn only Reference(ServiceRequest)
 * basedOn ^definition = "このプロファイルでは、検体検査オーダに関する情報。"
-* basedOn ^comment = "元のオーダID情報はここで使用する。"
+* basedOn ^comment = "元のオーダID情報や依頼者情報はここで使用する。"
 
 // OUL^R22.OBX[*]-11 結果状態
 * status ^definition = "検査結果値の状態。"
@@ -74,7 +77,7 @@ Description: "診療情報コアサマリー用　Observationリソース（検�
  laboratory 1..1
 
 * category[laboratory] 1..1 MS
-* category[laboratory] = $observation-category#laboratory
+* category[laboratory] = $observation-category-cs#laboratory
 */
 * category[laboratory] ^short = "Observationカテゴリーで検体検査の場合には 'laboratory'固定。追加で別のカテゴリコードも設定できる。"
 * category[laboratory] ^definition = "Observationカテゴリーで検体検査の場合には 'laboratory'固定。追加で別のカテゴリコードも設定できる。"
@@ -188,22 +191,6 @@ and localUncoded 0..1 MS
 * specimen ^short = "この検査に使用された検体（標本）。"
 * specimen ^definition = "この検査に使用された検体（標本）。"
 * specimen ^comment = "【JP Core仕様】必須とする。"
-/* 記述例：ロジカルリファレンス
- "specimen": {
-       "resourceType": "Specimen",
-       "type": {
-            "coding": [
-                {
-                    "system": "",
-                    "code": "",
-                    "display": ""
-                }
-            ],
-            "text": ""
-       },
-       "display": "医師　太郎"
-  },
-*/
 
 // OUL^R22.OBX[*]-7
 * referenceRange MS
@@ -223,3 +210,4 @@ and localUncoded 0..1 MS
 * derivedFrom ^short = "の検査値の発生元である関連リソース"
 * derivedFrom ^definition = "この検査値の発生元である関連リソース。例えば他のObservation を受けて、本検査値が発生した場合など。"
 * component ^definition = "一度のタイミングでの1回の検査で複数の結果を同時に得る場合にのみ使用される。例えば、血圧の収縮期、拡張期。新生児のApgarスコア。質問に対する複数の回答（飲んだアルコールの種類、など）。"
+
