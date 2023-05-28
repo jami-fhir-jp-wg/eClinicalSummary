@@ -11,5 +11,4 @@ Alias: $JP_ObservationLabResultLocalUncoded_CS = http://jpfhir.jp/fhir/clinicalC
 Alias: $JP_SimpleObservationCategory_VS = http://jpfhir.jp/fhir/core/ValueSet/JP_SimpleObservationCategory_VS
 Alias: $observation-category = $JP_SimpleObservationCategory_VS
 
-// hl7
 Alias: $JP_CCS_ObsLabResultCode_VS = JP_CCS_ObsLabResult_UnknownCode_CS#99999999999999999

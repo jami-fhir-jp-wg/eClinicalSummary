@@ -68,7 +68,7 @@ jobs:
       run: |
         cp -rf onlyForECS/* .
         cp -rf fsh input/fsh
-        cp aliases-eclinicalsummary.fsh input/fsh/aliases-eclinicalsummary.fsh
+        cp aliases-*.fsh input/fsh/
         
     - name: mv pkg to packages_snapshot folder
       run: |
