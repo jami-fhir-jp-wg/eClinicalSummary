@@ -1,8 +1,9 @@
 Profile: JP_Patient_eCS
 Parent: JP_Patient
 Id: JP-Patient-eCS
+Title: "JP_Patient_eCS"
 Description: "診療情報コアサマリー用　Patientプロファイル　　（JP_Patientの派生プロファイル）"
-* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Patient_eCS"
+* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Patient_eClinicalSummary"
 * ^status = #active
 * ^date = "2023-03-31"
 * meta.lastUpdated 0.. MS
@@ -53,7 +54,8 @@ and kana 0..1 MS
 Profile: JP_Patient_eCS_Contained
 Parent: JP_Patient_eCS
 Id: JP-Patient-eCS-Contained
-Description: "診療情報コアサマリーP埋め込み用 Patientリソースプロファイル　　（JP_Patient_eCSの派生プロファイル）"
+Title: "JP_Patient_eCS_Contained"
+Description: "診療情報コアサマリー埋め込み用 Patientプロファイル　　（JP_Patient_eClinicalSummaryの派生プロファイル）"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Patient_eCS_Contained"
 * ^status = #active
 * ^date = "2023-03-31"
