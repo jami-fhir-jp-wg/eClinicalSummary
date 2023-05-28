@@ -6,7 +6,8 @@ on:
       - develop1.0
     paths:
       - 'sushi-config.yaml'
-      - 'input/**'
+      - 'fsh/**'
+      - 'onlyForECS/**'
       - '.github/workflows/main.yml'
   pull_request:
     branches: [ develop1.0 ]
