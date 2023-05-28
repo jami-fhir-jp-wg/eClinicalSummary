@@ -11,6 +11,7 @@ Description: "検体検査結果項目で標準コードが割り当てられな
 * ^caseSensitive = false
 * #99999999999999999  "JLAC10 Uncoded"
 
+
 CodeSystem: JP_CCS_ObsLabResult_LocalUncoded_CS
 Id: jp-ccs-obslabresult-localuncoded-cs
 Description: "検体検査結果項目で標準コードが割り当てられない場合に使用する未コード化コード(Local)"

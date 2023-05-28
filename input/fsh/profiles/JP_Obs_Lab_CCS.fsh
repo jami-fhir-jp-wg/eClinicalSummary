@@ -1,4 +1,3 @@
-
 // ==================================================
 //   Profile 定義 FHIR臨床コア情報 Clinical-coreセット
 //   検体検査結果 リソースタイプ:Observation
@@ -8,19 +7,16 @@
 //   バッテリ検査項目で、それ自体に検査結果がないObservation
 //   は別のプロファイル　JP_Observation_LabBaterry_CCS　とする。
 // ==================================================
-Profile: JP_Observation_LabResult_CCS
+Profile: JP_Observation_LabResult_eCS
 Parent: JP_Observation_LabResult
-Id: jp-observation-labresult-ccs
-Title: "FHIR臨床コア情報 Clinical-coreセット(厚労省6情報)のひとつ。検体検査結果プロファイル"
-Description: "FHIR臨床コア情報 Clinical-coreセットのひとつ。検体検査結果プロファイル。JP_Observation_LabResultの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/clinicalCoreSet/StructureDefinition/JP_Observation_LabResult_CCS"
+Id: JP-Observation-LabResult-eCS
+Title: "JP_Observation_LabResult_eCS"
+Description: "診療情報コアサマリー用　Observationリソース（検体検査結果）プロファイル　（JP_Observation_LabResultの派生プロファイル）"
+* ^url = $JP_Observation_LabResult_eCS
 * ^status = #active
 * ^date = "2023-05-27"
-* . ^short = " Clinical-coreセット(厚労省6情報)における検体検査結果の格納に使用する"
-* . ^definition = "Clinical-coreセット(厚労省6情報)における検体検査結果の格納に使用する。"
-* . ^comment = "検体検査結果の制約プロファイル"
-* text ^short = "このリソースを人間が直感的に概要を解釈するためのテキスト要約"
-* text ^definition = "以降の要素の情報から計算機により自動生成されること。このテキストには情報に過不足がありうるので、受信側がこの情報を一部情報の可視化確認ためだけに利用するものとし、医療情報の構造的情報として使用してはならない。"
+* . ^short = "診療情報コアサマリーにおける検体検査結果の格納に使用する"
+* . ^definition = "診療情報コアサマリー・厚労省6情報などにおける検体検査結果の格納に使用する"
 
 // Patinet、Specimen、オーダ医療機関、は最低限の情報をContainedリソースとして記述する
 * contained ^slicing.discriminator.type = #profile
@@ -29,13 +25,15 @@ Description: "FHIR臨床コア情報 Clinical-coreセットのひとつ。検体
 * contained contains patient 1..1
 * contained contains specimen 1..1
 * contained contains organization 1..1
-* contained[patient] only  JP_Patient_CCS
-// * contained[specimen] only  JP_Specimen_CCS
+* contained[patient] only  JP_Patient_eCS_Contained
+* contained[specimen] only  JP_Specimen_LaboResult_eCS_Contained
 // * contained[organization] only  JP_Organizaion_CCS
-* meta 1..1 MS
-* meta.lastUpdated 1..1 MS
-* meta.lastUpdated ^short = "このデータの最終更新日時"
-* meta.lastUpdated ^definition = "このデータの最終更新日時。データ内容の更新日時を原則とするが、このリソースが内容の変更を伴わずにコピーや更新された場合に、その更新日時を設定してもよい。"
+
+* meta.lastUpdated 0.. MS
+* meta.lastUpdated ^short = "最終更新日"
+* meta.lastUpdated ^definition = "この患者情報の内容がサーバ上で最後に格納または更新された日時、またはこのFHIRリソースが生成された日時"
+* meta.profile 1.. MS
+* meta.profile = $JP_Observation_LabResult_eCS (exactly)
 
 * identifier 1..* MS
 * identifier ^short = "当該検査項目に対して、施設内で割り振られる一意の識別子"
@@ -207,10 +205,9 @@ and localUncoded 0..1 MS
   },
 */
 
-* device ^definition = "The device used to generate the observation data.\r\n\r\n検査装置、機器。"
-* device ^comment = "Note that this is not meant to represent a device involved in the transmission of the result, e.g., a gateway.  Such devices may be documented using the Provenance resource where relevant.\r\n\r\n【JP Core仕様】検査に使用した機器等の情報に使用する。"
-
 // OUL^R22.OBX[*]-7
+* referenceRange MS
+* referenceRange ^short = "結果値を解釈するためのの推奨範囲。基準値範囲。"
 * referenceRange ^definition = "推奨範囲として結果値を解釈するためのガイダンス。基準値。"
 * referenceRange ^comment = "【JP Core仕様】可能な限りlow、highに構造化すべき。構造化できない場合、あるいはlow、highに該当しない場合はtextを使用。"
 * referenceRange.type ^definition = "対象となる母集団のどの部分に適用するかを示すコード。正常範囲、要治療範囲、など。"
@@ -218,9 +215,11 @@ and localUncoded 0..1 MS
 * referenceRange.age ^definition = "T基準値が適用される年齢。新生児の場合、週数もありうる。"
 * referenceRange.text ^definition = "量的範囲で表せない場合などに使用する。"
 
+* hasMember MS
 * hasMember ^short = "この検査に含まれる個々の検査結果項目を示す。"
 * hasMember ^definition = "この検査（パネルやバッテリ）が結果を持たない親項目（グループ項目に相当）の場合に、この検査に含まれる個々の検査結果への参照を示す。"
-* hasMember ^comment = "【JP Core仕様】1検査で複数の検査項目が実施される場合の親検査項目を設定する。"
+* hasMember ^comment = "この検査に含まれる個々の検査結果Observationリソースを、このリソースに埋め込むのではなく、別の検査結果Observationリソースとして作成し、そのidentifierを論理参照する方法をとること。"
 
+* derivedFrom ^short = "の検査値の発生元である関連リソース"
 * derivedFrom ^definition = "この検査値の発生元である関連リソース。例えば他のObservation を受けて、本検査値が発生した場合など。"
 * component ^definition = "一度のタイミングでの1回の検査で複数の結果を同時に得る場合にのみ使用される。例えば、血圧の収縮期、拡張期。新生児のApgarスコア。質問に対する複数の回答（飲んだアルコールの種類、など）。"

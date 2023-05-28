@@ -1,3 +1,12 @@
+Profile: JP_Specimen
+Parent:	Specimen
+Id:             JP-Specimen
+Description:    "JP-Specimen　暫定プロファイル"
+* ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Specimen"
+* ^status = #active
+* ^date = "2023-03-31"
+* meta.lastUpdated 1.. MS
+
 
 Profile:        JP_Condition_eClinicalSummary
 Parent:			JP_Condition
@@ -28,7 +37,7 @@ Description:    "Derived Profile from JP-Core"
 Profile:        JP_DocumentReference
 Parent:			DocumentReference
 Id:             JP-DocumentReference
-Description:    "Derived Profile from JP-Core"
+Description:    "JP_DocumentReference　暫定プロファイル"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_DocumentReference"
 * ^date = "2023-03-31"
 * meta.lastUpdated 1.. MS

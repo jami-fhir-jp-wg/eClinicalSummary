@@ -5,10 +5,11 @@ Severity: #error
 Expression: "(telecom.where(value.exists())).exists()"
 
 
-Profile: JP_Organization_eClinicalSummary
+Profile: JP_Organization_eCS
 Parent: JP_Organization
-Id: JP-Organization-eClinicalSummary
-Description: "医療機関の情報　JP_Organizationの派生プロファイル"
+Id: JP-Organization-eCS
+Title: "JP_Organization_eCS"
+Description: "診療情報コアサマリー用　Organizationリソース（医療機関の情報）プロファイル　（JP_Organizationの派生プロファイル）"
 //* obeys checkPhoneNumberExists
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary"
 * ^status = #active

@@ -1,5 +1,5 @@
 Mapping: JPPatientR4toSSMIX2ADT00PID
-Source:   jp-patient-ccs
+Source:   JP-Patient-eCS
 Target:   "http://ssmix2"
 Id:       ssmix2-adt00-pid-r4-jppatient
 Title:    "SSMIX2ADT00PID  to JP_Patient"
