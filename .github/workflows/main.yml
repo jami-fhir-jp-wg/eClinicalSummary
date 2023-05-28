@@ -62,13 +62,6 @@ jobs:
       uses: wei/wget@v1
       with:
         args:  https://jpfhir.jp/fhir/hl7.fhir.r4.core-4.0.1.tgz-US
-
-
-    - name: move onlyForECS files to current root directory
-      run: |
-        cp -rf onlyForECS/* .
-        cp -rf fsh input/fsh
-        cp aliases-*.fsh input/fsh/
         
     - name: mv pkg to packages_snapshot folder
       run: |
@@ -76,8 +69,6 @@ jobs:
         mv hl7.fhir.r4.core-4.0.1.tgz-JPV1 packages_snapshot/hl7.fhir.r4.core#4.0.1.tgz-JPV1
         mv hl7.fhir.r4.core-4.0.1.tgz-JPV2 packages_snapshot/hl7.fhir.r4.core#4.0.1.tgz-JPV2
         mv hl7.fhir.r4.core-4.0.1.tgz-US packages_snapshot/hl7.fhir.r4.core#4.0.1.tgz-US
-
-
 
     - name: Run IG Publisher        
       env:
