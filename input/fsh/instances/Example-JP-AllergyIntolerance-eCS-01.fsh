@@ -10,6 +10,7 @@ Usage: #example
 Description: "allergyeferralExample01 アレルギー例1　サバ"
 
 * contained[+] = Example-JP-Patient-eCS-01-Contained
+* contained[+] = Example-JP-Encounter-OW-eCS-01-Contained
 
 * meta.lastUpdated = "2023-04-01T10:00:00+09:00"
 * meta.profile[+] = $JP_AllergyIntolerance_eCS

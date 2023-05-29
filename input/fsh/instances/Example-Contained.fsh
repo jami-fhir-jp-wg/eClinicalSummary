@@ -7,7 +7,7 @@ Description: "埋め込み　患者情報01"
 
 //* meta.profile[+] = $JP_Patient_eCS_Contained
 
-* id = "12345"
+* id = "Patient1"
 
 * identifier.system = "urn:oid:1.2.392.100495.20.3.51.11234567890"
 * identifier.value = "12345"
@@ -28,7 +28,7 @@ Description: "埋め込み　患者情報02"
 
 //* meta.profile[+] = $JP_Patient_eCS_Contained
 
-* id = "989"
+* id = "Patient2"
 * identifier.system = "urn:oid:1.2.392.100495.20.3.51.11234567890"
 * identifier.value = "989"
 * name[+].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation"
@@ -56,6 +56,7 @@ Description: "埋め込み　外来受診01 "
 * meta.lastUpdated = "2023-04-01T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary"
 
+* id = "Encounter1"
 * identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"
 * identifier.value = "192844"
 * status = #finished
@@ -63,8 +64,3 @@ Description: "埋め込み　外来受診01 "
 * class.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * class.code = #AMB
 * class.display = "外来"
-
-* classHistory[+].class.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
-* classHistory[=].class.code = #AMB
-* classHistory[=].class.display = "外来"
-* classHistory[=].period.start = "2020-04-10"
