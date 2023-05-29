@@ -228,7 +228,7 @@
                 <valueString value="special-url"/>
             </extension>
             <extension url="value">
-                <valueString value="http://jpfhir.jp/fhir/clinicalCoreSet/StructureDefinition/JP_Observation_LabResult_eCS"/>
+                <valueString value="http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Observation_LabResult_eCS"/>
             </extension>
         </extension>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -1818,7 +1818,7 @@
                     <valueUrl value="index.html"/>
                 </extension>
                 <nameUrl value="index.html"/>
-                <title value="ClinicalCoreSet FHIRコアリソース取得基本仕様（仮称）"/>
+                <title value="eClinicalSummary FHIRコアリソース取得基本仕様（仮称）"/>
                 <generation value="markdown"/>
             </page>
             <page>
@@ -2427,7 +2427,7 @@
         </parameter>
         <parameter>
             <code value="special-url"/>
-            <value value="http://jpfhir.jp/fhir/clinicalCoreSet/StructureDefinition/JP_Observation_LabResult_eCS"/>
+            <value value="http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Observation_LabResult_eCS"/>
         </parameter>
         <parameter>
             <code value="special-url"/>

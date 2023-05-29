@@ -44,7 +44,7 @@ Id:   jami-valueSet-ePreOrderUsageCode-16digits
 Description: "JAMI16桁用法コード"
 * ^url = "http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreOrderUsageCode"
 * ^status = #active
-* include codes from system urn:oid:1.2.392.200250.2.2.20.20
+* include codes from system urn:oid:1.2.392.200250.2.2.20
 
 
 ValueSet:  JP_valueSet_drugCode_yj

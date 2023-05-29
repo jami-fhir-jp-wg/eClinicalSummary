@@ -76,7 +76,7 @@ Description: "厚労省電子処方CDA規格別表5 JAMI16桁用法コード"
 CodeSystem:  JAMI_codeSystem_ePreOrderUsageCode_16digits
 Id:   jami-codeSystem-ePreOrderUsageCode-16digits
 Description: "JAMI16桁用法コード"
-* ^url = "urn:oid:1.2.392.200250.2.2.20.20"
+* ^url = "urn:oid:1.2.392.200250.2.2.20"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreOrderUsageCode"
 * ^status = #active
 * ^content = #complete

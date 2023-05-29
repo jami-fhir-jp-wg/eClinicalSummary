@@ -16,16 +16,6 @@ Description:    "JP-Specimen　暫定プロファイル"
 * ^date = "2023-03-31"
 * meta.lastUpdated 0.. MS
 
-
-Profile:        JP_Condition_eClinicalSummary
-Parent:			JP_Condition
-Id:             JP-Condition-eClinicalSummary
-Description:    "Derived Profile from JP-Core"
-* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Condition_eClinicalSummary"
-* ^status = #active
-* ^date = "2023-03-31"
-* meta.lastUpdated 0.. MS
-
 Profile:        JP_Observation_Common_eClinicalSummary
 Parent:			JP_Observation_Common
 Id:             JP-Observation-eClinicalSummary
