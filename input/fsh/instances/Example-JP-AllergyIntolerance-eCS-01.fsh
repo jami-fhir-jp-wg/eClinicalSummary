@@ -9,7 +9,7 @@ InstanceOf: JP_AllergyIntolerance_eCS
 Usage: #example
 Description: "allergyeferralExample01 アレルギー例1　サバ"
 
-* contained 
+* contained[+] = Example-JP-Patient-eCS-01-Contained
 
 * meta.lastUpdated = "2023-04-01T10:00:00+09:00"
 * meta.profile[+] = $JP_AllergyIntolerance_eCS
@@ -33,11 +33,9 @@ Description: "allergyeferralExample01 アレルギー例1　サバ"
 //070on_アレルギ物質コード名称JFAGY(ARGcode,ARGname)
 * code.text = "サバ"
 
-// * patient.reference = "jppatientExample01Inline"
-* patient.reference = "urn:uuid:85a51292-1089-4641-bac7-d453a0bdc311"
+* patient = Reference(Example-JP-Patient-eCS-01-Contained)
 
-// * encounter.reference = "encounterReferralExample01Inline"
-* encounter.reference = "urn:uuid:704b992e-e0aa-4ebe-bacb-4812e88a7a9a"
+* encounter = Reference(Example-JP-Encounter-OW-eCS-01-Contained)
 
 //100on_アレルギ時期日時(ARGdate,ARGtime)
 //100on_アレルギ時期日(ARGdate)

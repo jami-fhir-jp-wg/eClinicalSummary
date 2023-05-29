@@ -40,7 +40,6 @@ and kana 0..1 MS
 * name[kanji] ^definition =  "漢字の名前情報"
 * name[kana] ^short =  "カタカナの名前情報"
 * name[kana] ^definition =  "カタカナの名前情報"
-* name.use ..0
 * name.text 1..1    // 漢字名前　半角空白で姓と名を区切る
 * name.family 1..1  // 漢字姓
 * name.given 1..1  // 漢字名

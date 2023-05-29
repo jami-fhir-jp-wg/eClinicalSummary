@@ -51,7 +51,7 @@ Description: "診療情報コアサマリー用　AllergyIntoleranceリソース
 * patient ^comment = "Containedリソースに含まれる患者リソースのid(identifierではなく)をリソース内で#を最初につけて参照する。（患者リソースのid を　123 とすると、　{\"reference\" : \"#123\" }のようになる。）"
 
 * encounter 0..1 MS
-* encounter only  Reference(JP_Encounter_eCS_Contained)
+* encounter only  Reference(JP_Encounter_OW_eCS_Contained)
 * encounter ^short = "この情報を記録したときの受診情報（入外区分など）"
 * encounter ^definition = "この情報を記録したときの受診情報（入外区分など）を表すEncounterリソース（Containedリソース）への参照"
 * encounter ^comment = "Containedリソースに含まれるEncounterリソースをリソース内で参照する。なくてもよい。"

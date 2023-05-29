@@ -9,7 +9,7 @@ Alias: $JP_Patient_eCS_Contained = http://jpfhir.jp/fhir/eClinicalSummary/Struct
 
 Alias: $JP_Specimen_LaboResult_eCS_Contained = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Specimen_eCS_Contained
 
-Alias: $JP_Encounter_eCS_Contained = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eCS_Contained
+Alias: $JP_Encounter_OW_eCS_Contained = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_OW_eCS_Contained
 
 Alias: $JP_Practitioner_eCS_Contained = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eCS_Contained
 

@@ -63,7 +63,7 @@ and syobo 0.. MS
 
 
 * encounter 0..1 MS
-* encounter only  Reference(JP_Encounter_eCS_Contained)
+* encounter only  Reference(JP_Encounter_OW_eCS_Contained)
 * encounter ^short = "病名をつけたときの受診情報（入外区分など）"
 * encounter ^definition = "病名をつけたときの受診情報（入外区分など）を表すEncounterリソース（Containedリソース）への参照"
 * encounter ^comment = "Containedリソースに含まれるEncounterリソースをリソース内で参照する。なくてもよい。"

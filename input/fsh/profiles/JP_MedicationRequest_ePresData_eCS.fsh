@@ -20,7 +20,7 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 
 * contained[patient] only  JP_Patient_eCS_Contained
 * contained[organization] only  JP_Organization_eCS_Contained
-* contained[encounter] only  JP_Encounter_eCS_Contained
+* contained[encounter] only  JP_Encounter_OW_eCS_Contained
 * contained[author] only  JP_Practitioner_eCS_Contained
 * contained[order] only  JP_ServiceRequest_eCS_Contained
 
@@ -85,7 +85,7 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * subject ^comment = "Containedリソースに含まれる患者リソースをリソース内で参照する。"
 
 * encounter 0..1 MS
-* encounter only  Reference(JP_Encounter_eCS_Contained)
+* encounter only  Reference(JP_Encounter_OW_eCS_Contained)
 * encounter ^short = "処方を発行した受診情報（入外区分など）"
 * encounter ^definition = "処方を発行した受診情報（入外区分など）を表すEncounterリソース（Containedリソース）への参照"
 * encounter ^comment = "Containedリソースに含まれるEncounterリソースをリソース内で参照する。なくてもよい。"

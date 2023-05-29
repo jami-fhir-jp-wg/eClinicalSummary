@@ -33,7 +33,7 @@
 [JP_DocumentReference_eClinicalSummary]: StructureDefinition-JP-DocumentReference-eClinicalSummary.html
 [JP_DocumentReference]: StructureDefinition-JP-DocumentReference.html
 [JP_DrugContraIndication_eCS]: StructureDefinition-JP-DrugContraIndication-eCS.html
-[JP_Encounter_eCS_Contained]: StructureDefinition-JP-Encounter-eCS-Contained.html
+[JP_Encounter_OW_eCS_Contained]: StructureDefinition-JP-Encounter-OW-eCS-Contained.html
 [JP_Encounter_eClinicalSummary]: StructureDefinition-JP-Encounter-eClinicalSummary.html
 [JP_FamilyMemberHistory_eClinicalSummary]: StructureDefinition-JP-FamilyMemberHistory-eClinicalSummary.html
 [JP_ImagingStudy_Radiology_eClinicalSummary]: StructureDefinition-JP-ImagingStudy-Radiology-eClinicalSummary.html
