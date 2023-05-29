@@ -3,7 +3,7 @@
 //   検体検査結果 リソースタイプ:Observation
 //   親プロファイル:JP_Observation_LabResult
 // ==================================================
-Profile: JP_Observation_LabResult_eCS
+Profile: Core_JP_Observation_LabResult_eCS
 Parent: JP_Observation_LabResult
 Id: JP-Observation-LabResult-eCS
 Title:  "Core6 : JP_Observation_LabResult_eCS"
