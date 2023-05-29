@@ -25,9 +25,16 @@ Alias: $JP_Organization_eCS_department_Contained = http://jpfhir.jp/fhir/eClinic
 //////
 Alias: $communication-category = http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category
 
-Alias: $JP_MedicationRequest_ePres_eCS = http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData-eCS
+Alias: $JP_MedicationRequest_ePres_eCS = http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData_eClinicalSummary
 
 Alias: $JP_Organization_eCS_Contained = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eCS_Contained
+
+Alias: $JP_AllergyIntolerance_eCS = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary
+Alias: $JP_DrugContraIndication_eCS = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_DrugContraIndication_eClinicalSummary
+
+Alias: $JP_Condition_eCS = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Condition_eClinicalSummary
+
+Alias: $JP_Observation__InfectionRelated_eCS = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Observation_LabResult_InfectionRelated_eClinicalSummary
 
 Alias: $composition-clinicaldocument-versionNumber = http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber
 Alias: $coverage-copay-type = http://terminology.hl7.org/CodeSystem/coverage-copay-type
@@ -70,7 +77,8 @@ Alias: $observation-category-cs = http://terminology.hl7.org/CodeSystem/v3-Obser
 Alias: $JP_CCS_ObsLabResultCode_VS = JP_CCS_ObsLabResult_UnknownCode_CS#99999999999999999
 
 Alias: $JP_Disease_MEDIS_Concept_CS = urn:oid:1.2.392.200119.4.101.6    // MEDIS病名交換用コード
-Alias: $JP_Disease_MEDIS_Concept_CS = urn:oid:1.2.392.200119.4.101.2    // MEDIS病名管理番号
-Alias: $JP_Disease_Claim_CS = http://jpfhi.jp/fhir/ 
+Alias: $JP_Disease_MEDIS_ManagementID_CS = urn:oid:1.2.392.200119.4.101.2    // MEDIS病名管理番号
+Alias: $JP_Disease_Claim_CS = http://jpfhi.jp/fhir/CodeSystem/claimSystem_syobyomei_CS
 Alias: $JP_BodySite_MEDIS_Concept_CS = urn:oid:1.2.392.200119.4.201.5   // MEDIS修飾語交換用コード
-Alias: $JP_Disease_MEDIS_ManagementID_CS = urn:oid:1.2.392.200119.4.201.2 // MEDIS修飾語管理番号
+Alias: $JP_BodySite_MEDIS_ManagementID_CS = urn:oid:1.2.392.200119.4.201.2 // MEDIS修飾語管理番号
+Alias: $JP_DiseaseCategory_WHO_ICD10_CS = urn:oid:2.16.840.1.113883.6.3.1  // ICD10  HL7 regisered
