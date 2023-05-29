@@ -1,7 +1,12 @@
-
+// ==================================================
+//   Profile 定義 FHIR臨床コア情報 Clinical-coreセット
+//   アレルギー情報（除く：薬剤禁忌） リソースタイプ:AllergyIntolerance
+//   親プロファイル:JP_AllergyIntolerance
+// ==================================================
 Profile:        JP_AllergyIntolerance_eCS
 Parent:			JP_AllergyIntolerance
 Id:             JP-AllergyIntolerance-eCS
+Title:  "Core6 : JP_AllergyIntolerance_eCS"
 Description: "診療情報コアサマリー用　AllergyIntoleranceリソース（アレルギー情報（除く：薬剤禁忌））プロファイル　（JP_AllergyIntoleranceの派生プロファイル）"
 * ^url = $JP_AllergyIntolerance_eCS
 * ^status = #active

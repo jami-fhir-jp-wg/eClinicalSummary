@@ -1,18 +1,18 @@
 // ==================================================
 //   Profile 定義 FHIR臨床コア情報 Clinical-coreセット
-//   検体検査結果 リソースタイプ:Observation
+//   感染症検体検査結果 リソースタイプ:Observation
 //   親プロファイル:JP_Observation_LabResult
 // ==================================================
-Profile: JP_Observation_LabResult_eCS
+Profile: JP_Observation_LabResult_InfectionRelated_eCS
 Parent: JP_Observation_LabResult
-Id: JP-Observation-LabResult-eCS
-Title: "JP_Observation_LabResult_eCS"
-Description: "診療情報コアサマリー用　Observationリソース（検体検査結果）プロファイル　（JP_Observation_LabResultの派生プロファイル）"
-* ^url = $JP_Observation_LabResult_eCS
+Id: JP-Observation-LabResult-InfectionRelated-eCS
+Title:  "Core6 : JP_Observation_LabResult_InfectionRelated_eCS"
+Description: "診療情報コアサマリー用　Observationリソース(感染症検体検査結果）プロファイル　（JP_Observation_LabResultの派生プロファイル）　対象検査結果項目を感染症関連の指定された特定の項目に限定"
+* ^url = $JP_Observation__InfectionRelated_eCS
 * ^status = #active
 * ^date = "2023-05-27"
-* . ^short = "診療情報コアサマリーにおける検体検査結果の格納に使用する"
-* . ^definition = "診療情報コアサマリー・厚労省6情報などにおける検体検査結果の格納に使用する"
+* . ^short = "診療情報コアサマリーにおける指定された特定の感染症検体検査結果の格納に使用する。"
+* . ^definition = "診療情報コアサマリー・厚労省6情報などにおける指定された特定の感染症検体検査結果の格納に使用する。子項目は出現しない。"
 
 // Patinet、Specimen、オーダ医療機関、は最低限の情報をContainedリソースとして記述する
 * contained ^slicing.discriminator.type = #profile
@@ -23,14 +23,12 @@ Description: "診療情報コアサマリー用　Observationリソース（検�
     and order 0..
     and organization 0..
     and department 0..
-    and childObsLaboResult 0..
 
 * contained[patient] only  JP_Patient_eCS_Contained
 * contained[specimen] only  JP_Specimen_LaboResult_eCS_Contained
 * contained[order] only  JP_ServiceRequest_eCS_Contained
 * contained[organization] only  JP_Organization_eCS_Contained
 * contained[department] only  JP_Organization_eCS_department_Contained
-* contained[childObsLaboResult] only  JP_Observation_LabResult_eCS_Contained
 
 * meta.lastUpdated 0.. MS
 * meta.lastUpdated ^short = "最終更新日"

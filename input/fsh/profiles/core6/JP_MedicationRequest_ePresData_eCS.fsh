@@ -1,12 +1,18 @@
+// ==================================================
+//   Profile 定義 FHIR臨床コア情報 Clinical-coreセット
+//   処方オーダ情報 リソースタイプ:MedicationRequest
+//   親プロファイル:JP_MedicationRequest
+// ==================================================
 Profile: JP_MedicationRequest_ePres_eCS
 Parent: JP_MedicationRequest
 Id: JP-MedicationRequest-ePres-eCS
-Description: "処方オーダ情報　JP_MedicationRequestの派生プロファイル"
+Title:  "Core6 : JP_MedicationRequest_ePres_eCS"
+Description: "診療情報コアサマリー用　MedicationRequestリソース（処方オーダ情報）プロファイル　（JP_MedicationRequestの派生プロファイル）"
 * ^url = $JP_MedicationRequest_ePres_eCS
-* ^status = #draft
+* ^status = #active
 * ^date = "2023-05-27"
-* . ^short = "診療情報コアサマリーにおける処方情報の格納に使用する"
-* . ^definition = "診療情報コアサマリー・厚労省6情報などにおける処方情報の格納に使用する"
+* . ^short = "診療情報コアサマリーにおける処方オーダ情報の格納に使用する"
+* . ^definition = "診療情報コアサマリー・厚労省6情報などにおける処方オーダ情報の格納に使用する"
 
 // Patinet、Specimen、オーダ医療機関、は最低限の情報をContainedリソースとして記述する
 * contained ^slicing.discriminator.type = #profile
