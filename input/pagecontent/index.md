@@ -78,8 +78,8 @@ table th {
 
 
 # clinical-core
-# 名称：名称：臨床コア情報FHIR仕様 : 　JP-FHIR-CCS (Clinical Core Set)
-#  （　６情報　を主とする臨床情報のコアセット　FHIR仕様）
+# 名称：臨床コア情報FHIR仕様 : 　JP-FHIR-CCS (Clinical Core Set)
+#  （６情報を含む臨床情報のコアセット　FHIR仕様）
 ## このImplementationガイド(IG)の目的：
 臨床情報のうち主要な情報種別について、患者や他の医療機関との診療情報の共有、退院時サマリーなど医療文書の作成、臨床研究のためのデータ利用などを想定して、主要なデータ項目をFHIRに準拠する形式で記述するとともに、そのデータをFHIRのAPIで要求側（通常ははデータを保有しないクライアント）が要求を行い、応答側（通常はデータを保有するサーバ）する（Pull方式）ためのIGである。
 
@@ -87,10 +87,9 @@ table th {
  
 ## 主要な情報種別の範囲：
 * 2022年度時点で厚生労働省が提示する臨床コア6情報（いわゆる６情報）
-  * 傷病名情報	Conditionリソース
   * アレルギー情報	AllergyIntoleranceリソース
   * 薬剤禁忌情報	AllergyIntoleranceリソース
-  * [傷病名情報	Conditionリソース] (JP_Condition_eCS)
+* [傷病名情報	Conditionリソース][JP_Condition_eCS]
   * 検査情報（救急時に有用な検査、 生活習慣病関連の検査） 	Observationリソース
   * 感染症情報	Observationリソース
   * 処方依頼情報	MedicationRequestリソース
