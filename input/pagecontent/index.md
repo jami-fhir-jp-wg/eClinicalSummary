@@ -87,12 +87,12 @@ table th {
  
 ## 主要な情報種別の範囲：
 * 2022年度時点で厚生労働省が提示する臨床コア6情報（いわゆる６情報）
-  * アレルギー情報	AllergyIntoleranceリソース
-  * 薬剤禁忌情報	AllergyIntoleranceリソース
-* [傷病名情報	Conditionリソース][JP_Condition_eCS]
-  * 検査情報（救急時に有用な検査、 生活習慣病関連の検査） 	Observationリソース
-  * 感染症情報	Observationリソース
-  * 処方依頼情報	MedicationRequestリソース
+  * [アレルギー情報][JP_AllergyIntolerance_eCS]
+  * [薬剤禁忌情報][JP_DrugContraIndication_eCS]
+  * [傷病名情報	Conditionリソース][JP_Condition_eCS]
+  * [検査情報（救急時に有用な検査、 生活習慣病関連の検査）][Observationリソース]
+  * [感染症情報][Observationリソース]
+  * [処方依頼情報][MedicationRequestリソース]
 
 ### 上記から参照される情報
 　以下の情報は上記主要の6情報から、その要素情報として参照されることがある情報種別として特に定義している。またこのうち、＠印の情報については、後述するContainedリソース専用のプロファイル定義をしている。
