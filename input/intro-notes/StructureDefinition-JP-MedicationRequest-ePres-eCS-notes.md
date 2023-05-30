@@ -67,3 +67,4 @@ Medicationリソースを参照する上位のリソースに記述される。
 1. 日本医療情報学会、SS-MIX2仕様書・ガイドライン, [http://www.jami.jp/jamistd/ssmix2.php](http://www.jami.jp/jamistd/ssmix2.php)
 
 {% include markdown-link-references.md %}
+

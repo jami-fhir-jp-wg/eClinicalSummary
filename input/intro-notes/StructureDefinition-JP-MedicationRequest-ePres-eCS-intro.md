@@ -22,3 +22,5 @@
 また、このリソースは単独で用いられることはない。
 
 ## プロファイル定義
+
+{% include markdown-link-references.md %}
