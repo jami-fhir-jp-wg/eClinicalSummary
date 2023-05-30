@@ -36,7 +36,7 @@ dependencies:
 
 pages:
   index.md:
-    title: eClinicalSummary FHIRコアリソース取得基本仕様（仮称）
+    title: 名称：臨床コア情報FHIR仕様  　JP-FHIR-CCS (Clinical Core Set)
 
 #-------------------------------------
 # メニュー設定
