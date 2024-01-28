@@ -1,7 +1,7 @@
 {
     "resourceType": "ImplementationGuide",
     "id": "clinical-core-set",
-    "url": "http://jpfhir.jp/fhir/ccs/ImplementationGuide/clinical-core-set",
+    "url": "http://jpfhir.jp/fhir/eCS/ImplementationGuide/clinical-core-set",
     "version": "0.1.0",
     "name": "HL7Japan_JAMIccsImplementationGuide",
     "title": "HL7 Japan-JAMI ccs ImplementationGuide",

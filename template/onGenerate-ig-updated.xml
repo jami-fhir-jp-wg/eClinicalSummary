@@ -5,14 +5,14 @@
         <div xmlns="http://www.w3.org/1999/xhtml">
             <h2>HL7Japan_JAMIccsImplementationGuide</h2>
             <p>The official URL for this implementation guide is: </p>
-            <pre>http://jpfhir.jp/fhir/ccs/ImplementationGuide/clinical-core-set</pre>
+            <pre>http://jpfhir.jp/fhir/eCS/ImplementationGuide/clinical-core-set</pre>
             <div>
                 <p>HL7 Japan-JAMI ccs ImplementationGuide</p>
                 
             </div>
         </div>
     </text>
-    <url value="http://jpfhir.jp/fhir/ccs/ImplementationGuide/clinical-core-set"/>
+    <url value="http://jpfhir.jp/fhir/eCS/ImplementationGuide/clinical-core-set"/>
     <version value="0.1.0"/>
     <name value="HL7Japan_JAMIccsImplementationGuide"/>
     <title value="HL7 Japan-JAMI ccs ImplementationGuide"/>
@@ -356,7 +356,7 @@
                 <valueString value="path-history"/>
             </extension>
             <extension url="value">
-                <valueString value="http://jpfhir.jp/fhir/ccs/history.html"/>
+                <valueString value="http://jpfhir.jp/fhir/eCS/history.html"/>
             </extension>
         </extension>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -2491,7 +2491,7 @@
         </parameter>
         <parameter>
             <code value="path-history"/>
-            <value value="http://jpfhir.jp/fhir/ccs/history.html"/>
+            <value value="http://jpfhir.jp/fhir/eCS/history.html"/>
         </parameter>
         <parameter>
             <code value="template-html"/>

@@ -2,17 +2,20 @@
 Profile: JP_Encounter_eCS
 Parent: JP_Encounter
 Id: JP-Encounter-eCS
-Description: "診療情報提供では、紹介理由を記述するEncouter情報　JP_Encounterの派生プロファイル。診療サマリーではサマリー対象となる受診や入院に関する情報。"
+Title: "eCS:JP_Encounter-eCS"
+Description: "eCS 診療情報・サマリー汎用 Encounterリソース（受診時・入院時等のEncounter情報）プロファイル"
+
 * ^url = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Encounter_eCS"
 * ^status = #active
 * ^date = "2023-03-31"
-* meta.lastUpdated 1.. MS
+* . ^short = ""
+* . ^definition = "診療情報提供では、紹介理由を記述する受診時情報. 診療サマリーではサマリー対象となる受診や入院に関する受診時または入院時情報。診療６情報において埋め込みリソースとして記述する場合にも適用できる。"
 
 * identifier 0..1 MS
 * identifier ^short = "この医療機関における患者の受診番号、入院管理番号"
 * identifier ^definition = "この医療機関における患者の受診番号、入院管理番号"
 * identifier.system 1..1 MS
-* identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier" (exactly)
+* identifier.system = $JP_ResourceInstanceIdentifier (exactly)
 * identifier.value 1..1 MS
 
 * status = #finished (exactly)

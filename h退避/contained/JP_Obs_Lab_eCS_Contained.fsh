@@ -1,40 +1,29 @@
-// ==================================================
-//   Profile 定義 FHIR臨床コア情報 Clinical-coreセット
-//   感染症検体検査結果 リソースタイプ:Observation
-//   親プロファイル:JP_Observation_LabResult
-// ==================================================
-Profile: JP_Observation_LabResult_InfectionRelated_eCS
+
+//-------------------------------
+//--- Profile for conatained resource within other resources
+//-------------------------------
+
+Profile: JP_Observation_LabResult_eCS_Contained
 Parent: JP_Observation_LabResult
-Id: JP-Observation-LabResult-InfectionRelated-eCS
-Title:  "Core6 : JP_Observation_LabResult_InfectionRelated_eCS"
-Description: "診療情報コアサマリー用　Observationリソース(感染症検体検査結果）プロファイル　（JP_Observation_LabResultの派生プロファイル）　対象検査結果項目を感染症関連の指定された特定の項目に限定"
-* ^url = $JP_Observation__InfectionRelated_eCS
+Id: JP-Observation-LabResult-eCS-Contained
+Title: "JP_Observation_LabResult_eCS_Contained"
+Description: "診療情報コアサマリー埋め込み用 Observationリソース（検体検査結果）　　（JP_Observation_LabResult_eCSの派生プロファイル）"
+* ^url = $JP_Observation_LabResult_eCS_Contained
 * ^status = #active
 * ^date = "2023-05-27"
-* . ^short = "診療情報コアサマリーにおける指定された特定の感染症検体検査結果の格納に使用する。"
-* . ^definition = "診療情報コアサマリー・厚労省6情報などにおける指定された特定の感染症検体検査結果の格納に使用する。子項目は出現しない。"
+* . ^short = "診療情報コアサマリーにおける他のリソースへの埋め込み用の検体検査結果の格納に使用する。"
+* . ^definition = "診療情報コアサマリー・厚労省6情報などにおける他のリソースへの埋め込み用の検体検査結果の格納に使用する。"
+* . ^comment = "Contaiedリソースであるため、これ自身はContainedリソースを持てない。子検査結果を格納できないため、検査結果をもたない親グループを記述できないことに注意。"
 
-// Patinet、Specimen、オーダ医療機関、は最低限の情報をContainedリソースとして記述する
-* contained ^slicing.discriminator.type = #profile
-* contained ^slicing.discriminator.path = "$this"
-* contained ^slicing.rules = #open
-* contained contains patient 0..1
-    and specimen 0..
-    and order 0..
-    and organization 0..
-    and department 0..
+* id 1..1
+//* meta.profile = $JP_Observation_LabResult_eCS_Contained
 
-* contained[patient] only  JP_Patient_eCS_Contained
-* contained[specimen] only  JP_Specimen_LaboResult_eCS_Contained
-* contained[order] only  JP_ServiceRequest_eCS_Contained
-* contained[organization] only  JP_Organization_eCS_Contained
-* contained[department] only  JP_Organization_eCS_department_Contained
-
-* meta.lastUpdated 0.. MS
-* meta.lastUpdated ^short = "最終更新日"
-* meta.lastUpdated ^definition = "この患者情報の内容がサーバ上で最後に格納または更新された日時、またはこのFHIRリソースが生成された日時"
 * meta.profile 1.. MS
-* meta.profile = $JP_Observation_LabResult_eCS
+* meta.profile = $JP_Observation_LabResult_eCS_Contained
+
+* implicitRules ..0
+* text ..0
+* contained ..0
 
 * identifier 1..* MS
 * identifier ^short = "当該検査項目に対して、施設内で割り振られる一意の識別子"
@@ -76,7 +65,7 @@ Description: "診療情報コアサマリー用　Observationリソース(感染
 
 * category[laboratory] 1..1 MS
 * category[laboratory] = $observation-category-cs#laboratory
-*/
+*/  
 * category[laboratory] ^short = "Observationカテゴリーで検体検査の場合には 'laboratory'固定。追加で別のカテゴリコードも設定できる。"
 * category[laboratory] ^definition = "Observationカテゴリーで検体検査の場合には 'laboratory'固定。追加で別のカテゴリコードも設定できる。"
 * category[laboratory] ^comment = "【JP Core仕様】推奨コード表「ObservationCategoryCodes」より、このプロファイルでは「laboratory」固定とする。"
@@ -99,10 +88,10 @@ and localUncoded 0..1 MS
 * code.coding ^comment = "JLAC10標準コード、ローカルコードの2つを設定するものとし、どちらも必須とする。さらにJLAC10以外にJLAC11などの複数の標準コードも設定できるよう、上限は設けない。\r\n\r\n標準コード、ローカルコードの順不同。\r\nSS-MIX2だとCWE.1 ～CWE.3に標準コード、CWE.4～CWE.6にローカルコード、など（順不同）。"
 * code.coding.system 1..1 MS    // MS 追加 // OUL^R22.OBX[*]-3[*]-3    コードシステム
 * code.coding.system ^definition = "コード体系。"
-* code.coding.system ^comment = "JLAC10フル17桁の場合にはurn:oid:1.2.392.200119.4.504（MEDIS 臨床検査マスター（JLAC10 17桁））、JLAC10の測定法コード3桁を999(不明)としたコード体系の使用も許容され、http://jpfhir.jp/fhir/eCS/CodeSystem/JP_CCS_ObsLabResult_Uncoded_CS を使用する。どちらの標準コードも不要できない場合には、未コード化コード(17桁のall 9)を使用することとし、その場合のsystem値はhttp://jpfhir.jp/fhir/eCS/CodeSystem/JP_CCS_ObsLabResult_Uncoded_CSを使用する。【SS-MIX2】OUL^R22.OBX[*]-3[*]-3"
+* code.coding.system ^comment = "JLAC10フル17桁の場合にはurn:oid:1.2.392.200119.4.504（MEDIS 臨床検査マスター（JLAC10 17桁））、JLAC10の測定法コード3桁を999(不明)としたコード体系の使用も許容され、http://jpfhir.jp/fhir/eCS/CodeSystem/JP_eCS_ObsLabResult_Uncoded_CS を使用する。どちらの標準コードも不要できない場合には、未コード化コード(17桁のall 9)を使用することとし、その場合のsystem値はhttp://jpfhir.jp/fhir/eCS/CodeSystem/JP_eCS_ObsLabResult_Uncoded_CSを使用する。【SS-MIX2】OUL^R22.OBX[*]-3[*]-3"
 * code.coding[jlac10Coded].system = $JP_ObservationLabResultCode_CS (exactly)    // MEDIS JLAC10
-* code.coding[jlac10wUnmethod].system = $JP_CCS_ObsLabResult_JLAC10Unmethod_CS (exactly)   // MEDIS JLAC10の測定法部分を999にしたコード
-* code.coding[jlac10Uncoded].system = $JP_CCS_ObsLabResultUncoded_CS (exactly) // 17桁未コード化コード
+* code.coding[jlac10wUnmethod].system = $JP_eCS_ObsLabResult_JLAC10Unmethod_CS (exactly)   // MEDIS JLAC10の測定法部分を999にしたコード
+* code.coding[jlac10Uncoded].system = $JP_eCS_ObsLabResultUncoded_CS (exactly) // 17桁未コード化コード
 * code.coding[jlac10Uncoded].code = #99999999999999999  (exactly)
 * code.coding[localCoded].system = $JP_ObservationLabResultLocal_CS (exactly)    // その施設のローカルコード
 * code.coding[localUncoded].system = $JP_ObservationLabResultLocalUncoded_CS (exactly)    // その施設のローカルコード

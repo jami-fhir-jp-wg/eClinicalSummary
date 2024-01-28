@@ -8,7 +8,7 @@ Parent: JP_MedicationRequest
 Id: JP-MedicationRequest-ePres-eCS
 Title:  "Core6 : JP_MedicationRequest_ePres_eCS"
 Description: "診療情報コアサマリー用　MedicationRequestリソース（処方オーダ情報）プロファイル　（JP_MedicationRequestの派生プロファイル）"
-* ^url = $JP_MedicationRequest_ePres_eCS
+* ^url = $JP_MedicationRequest_eCS
 * ^status = #active
 * ^date = "2023-05-27"
 * . ^short = "診療情報コアサマリーにおける処方オーダ情報の格納に使用する"
@@ -34,7 +34,7 @@ Description: "診療情報コアサマリー用　MedicationRequestリソース�
 * meta.lastUpdated ^short = "最終更新日"
 * meta.lastUpdated ^definition = "この患者情報の内容がサーバ上で最後に格納または更新された日時、またはこのFHIRリソースが生成された日時"
 * meta.profile 1.. MS
-* meta.profile = $JP_MedicationRequest_ePres_eCS
+* meta.profile = $JP_MedicationRequest_eCS
 
 * identifier[rpNumber] 1..1 MS
 * identifier[orderInRp] 1..1 MS

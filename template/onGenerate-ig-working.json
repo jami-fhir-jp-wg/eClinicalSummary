@@ -3,9 +3,9 @@
     "id": "clinical-core-set",
     "text": {
         "status": "extensions",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>HL7Japan_JAMIccsImplementationGuide</h2><p>The official URL for this implementation guide is: </p><pre>http://jpfhir.jp/fhir/ccs/ImplementationGuide/clinical-core-set</pre><div><p>HL7 Japan-JAMI ccs ImplementationGuide</p>\n</div></div>"
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>HL7Japan_JAMIccsImplementationGuide</h2><p>The official URL for this implementation guide is: </p><pre>http://jpfhir.jp/fhir/eCS/ImplementationGuide/clinical-core-set</pre><div><p>HL7 Japan-JAMI ccs ImplementationGuide</p>\n</div></div>"
     },
-    "url": "http://jpfhir.jp/fhir/ccs/ImplementationGuide/clinical-core-set",
+    "url": "http://jpfhir.jp/fhir/eCS/ImplementationGuide/clinical-core-set",
     "version": "0.1.0",
     "name": "HL7Japan_JAMIccsImplementationGuide",
     "title": "HL7 Japan-JAMI ccs ImplementationGuide",
@@ -555,7 +555,7 @@
                     },
                     {
                         "url": "value",
-                        "valueString": "http://jpfhir.jp/fhir/ccs/history.html"
+                        "valueString": "http://jpfhir.jp/fhir/eCS/history.html"
                     }
                 ],
                 "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -2526,7 +2526,7 @@
             },
             {
                 "code": "path-history",
-                "value": "http://jpfhir.jp/fhir/ccs/history.html"
+                "value": "http://jpfhir.jp/fhir/eCS/history.html"
             },
             {
                 "code": "template-html",
