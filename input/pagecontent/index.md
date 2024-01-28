@@ -132,10 +132,10 @@ table th {
 ## プロファイルURL等のルール
 FHIRでは、Profile（プロファイル）とよばれる定義ファイルにより、それぞれのリソースごとに要素の制約は使用方法を記述する。このプロファイルを識別するURLは以下のようなルールで定めることにする。
 
-URLベース部分　：　http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/
+URLベース部分　：　http://jpfhir.jp/fhir/eCS/StructureDefinition/
 
 URL末尾パートは、
-JP_\[リソースタイプ\]\(_0個以上の付加的な階層名\)_eClinicalSummary
+JP_\[リソースタイプ\]\(_0個以上の付加的な階層名\)_eCS
 
 または、
 JP_\[リソースタイプ\]\(_0個以上の付加的な階層名\)_eCS_プロファイル目的名

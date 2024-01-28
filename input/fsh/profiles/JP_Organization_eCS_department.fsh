@@ -37,8 +37,8 @@ Description: "診療情報コアサマリー用　Organizationリソース（診
 /*
 Profile: JP_Organization_eS_departmentOfIssuer
 Parent: JP_Organization_eS_department
-Id: JP-Organization-eClinicalSummary-departmentOfissuer
+Id: JP-Organization-eCS-departmentOfissuer
 Description: "医療文書を発行した医療機関の診療科情報　JP_Organizationの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_departmentOfIssuer"
+* ^url = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS_departmentOfIssuer"
 * ^status = #active
 */

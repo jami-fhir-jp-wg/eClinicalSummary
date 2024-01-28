@@ -7,7 +7,7 @@
 Profile: JP_Encounter_OW_eCS_Contained
 Parent: JP_Encounter
 Id: JP-Encounter-OW-eCS-Contained
-Description: "診療情報コアサマリー埋め込み用 Encouterリソース(入院外来の別に関するのみの情報)プロファイル　　（JP_Encounter_eClinicalSummaryの派生プロファイル）"
+Description: "診療情報コアサマリー埋め込み用 Encouterリソース(入院外来の別に関するのみの情報)プロファイル　　（JP_Encounter_eCSの派生プロファイル）"
 * ^url = $JP_Encounter_OW_eCS_Contained
 * ^status = #active
 * ^date = "2023-03-31"

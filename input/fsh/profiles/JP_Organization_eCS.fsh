@@ -5,7 +5,7 @@ Id: JP-Organization-eCS
 Title: "JP_Organization_eCS"
 Description: "診療情報コアサマリー用　Organizationリソース（医療機関等組織情報）プロファイル　（JP_Organizationの派生プロファイル）"
 //* obeys checkPhoneNumberExists
-* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary"
+* ^url = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS"
 * ^status = #active
 * ^date = "2023-03-31"
 * . ^short = "診療情報コアサマリーにおける検体検査結果の格納に使用する"
@@ -63,12 +63,12 @@ Description: "診療情報コアサマリー用　Organizationリソース（医
 * address.postalCode ^definition = "郵便番号。３桁-４桁。\r\n例）　\"123-4567\""
 
 /*
-Profile: JP_Organization_eClinicalSummary_issuer
-Parent: JP_Organization_eClinicalSummary
-Id: JP-Organization-eClinicalSummary-issuer
+Profile: JP_Organization_eCS_issuer
+Parent: JP_Organization_eCS
+Id: JP-Organization-eCS-issuer
 Description: "処方を発行した医療機関の情報　JP_Organizationの派生プロファイル"
 * obeys checkPhoneNumberExists
-* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_issuer"
+* ^url = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS_issuer"
 * ^status = #active
 * telecom 1.. MS
 * telecom ^short = "医療機関電話番号。電話番号は最低１件必ず記述されること。"

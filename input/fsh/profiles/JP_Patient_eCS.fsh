@@ -3,7 +3,7 @@ Parent: JP_Patient
 Id: JP-Patient-eCS
 Title: "JP_Patient_eCS"
 Description: "診療情報コアサマリー用　Patientリソース（患者情報）プロファイル　（JP_Patientの派生プロファイル）"
-* ^url = $JP_Patient_eClinicalSummary
+* ^url = $JP_Patient_eCS
 * ^status = #active
 * ^date = "2023-03-31"
 * . ^short = "診療情報コアサマリーにおける患者情報の格納に使用する"
@@ -14,7 +14,7 @@ Description: "診療情報コアサマリー用　Patientリソース（患者�
 * meta.lastUpdated ^short = "最終更新日"
 * meta.lastUpdated ^definition = "この患者情報の内容がサーバ上で最後に格納または更新された日時、またはこのFHIRリソースが生成された日時"
 * meta.profile 1.. MS
-* meta.profile = $JP_Patient_eClinicalSummary (exactly)
+* meta.profile = $JP_Patient_eCS (exactly)
 
 * identifier 1.. MS
 * identifier.assigner.reference ^short = "患者番号を付番した医療機関情報（Organization）への参照"

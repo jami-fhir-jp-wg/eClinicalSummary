@@ -1,9 +1,9 @@
 
-Profile: JP_Encounter_eClinicalSummary
+Profile: JP_Encounter_eCS
 Parent: JP_Encounter
-Id: JP-Encounter-eClinicalSummary
+Id: JP-Encounter-eCS
 Description: "診療情報提供では、紹介理由を記述するEncouter情報　JP_Encounterの派生プロファイル。診療サマリーではサマリー対象となる受診や入院に関する情報。"
-* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary"
+* ^url = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Encounter_eCS"
 * ^status = #active
 * ^date = "2023-03-31"
 * meta.lastUpdated 1.. MS
