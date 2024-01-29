@@ -844,7 +844,7 @@
                 "value": "true"
             },
             {
-                "code": "apply-licese",
+                "code": "apply-license",
                 "value": "true"
             },
             {
@@ -864,7 +864,7 @@
                 "value": "true"
             },
             {
-                "code": "excludejsn",
+                "code": "excludejson",
                 "value": "false"
             },
             {

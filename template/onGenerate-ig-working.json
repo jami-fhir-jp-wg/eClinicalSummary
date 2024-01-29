@@ -174,7 +174,7 @@
                 "extension": [
                     {
                         "url": "code",
-                        "valueString": "apply-licese"
+                        "valueString": "apply-license"
                     },
                     {
                         "url": "value",
@@ -239,7 +239,7 @@
                 "extension": [
                     {
                         "url": "code",
-                        "valueString": "excludejsn"
+                        "valueString": "excludejson"
                     },
                     {
                         "url": "value",
@@ -2409,7 +2409,7 @@
                 "value": "true"
             },
             {
-                "code": "apply-licese",
+                "code": "apply-license",
                 "value": "true"
             },
             {
@@ -2429,7 +2429,7 @@
                 "value": "true"
             },
             {
-                "code": "excludejsn",
+                "code": "excludejson",
                 "value": "false"
             },
             {
