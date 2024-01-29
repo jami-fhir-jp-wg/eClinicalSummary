@@ -29,7 +29,7 @@ Description: "検体検査結果項目で標準コードが割り当てられな
 
 CodeSystem: JP_CLINS_ObsLabResult_LocalUncoded_CS
 Id: jp-clins-obslabresult-localuncoded-cs
-Title "検体検査結果項目で標準コードが割り当てられない場合に使用する未コード化コード(Local)"
+Title: "検体検査結果項目で標準コードが割り当てられない場合に使用する未コード化コード(Local)"
 Description: "検体検査結果項目で標準コードが割り当てられない場合に使用する未コード化コード(Local)"
 * ^url = $JP_ObservationLabResultLocalUncoded_CS
 * ^title = "未標準化コード項目(Local)"
@@ -41,7 +41,7 @@ Description: "検体検査結果項目で標準コードが割り当てられな
 
 CodeSystem: JP_eCS_MedicationCode_Nocoded_CS
 Id: jp-eCS-medicationcode-nocoded-cs
-Title "医薬品コードで標準コードが割り当てられない場合に使用する未コード化コード"
+Title: "医薬品コードで標準コードが割り当てられない場合に使用する未コード化コード"
 Description: "医薬品コードで標準コードが割り当てられない場合に使用する未コード化コード"
 * ^url = $JP_eCS_MedicationCodeNocoded_CS
 * ^title = "医薬品未標準化コード項目"
@@ -66,7 +66,7 @@ Description: "検体検査項目ローカルコード識別用CS"
 
 CodeSystem: JP_ehrshrs_indication_CS
 Id: jp-ehrshrs-indication-cs
-Title "長期保存／未告知診療情報のためのフラグコード"
+Title: "長期保存／未告知診療情報のためのフラグコード"
 Description: "長期保存／未告知診療情報のためのフラグコード"
 * ^url = $JP_ehrshrs_indication_CS
 * ^title = "長期保存／未告知診療情報のためのフラグコード"
