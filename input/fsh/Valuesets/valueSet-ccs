@@ -45,5 +45,5 @@ Description: "入院経路を表すコード (出典：厚労省DPC導入影響�
 * ^status = #active
 * ^experimental = false
 * ^date = "2024-01-28"
-* include codes from system  $JP_admit-Source_CS
+* include codes from system  $JP_admit_Source_CS
 

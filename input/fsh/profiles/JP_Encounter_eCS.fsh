@@ -68,7 +68,7 @@ Description: "eCS 診療情報・サマリー汎用 Encounterリソース（受�
 * length.code = #d (exactly)
 * length.code ^definition = "日"
 
-* reasonCode 1..* MS
+* reasonCode 0..* MS
 * reasonCode ^short = "入院時主訴・入院理由。紹介する理由（主訴・目的）"
 * reasonCode ^definition = "コードで記述できる場合にそのコード記述。system値はMEDIS標準病名マスター病名交換用コードを使用できる。text要素にフリーテキストで記述してもよい。"
 * reasonCode.coding 0..* MS

@@ -114,11 +114,11 @@ Description: "JP Coreにて定義したObservationリソースに関する分類
 * #activity "Activity" "体力と全体的な健康状態を向上または維持する身体活動を測定または記録する観察。 理学療法士などの施術者の直接の監督下にないこと。 (例: 水泳ラップ、歩数、睡眠データ)"
 
 // 入院経路を表すコード情報。値は例示。コード表は一例（出典：厚労省DPC導入影響評価調査）
-CodeSystem: JP_admit-Source_CS
+CodeSystem: JP_admit_Source_CS
 Id: jp-admit-Source-cs
 Title: "入院経路を表すコード (出典：厚労省DPC導入影響評価調査)"
 Description: "入院経路を表すコード (出典：厚労省DPC導入影響評価調査)  ValueSet"
-* ^url = $JP_admit-Source_CS
+* ^url = $JP_admit_Source_CS
 * ^status = #active
 * ^experimental = false
 * ^date = "2023-04-18"
