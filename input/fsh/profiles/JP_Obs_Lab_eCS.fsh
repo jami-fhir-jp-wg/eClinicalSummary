@@ -68,7 +68,7 @@ Description: "eCS 診療情報・サマリー汎用 Observationリソース（�
 * code.coding  ^slicing.discriminator[=].path = "system"
 * code.coding  ^slicing.discriminator[+].type = #value
 * code.coding  ^slicing.discriminator[=].path = "display"
-* code.coding  ^slicing.rules = #closed
+* code.coding  ^slicing.rules = #open
 * code.coding  contains
   localLaboCode 1..1 MS
  and coreLabo/abo-bld 0..1 MS
