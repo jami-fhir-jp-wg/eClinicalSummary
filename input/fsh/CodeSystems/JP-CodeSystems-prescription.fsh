@@ -1,24 +1,28 @@
 // 別表１	文書区分コード	OID:	1.2.392.100495.20.2.11
 CodeSystem: MHLW_codeSystem_ePreCDA_documentCategory_tbl01
 Id: mhlw-codeSystem-ePreCDA-documentCategory-tbl011
+Title: "厚労省電子処方CDA規格別表１ 文書区分コード"
 Description: "厚労省電子処方CDA規格別表１ 文書区分コード"
 * ^url = "urn:oid:1.2.392.100495.20.2.11"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-ePreCDA-documentCategory"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #01  "処方箋"
 * #02  "調剤結果"
 
 // 別表２	セクション区分コード	OID: 1.2.392.100495.20.2.12
 CodeSystem: MHLW_codeSystem_ePreCDA_sectionCategory_tbl02
 Id: mhlw-codeSystem-ePreCDA-sectionCategory-tbl02
+Title: "厚労省電子処方CDA規格別表2 セクション区分コード"
 Description: "厚労省電子処方CDA規格別表2 セクション区分コード"
 * ^url = "urn:oid:1.2.392.100495.20.2.12"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-ePreCDA-sectionCategory"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #01	"処方指示"	
 * #02	"調剤実施内容"	
 * #11	"保険・公費情報"	
@@ -29,12 +33,14 @@ Description: "厚労省電子処方CDA規格別表2 セクション区分コー�
 // 別表３	剤形区分コード	OID: 1.2.392.100495.20.2.21
 CodeSystem:  MHLW_codeSystem_ePreCDA_drugsageForm_tbl03
 Id: mhlw-codeSystem-ePreCDA-drugUsageForm-tbl03
+Title: "厚労省電子処方CDA規格別表3  剤形区分コード"
 Description: "厚労省電子処方CDA規格別表3  剤形区分コード"
 * ^url = "urn:oid:1.2.392.100495.20.2.21"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-ePreCDA-drugsageForm"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #1	"内服"	
 * #2	"頓服"	
 * #3	"外用"	
@@ -46,12 +52,14 @@ Description: "厚労省電子処方CDA規格別表3  剤形区分コード"
 // 別表４	力価区分コード	OID: 1.2.392.100495.20.2.22
 CodeSystem:  MHLW_codeSystem_ePreCDA_drugDosageStrength_tbl04
 Id: mhlw-codeSystem-ePreCDA-drugDosageStrength-tbl04
+Title: "厚労省電子処方CDA規格別表4 力価区分コード"
 Description: "厚労省電子処方CDA規格別表4 力価区分コード"
 * ^url = "urn:oid:1.2.392.100495.20.2.22"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-ePreCDA-drugDosageStrength"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #1	"製剤量"	
 * #2	"原薬量"
 
@@ -103,13 +111,14 @@ Description: "厚労省電子処方CDA規格別表5  JAMI補足用法コード8�
 
 CodeSystem:  JAMI_codeSystem_ePreOrderUsageAuxCode
 Id:   jami-codeSystem-ePreOrderUsageAuxCode
+Title: "JAMI補足用法コード8桁"
 Description: "JAMI補足用法コード8桁"
 * ^url = "urn:oid:1.2.392.200250.2.2.20.22"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreOrderUsageAuxCode"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
-
+* ^experimental = false
 * #V11NNNNN    "不均等・１回目・１単位量"
 * #V12NNNNN    "不均等・１回目・２単位量"
 * #V13NNNNN   "不均等・１回目・３単位量"
@@ -188,12 +197,14 @@ Description: "JAMI補足用法コード8桁"
 // JAMI部位コード3桁
 CodeSystem:  JAMI_codeSystem_ePreSiteCode
 Id:   jami-codeSystem-ePreSiteCode
+Title: "JAMI標準用法部位コード（３桁）"
 Description: "JAMI標準用法部位コード（３桁）"
 * ^url = "urn:oid:1.2.392.200250.2.2.20.32"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreSiteCode"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #010  "全身"
 * #120  "頭皮"
 * #12L  "左頭皮"
@@ -503,12 +514,14 @@ Description: "JAMI標準用法部位コード（３桁）"
 
 CodeSystem:  JAMI_codeSystem_ePreBasicUsageMethod_OneDigit
 Id:   jami-codeSystem-ePreBasicUsageMethod-OneDigit
+Title: "JAMI標準基本用法区分コード1桁"
 Description: "JAMI標準基本用法区分コード1桁"
 * ^url = "urn:oid:1.2.392.200250.2.2.20.30"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-codeSystem-ePreBasicUsageMethod-OneDigit"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #1  "内服"
 * #2  "外用"
 * #3  "注射"
@@ -520,12 +533,14 @@ Description: "JAMI標準基本用法区分コード1桁"
 
 CodeSystem:  JAMI_codeSystem_ePreDetailUsageMethod_TwoDigits
 Id:   jami-codeSystem-ePreDetailUsageMethod-TwoDigits
+Title: "JAMI標準投与方法区分コード2桁"
 Description: "JAMI標準投与方法区分コード2桁"
 * ^url = "urn:oid:1.2.392.200250.2.2.20.40"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreDetailUsageMethod"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #10 "経口"
 * #11 "舌下"
 * #12 "バッカル"
@@ -583,12 +598,14 @@ Description: "JAMI標準投与方法区分コード2桁"
 // HL7医薬品投与経路コード（JAHIS 使用者定義表 0162 投薬経路）
 CodeSystem:  JAMI_codeSystem_ePreUsageRoute
 Id:   jami-codeSystem-ePreUsageRoute
+Title: "HL7医薬品投与経路コード（JAHIS 使用者定義表 0162 投薬経路）"
 Description: "HL7医薬品投与経路コード（JAHIS 使用者定義表 0162 投薬経路）"
 * ^url = "http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/route-codes"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #AP  "外用"
 * #B  "頬"
 * #DT  "歯"
@@ -640,12 +657,14 @@ Description: "HL7医薬品投与経路コード（JAHIS 使用者定義表 0162 
 // 処方箋備考区分
 CodeSystem: JP_codeSystem_ePreCommunication_category
 Id:   jp-codeSystem-ePreCommunication-category
+Title: "処方箋備考区分"
 Description: "処方箋備考区分"
 * ^url = "http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/communication-category"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #1  "処方箋備考"
 * #2  "調剤者への指示"
 * #3  "残薬確認指示"
@@ -655,12 +674,14 @@ Description: "処方箋備考区分"
 
 CodeSystem:  JAMI_codeSystem_ePreDispenseInstruction
 Id:   jami-codeSystem-ePreDispenseInstruction
+Title: "調剤指示コード（備考欄）"
 Description: "調剤指示コード（備考欄）"
 * ^url = "urn:oid:1.2.392.200250.2.2.30.10"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreDispenseInstruction"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #C "粉砕指示"
 * #OP "一包化指示"
 * #SP "別包化指示"
@@ -669,12 +690,14 @@ Description: "調剤指示コード（備考欄）"
 // 別表８	後発品変更不可コード	OID: 1.2.392.100495.20.2.41
 CodeSystem:  MHLW_codeSystem_ePreCDA_unable2Change2Generic_tbl08
 Id: mhlw-codeSystem-ePreCDA-unable2Change2Generic-tbl08
+Title: "厚労省電子処方CDA規格別表8 後発品変更不可コード"
 Description: "厚労省電子処方CDA規格別表8 後発品変更不可コード"
 * ^url = "urn:oid:1.2.392.100495.20.2.41"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-ePreCDA-unable2Change2Generic"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #0	"変更可"
 * #1	"変更不可"	
 * #2	"剤形変更不可"	
@@ -683,12 +706,14 @@ Description: "厚労省電子処方CDA規格別表8 後発品変更不可コー�
 // 別表９	残薬確認指示コード	OID: 1.2.392.100495.20.2.42
 CodeSystem: MHLW_codeSystem_ePreCDA_instructionResidual_tbl09
 Id: mhlw-codeSystem-ePreCDA-instructionResidual-tbl09
+Title: "厚労省電子処方CDA規格別表9 残薬確認指示コード"
 Description: "厚労省電子処方CDA規格別表9 残薬確認指示コード"
 * ^url = "urn:oid:1.2.392.100495.20.2.42"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-ePreCDA-instructionResidual"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #0	"指示無し"
 * #1	"疑義照会の上調剤"	
 * #2	"情報提供"	
@@ -696,12 +721,14 @@ Description: "厚労省電子処方CDA規格別表9 残薬確認指示コード"
 // 別表１０	診療科コード	OID:	1.2.392.100495.20.2.51
 CodeSystem:  MHLW_codeSystem_ePreCDA_clinicalDepartment_tbl10
 Id: mhlw-codeSystem-ePreCDA-clinicalDepartment-tbl10
+Title: "厚労省電子処方CDA規格別表10 診療科コード"
 Description: "厚労省電子処方CDA規格別表10 診療科コード"
 * ^url = "urn:oid:1.2.392.100495.20.2.51"
 // * ^valueSet = "http://jpfhir.jp/fhir/Common/ValueSet/mhlw-ePreCDA-clinicalDepartment"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #01	"内科"	
 * #02	"精神科"	
 * #03	"神経科"	
@@ -744,12 +771,14 @@ Description: "厚労省電子処方CDA規格別表10 診療科コード"
 // 別表１１	保険種別コード	OID: 1.2.392.100495.20.2.61
 CodeSystem:  MHLW_codeSystem_ePreCDA_insuranceCategory_tbl11
 Id:   mhlw-codeSystem-ePreCDA-insuranceCategory-tbl11
+Title: "厚労省電子処方CDA規格別表11 保険種別コード"
 Description: "厚労省電子処方CDA規格別表11 保険種別コード"
 * ^url = "urn:oid:1.2.392.100495.20.2.61"
 // * ^valueSet = "http://jpfhir.jp/fhir/Common/ValueSet/mhlw-ePreCDA-insuranceCategory"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #1	"医保"	
 * #2	"国保"	
 * #3	"労災"	
@@ -762,12 +791,14 @@ Description: "厚労省電子処方CDA規格別表11 保険種別コード"
 // 別表１２	被保険者区分コード	OID: 1.2.392.100495.20.2.62
 CodeSystem:  MHLW_codeSystem_ePreCDA_insuredRelationship_tbl12
 Id:   mhlw-codeSystem-ePreCDA-insuredRelationship-tbl12
+Title: "厚労省電子処方CDA規格別表12 被保険者区分コード"
 Description: "厚労省電子処方CDA規格別表12 被保険者区分コード"
 * ^url = "urn:oid:1.2.392.100495.20.2.62"
 // * ^valueSet = "http://jpfhir.jp/fhir/Common/ValueSet/mhlw-ePreCDA-insuredRelationship"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #1	"被保険者"	
 * #2	"被扶養者"	
 
@@ -775,12 +806,14 @@ Description: "厚労省電子処方CDA規格別表12 被保険者区分コード
 // 別表１３	患者一部負担コード	OID: 1.2.392.100495.20.2.63
 CodeSystem:  MHLW_codeSystem_ePreCDA_insuredCoPayCategory_tbl13
 Id:   mhlw-codeSystem-ePreCDA-insuredCoPayCategory-tbl13
+Title: "厚労省電子処方CDA規格別表13 患者一部負担コード"
 Description: "厚労省電子処方CDA規格別表13 患者一部負担コード"
 * ^url = "urn:oid:1.2.392.100495.20.2.63"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-ePreCDA-insuredCoPayCategory"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #1	"高齢者一般（高一）"	
 * #2	"高齢者 7 割（高７）"	
 * #3	"６歳未満（６歳）"
@@ -911,12 +944,14 @@ Description: "医薬品コードGTIN 14桁"
 // 別表２０	医薬品単位略号	OID: 1.2.392.100495.20.2.101
 CodeSystem:  MHLW_codeSystem_drugUnitAbbr_tbl20
 Id:   mhlw-codeSystem-drugUnitAbbr-tbl20
+Title: "厚労省電子処方CDA規格別表２０	医薬品単位略号"
 Description: "厚労省電子処方CDA規格別表２０	医薬品単位略号"
 * ^url = "urn:oid:1.2.392.100495.20.2.101"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-codeSystem-drugUnitAbbr"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #PART	"分"
 * #TIME	"回"
 * #KIND	"種"	
@@ -985,12 +1020,14 @@ Description: "厚労省電子処方CDA規格別表２０	医薬品単位略号"
 // 別表２２	点数表番号	OID: 1.2.392.100495.20.3.22
 CodeSystem:  MHLW_codeSystem_claimOrganizationCategory_tbl22
 Id:   mhlw-codeSystem-claimOrganizationCategory-tbl22
+Title: "厚労省電子処方CDA規格別別表２２ 点数表番号"
 Description: "厚労省電子処方CDA規格別別表２２ 点数表番号"
 * ^url = "urn:oid:1.2.392.100495.20.3.22"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-codeSystem-claimOrganizationCategory"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #1	"医科"	
 * #3	"歯科"	
 * #4	"調剤"	
@@ -1000,12 +1037,14 @@ Description: "厚労省電子処方CDA規格別別表２２ 点数表番号"
 // 固定のコード表にはできないので、ルールベースでチェックすることが必要か
 CodeSystem:  MHLW_codeSystem_claimOrganizationNo7digits_tbl23
 Id:   mhlw-codeSystem-claimOrganizationNo7digits-tbl23
+Title: "厚労省電子処方CDA規格別別表２３ 保険医療機関番号（7桁）"
 Description: "厚労省電子処方CDA規格別別表２３ 保険医療機関番号（7桁）"
 * ^url = "urn:oid:1.2.392.100495.20.1.23"
 // * ^valueSet = "http://jpfhir.jp/fhir/Common/ValueSet/mhlw-codeSystem-claimOrganizationNo7digits"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #1234567  "保険医療機関番号１２３４５６７ダミー"
 
 // 医籍登録番号
@@ -1019,12 +1058,14 @@ Description: "厚労省電子処方CDA規格別別表２３ 保険医療機関�
 // 医療者役割コード(処方)
 CodeSystem:  JP_codeSystem_practitioner_role_category
 Id:   jp-codeSystem-practitioner-role-category
+Title: "医療者役割コード(処方)"
 Description: "医療者役割コード(処方)"
 * ^url = "http://jpfhir.jp/fhir/Common/CodeSystem/practitioner-role-category"
 // * ^valueSet = "http://jpfhir.jp/fhir/Common/ValueSet/practitioner-role-category"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #doctor "医師"
 * #dentist "歯科医師"
 
@@ -1032,17 +1073,20 @@ Description: "医療者役割コード(処方)"
 // 固定のコード表の作成が可能か厚労省に確認する
 CodeSystem:  JP_codeSystem_insurerNumber
 Id:   jp-codeSystem-insurerNumber
+Title: "保険者番号"
 Description: "保険者番号"
 * ^url = "urn:oid:1.2.392.100495.20.3.61"
 // * ^valueSet = "http://jpfhir.jp/fhir/Common/ValueSet/insurerNumber"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #06123456 "サンプル健康保険組合06123456"
 
 // 公費負担者番号
 // 固定のコード表の作成が可能か厚労省に確認する
 CodeSystem:  JP_codeSystem_publicPyerNumber
+Title: "公費負担者番号"
 Id:   jp-codeSystem-publicPyerNumber
 Description: "公費負担者番号"
 * ^url = "urn:oid:1.2.392.100495.20.3.71"
@@ -1057,12 +1101,14 @@ Description: "公費負担者番号"
 // 都道府県番号	1.2.392.100495.20.3.21
 CodeSystem:  JP_codeSystem_prefectureNumber
 Id:   jp-codeSystem-prefectureNumber
+Title: "都道府県番号"
 Description: "都道府県番号"
 * ^url = "urn:oid:1.2.392.100495.20.3.21"
 // * ^valueSet = "http://jpfhir.jp/fhir/Common/ValueSet/prefectureNumber"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #01	"北海道"
 * #02	"青森県"
 * #03	"岩手県"
@@ -1115,12 +1161,14 @@ Description: "都道府県番号"
 // コードリスト作成途中　健診結果報告書コード　未定
 CodeSystem:  JP_codeSystem_documentTypeCode
 Id:   jp-codeSystem-documentTypeCode
+Title: "FHIR文書の文書区分（医療文書全般）"
 Description: "FHIR文書の文書区分（医療文書全般）"
 * ^url = "http://jpfhir.jp/fhir/Common/CodeSystem/doc-typecodes"
 // * ^valueSet = "http://jpfhir.jp/fhir/Common/ValueSet/doc-typecodes"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #JPGCHKUP01 "健診結果報告書"
 * #JPMCHKUP01 "自治体検診結果報告書"
 * #18842-5 "退院時サマリー"
@@ -1130,12 +1178,14 @@ Description: "FHIR文書の文書区分（医療文書全般）"
 // 処方箋区分コード
 CodeSystem:  JP_codeSystem_prescription_category
 Id:   jp-codeSystem-prescription-category
+Title: "処方箋区分コード　（01:一般処方箋、02:麻薬処方箋、03:分割一般処方）"
 Description: "処方箋区分コード　（01:一般処方箋、02:麻薬処方箋、03:分割一般処方）"
 * ^url = "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-category"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/prescription-category"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #01 "一般処方箋"
 * #02 "麻薬処方箋"
 * #03 "分割一般処方"
@@ -1143,12 +1193,14 @@ Description: "処方箋区分コード　（01:一般処方箋、02:麻薬処方
 // 処方セクション区分コード
 CodeSystem: JP_codeSystem_ePrescription_section
 Id: jp-codeSystem-ePrescription-section
+Title: "処方セクション区分コード"
 Description: "処方セクション区分コード"
 * ^url = "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-section"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/prescription-category"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 * #01 "処方情報セクション"
 * #11 "分割処方箋セクション"
 * #12 "別紙セクション"
@@ -1157,11 +1209,13 @@ Description: "処方セクション区分コード"
 // 医療従事者資格種別
 CodeSystem:  JP_codeSystem_practitioner_certificate_category
 Id:   jp-codeSystem-practitioner-certificate-category
+Title: "医療従事者資格種別"
 Description: "医療従事者資格種別"
 * ^url = "http://jpfhir.jp/fhir/core/CodeSystem/practitioner-certificate-category"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/practitioner-certificate-category"
 * ^status = #active
 * ^content = #complete
+* ^experimental = false
 * ^caseSensitive = false
 * #MedicalDoctorLicense "医師"
 * #NarcoticsPractitioner "麻薬施用者"

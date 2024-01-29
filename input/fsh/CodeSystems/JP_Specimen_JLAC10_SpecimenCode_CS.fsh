@@ -10,6 +10,7 @@ Description: "JLAC10検査材料コード"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
+* ^experimental = false
 //	 ○尿・便
 * #001	"尿(含むその他)"
 * #002	"自然排尿"
