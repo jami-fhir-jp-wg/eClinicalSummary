@@ -105,9 +105,9 @@ Description: "eCS 診療情報・サマリー汎用 Encounterリソース（受�
 * hospitalization.admitSource 0..1 MS
 * hospitalization.admitSource ^short = "入院経路を表すコード情報"
 * hospitalization.admitSource ^definition = "入院経路を表すコード情報"
-* hospitalization.admitSource.coding 1..1 MS
+* hospitalization.admitSource.coding 1.. MS
+* hospitalization.admitSource.coding from  $JP_admit-Source_VS (preferred)
 * hospitalization.admitSource.coding.system 1..1 MS
-* hospitalization.admitSource.coding.system = "http://jpfhir.jp/fhir/Common/CodeSystem/admit-Source" (preferred)
 * hospitalization.admitSource.coding.code 1..1 MS
 * hospitalization.destination   0..1 MS
 * hospitalization.destination ^short = "退院後の所在場所または施設への参照。"

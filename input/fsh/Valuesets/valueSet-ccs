@@ -36,3 +36,14 @@ Description: "JP Coreにて定義したObservationリソースに関する分類
 * ^experimental = false
 * ^date = "2023-04-18"
 * include codes from system $JP_SimpleObservationCategory_CS
+
+ValueSet: JP_admit-Source_VS
+Id: jp-admit-Source-Source_VS
+Title: "入院経路を表すコード (出典：厚労省DPC導入影響評価調査)  ValueSet"
+Description: "入院経路を表すコード (出典：厚労省DPC導入影響評価調査)  ValueSet"
+* ^url = $JP_admit-Source_VS
+* ^status = #active
+* ^experimental = false
+* ^date = "2024-01-28"
+* include codes from system  $JP_admit-Source_CS
+
