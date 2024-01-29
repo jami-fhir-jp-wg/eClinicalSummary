@@ -1,3 +1,15 @@
+Profile: JP_Organization_eCS_fromOrganization
+Parent: JP_Organization_eCS
+Id: JP-Organization-eCS-fromOrganization
+Title: "JP_Organization_eCS_fromOrganization"
+Description: "診療情報コアサマリー用　Organizationリソース診療情報提供元（医療機関等組織情報）プロファイル　（JP_Organizationの派生プロファイル）"
+//* obeys checkPhoneNumberExists
+* ^url = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS_fromOrganization"
+* ^status = #active
+* ^date = "2023-03-31"
+* . ^short = "診療情報コアサマリーにおける診療情報提供元の格納に使用する"
+* . ^definition = "診療情報コアサマリー・厚労省6情報などにおける診療情報提供元の格納に使用する"
+
 
 Profile: JP_Organization_eCS
 Parent: JP_Organization
@@ -8,8 +20,8 @@ Description: "診療情報コアサマリー用　Organizationリソース（医
 * ^url = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS"
 * ^status = #active
 * ^date = "2023-03-31"
-* . ^short = "診療情報コアサマリーにおける検体検査結果の格納に使用する"
-* . ^definition = "診療情報コアサマリー・厚労省6情報などにおける検体検査結果の格納に使用する"
+* . ^short = "診療情報提供元の格納に使用する"
+* . ^definition = "診療情報提供元の格納に使用する"
 
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^short = "generated| extensions | additional | empty"
