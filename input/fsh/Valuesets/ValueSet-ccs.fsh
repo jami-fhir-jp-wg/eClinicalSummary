@@ -16,5 +16,3 @@ Description: "医薬品コードで標準コードが割り当てられない場
 * ^status = #active
 * ^experimental = false
 * include codes from system $JP_eCS_MedicationCodeNocoded_CS
-
-/
