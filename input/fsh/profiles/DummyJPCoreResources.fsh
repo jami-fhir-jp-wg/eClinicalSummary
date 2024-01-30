@@ -68,7 +68,7 @@ Description:    "Derived Profile from JP-Core"
 * ^date = "2023-03-31"
 * meta.lastUpdated 0.. MS
 
-
+/*
 Profile:        JP_ImagingStudy_Radiology_eCS
 Parent:			JP_ImagingStudy_Radiology
 Id:             JP-ImagingStudy-Radiology-eCS
@@ -76,7 +76,7 @@ Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ImagingStudy_Radiology_eCS"
 * ^date = "2023-03-31"
 * meta.lastUpdated 0.. MS
-
+*/
 
 Profile:        JP_MedicationStatement
 Parent:			MedicationStatement
