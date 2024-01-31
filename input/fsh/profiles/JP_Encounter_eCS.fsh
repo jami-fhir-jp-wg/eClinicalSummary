@@ -55,6 +55,7 @@ Description: "eCS 診療情報・サマリー汎用 Encounterリソース（受�
 * period.start 1..1 MS
 * period.end 0..1 MS
 
+/*
 * length 0..1 MS
 * length ^short = "この入院の在院日数"
 * length ^definition = "この入院の在院日数"
@@ -146,3 +147,4 @@ Description: "eCS 診療情報・サマリー汎用 Encounterリソース（受�
 * location.period.start 1..1 MS
 * location.period.end 0..1 MS
 
+*/
