@@ -3,7 +3,7 @@
 //-------------------------------
 
 Profile: JP_Organization_eCS_department
-Parent: Organization
+Parent: JP_Organization_eCS
 Id: JP-Organization-eCS-department
 
 // * obeys checkOrganizationType0
