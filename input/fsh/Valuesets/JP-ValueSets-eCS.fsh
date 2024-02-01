@@ -6,9 +6,9 @@
 
 ValueSet:  JP_valueSet_carePlanCategory
 Id:   JP-valueSet-carePlanCategory
+Title: "CarePlan カテゴリー"
 Description: "CarePlan カテゴリー　hospital-plan または discharge-plan"
 * ^url = $JP_carePlanCategory_VS
-* ^title = "CarePlan カテゴリー valueSet"
 * ^status = #active
 * ^experimental = false
 * include codes from system $JP_carePlanCategory_CS
@@ -20,8 +20,11 @@ Description: "CarePlan カテゴリー　hospital-plan または discharge-plan"
 //--------------------------------------------------------------------
 ValueSet: ECheckup_valueSet_encounterType
 Id: ECheckup-valueSet-encounterType
+Title: "受診形態区分"
 Description: "受診形態区分"
 * ^url = $checkup_encounter_type_vs
+* ^status = #active
+* ^experimental = false
 * include codes from system $checkup_encounter_type_cs
 
 //--------------------------------------------------------------------
@@ -30,7 +33,10 @@ Description: "受診形態区分"
 //--------------------------------------------------------------------
 ValueSet: ECheckup_valueSet_encounterCategory
 Id: ECheckup-valueSet-encounterCategory
+Title: "受診区分"
 Description: "受診区分"
 * ^url = $encounter_cateogry_vs
+* ^status = #active
+* ^experimental = false
 * include codes from system $encounter_cateogry_cs
 

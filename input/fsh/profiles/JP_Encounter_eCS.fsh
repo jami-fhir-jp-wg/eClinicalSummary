@@ -104,7 +104,7 @@ Description: "eCS 診療情報・サマリー汎用 Encounterリソース（受�
 * hospitalization.origin ^definition = "入院前の所在場所または施設への参照。"
 * hospitalization.origin only Reference(JP_Location or JP_Organization)
 * hospitalization.admitSource 0..1 MS
-* hospitalization.admitSource from  $JP_admit-Source_VS (preferred)
+* hospitalization.admitSource from  $JP_admit_Source_VS (preferred)
 * hospitalization.admitSource ^short = "入院経路を表すコード情報"
 * hospitalization.admitSource ^definition = "入院経路を表すコード情報"
 * hospitalization.admitSource.coding 1.. MS

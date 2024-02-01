@@ -17,11 +17,11 @@ Description: "医薬品コードで標準コードが割り当てられない場
 * ^experimental = false
 * include codes from system $JP_eCS_MedicationCodeNocoded_CS
 
-ValueSet: JP_admit-Source_VS
+ValueSet: JP_admit_Source_VS
 Id: jp-admit-Source-Source-VS
 Title: "入院経路を表すコード (出典：厚労省DPC導入影響評価調査)  ValueSet"
 Description: "入院経路を表すコード (出典：厚労省DPC導入影響評価調査)  ValueSet"
-* ^url = $JP_admit-Source_VS
+* ^url = $JP_admit_Source_VS
 * ^status = #active
 * ^experimental = false
 * ^date = "2024-01-28"

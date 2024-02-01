@@ -139,7 +139,7 @@ Alias: $JP_InstitutionNumber = http://jpfhir.jp/fhir/core/IdSystem/insurance-med
 Alias: $JP_ResourceInstanceIdentifier = http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier
 
 Alias: $JP_admit_Source_CS = http://jpfhir.jp/fhir/Common/CodeSystem/admit-Source
-Alias: $JP_admit-Source_VS = http://jpfhir.jp/fhir/Common/ValueSet/admit-Source
+Alias: $JP_admit_Source_VS = http://jpfhir.jp/fhir/Common/ValueSet/admit-Source
 
 Alias: $JP_carePlanCategory_CS = http://jpfhir.jp/fhir/CarePlan/CodeSystem/category
 Alias: $JP_carePlanCategory_VS = http://jpfhir.jp/fhir/CarePlan/ValueSet/category
