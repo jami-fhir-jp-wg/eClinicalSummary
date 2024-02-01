@@ -136,3 +136,22 @@ Description: "入院経路を表すコード (出典：厚労省DPC導入影響�
 * #5 "介護施設・福祉施設に入所中"
 * #8 "院内で出生"
 * #9 "その他"
+
+
+//
+// ケアプランのタイプ
+// "hospital-plan"(入院中のプラン)、または"discharge-plan"(退院時のプラン)のいずれか固定値。
+//
+CodeSystem: JP_carePlanCategory_CS
+Id: jp-careplancategory-cs
+Title: "ケアプランのタイプコード"
+Description: "ケアプランのタイプコード"
+* ^url = $JP_carePlanCategory_CS
+* ^status = #active
+* ^experimental = false
+* ^date = "2024-01-31"
+* ^caseSensitive = true
+* ^content = #complete
+* #hospital-plan "入院中のプラン"
+* #discharge-plan "退院時のプラン"
+
