@@ -3,13 +3,13 @@ Alias: $narrative_cs = http://hl7.org/fhir/narrative-status
 Alias: $composition-clinicaldocument-versionNumber = http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber
 Alias: $composition-clinicaldocument-dataEnterer = http://jpfhir.jp/fhir/eCheckup/Extension/StructureDefinition/composition_dataEnterer
 Alias: $ucum = http://unitsofmeasure.org
-Alias: $jlac10_specimen_cs = http://jpfhir.jp/fhir/eCheckup/CodeSystem/jlac10-specimen-codes
+//Alias: $jlac10_specimen_cs = http://jpfhir.jp/fhir/eCheckup/CodeSystem/jlac10-specimen-codes
 Alias: $jlac10_specimen_vs = http://jpfhir.jp/fhir/eCheckup/ValueSet/jlac10-specimen-codes
 Alias: $specialCheckup_observations_cs = urn:oid:1.2.392.200119.6.1005  //特定健診項目コード表
 
 Alias: $JP_Patient_CLINS_eCS = http://jpfhir.jp/fhir/clins/StructureDefinition/JP_Patient_eCS
 Alias: $JP_Patient_eCS = http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Patient_eCS
-Alias: $JP_eCS_Department = http://jpfhir.jp/fhir/clins/Extension/StructureDefinition/JP_eCS_Department
+Alias: $JP_eCS_Department = http://jpfhir.jp/fhir/eCS/Extension/StructureDefinition/JP_eCS_Department
 Alias: $JP_eCS_InstitutionNumber = http://jpfhir.jp/fhir/clins/Extension/StructureDefinition/JP_eCS_InstitutionNumber
 Alias: $JP_InstitutionNumber = http://jpfhir.jp/fhir/core/IdSystem/insurance-medical-institution-no
 

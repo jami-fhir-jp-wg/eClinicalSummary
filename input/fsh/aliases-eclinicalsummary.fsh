@@ -131,7 +131,7 @@ Alias: $JP_DiseaseCategory_WHO_ICD10_CS = http://jpfhir.jp/fhir/core/mhlw/CodeSy
 Alias: $JP_DiseaseCategory_WHO_ICD10_CS_oid = urn:oid:2.16.840.1.113883.6.3.1  // ICD10  HL7 regisered
 
 // 拡張
-Alias: $JP_eCS_Department = http://jpfhir.jp/fhir/clins/Extension/StructureDefinition/JP_eCS_Department
+Alias: $JP_eCS_Department = http://jpfhir.jp/fhir/eCS/Extension/StructureDefinition/JP_eCS_Department
 Alias: $JP_eCS_InstitutionNumber = http://jpfhir.jp/fhir/clins/Extension/StructureDefinition/JP_eCS_InstitutionNumber
 Alias: $JP_InstitutionNumber = http://jpfhir.jp/fhir/core/IdSystem/insurance-medical-institution-no
 
