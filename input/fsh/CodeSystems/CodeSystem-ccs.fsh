@@ -122,8 +122,8 @@ Description: "JP Coreにて定義したObservationリソースに関する分類
 // 入院経路を表すコード情報。値は例示。コード表は一例（出典：厚労省DPC導入影響評価調査）
 CodeSystem: JP_admit_Source_CS
 Id: jp-admit-Source-cs
-Title: "入院経路を表すコード (出典：厚労省DPC導入影響評価調査)"
-Description: "入院経路を表すコード (出典：厚労省DPC導入影響評価調査)  ValueSet"
+Title: "入院経路を表すコード (出典：厚労省DPC導入影響評価調査) CodeSystem"
+Description: "入院経路を表すコード (出典：厚労省DPC導入影響評価調査)  CodeSystem"
 * ^url = $JP_admit_Source_CS
 * ^status = #active
 * ^experimental = false
@@ -137,6 +137,23 @@ Description: "入院経路を表すコード (出典：厚労省DPC導入影響�
 * #8 "院内で出生"
 * #9 "その他"
 
+// 退院時転帰コード情報
+CodeSystem: JP_codeSystem_dischargeDisposition
+Id: jp-codeSystem-dischargeDisposition
+Description: "退院時転帰コード情報（出典：厚労省DPC導入影響評価調査）CodeSystem"
+* ^url = $JP_dischargeDisposition_CS
+* ^title = "退院時転帰コード情報（出典：厚労省DPC導入影響評価調査） CodeSystem"
+* ^status = #active
+* ^experimental = false
+* ^content = #complete
+* ^caseSensitive = false
+* #1    "傷病が治癒・軽快"
+* #3    "傷病（白血病、潰瘍性大腸炎、クローン病等）が寛解"
+* #4    "傷病が不変"
+* #5    "傷病が増悪"
+* #6    "傷病による死亡"
+* #7    "傷病以外による死亡"
+* #9    "その他（検査入院,正常分娩及び人間ドック含む）"
 
 //
 // ケアプランのタイプ

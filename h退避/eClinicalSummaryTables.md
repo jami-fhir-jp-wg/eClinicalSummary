@@ -790,7 +790,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | |specialCourtesy | | |0..1|CodeableConcept ||特別配慮を要する入院。VIP、職員、医療専門職といった区分。当面未使用 |
 | |SpecialArrangement| | |0..1|CodeableConcept ||特別調整を要する入院。車椅子、増設ベッド、通訳、付き添い、盲導犬等の必要性。当面未使用|
 | |destination | | |0..1|Reference(Location \| Organization)||退院先場所または施設への参照。|
-| |dischargeDisposition| | |1..1|CodeableConcept |"http://jpfhir.jp/fhir<br>/Common/CodeSystem/discharge-disposition"<br>"3"|退院時転帰コード情報。コード表は暫定（出典：厚労省DPC導入影響評価調査）1傷病が治癒・軽快3:傷病（白血病、潰瘍性大腸炎、クローン病等）が寛解4:傷病が不変5:傷病が増悪6:傷病による死亡7:傷病以外による死亡9:その他（検査入院,正常分娩及び人間ドック含む） |
+| |dischargeDisposition| | |1..1|CodeableConcept |"http://jpfhir.jp/fhir<br>/Common/CodeSystem/discharge-disposition"<br>"3"|退院時転帰コード情報。コード表は暫定（出典：厚労省DPC導入影響評価調査）　1傷病が治癒・軽快　3:傷病（白血病、潰瘍性大腸炎、クローン病等）が寛解　4:傷病が不変5:傷病が増悪　6:傷病による死亡　7:傷病以外による死亡　9:その他（検査入院,正常分娩及び人間ドック含む） |
 |location || | |0..\* |BackboneElement ||入院中の所在場所（病棟病室など）。診療情報提供書では不要。|
 | |location| | |0..1|Reference(Location) ||入院中の所在場所（病棟病室など）への参照|
 | |status| | |1..1|code|"completed" |planned \| active \| reserved \| completed のいずれかであるが、退院時サマリーなので"completed"。 |

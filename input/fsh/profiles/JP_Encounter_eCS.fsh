@@ -119,9 +119,8 @@ Description: "eCS 診療情報・サマリー汎用 Encounterリソース（受�
 * hospitalization.dischargeDisposition ^definition = "退院時転帰コード情報"
 * hospitalization.dischargeDisposition.coding 1..1 MS
 * hospitalization.dischargeDisposition.coding.system 1..1 MS
-* hospitalization.dischargeDisposition.coding.system = "http://terminology.hl7.org/CodeSystem/discharge-disposition" (exactly)
+* hospitalization.dischargeDisposition.coding.system = $JP_dischargeDisposition_CS 
 * hospitalization.dischargeDisposition.coding.code 1..1 MS  
-// 1:傷病が治癒・軽快 3:傷病（白血病、潰瘍性大腸炎、クローン病等）が寛解 4:傷病が不変5:傷病が増悪6:傷病による死亡7:傷病以外による死亡9:その他（検査入院,正常分娩及び人間ドック含む）
 * hospitalization.dischargeDisposition.coding.display 0..1 MS
 
 * location 0..* MS
