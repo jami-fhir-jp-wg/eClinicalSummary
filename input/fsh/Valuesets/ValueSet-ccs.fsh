@@ -18,7 +18,7 @@ Description: "医薬品コードで標準コードが割り当てられない場
 * include codes from system $JP_eCS_MedicationCodeNocoded_CS
 
 ValueSet: JP_admit_Source_VS
-Id: jp-admit-Source-Source-VS
+Id: jp-admit-Source-Source-vs
 Title: "入院経路を表すコード (出典：厚労省DPC導入影響評価調査)  ValueSet"
 Description: "入院経路を表すコード (出典：厚労省DPC導入影響評価調査)  ValueSet"
 * ^url = $JP_admit_Source_VS
@@ -27,3 +27,12 @@ Description: "入院経路を表すコード (出典：厚労省DPC導入影響�
 * ^date = "2024-01-28"
 * include codes from system  $JP_admit_Source_CS
 
+ValueSet: JP_dischargeDisposition_VS
+Id: jp-dischargeDisposition-vs
+Title: "退院時転帰コード情報　(出典：厚労省DPC導入影響評価調査) ValueSet"
+Description: "退院時転帰コード情報　(出典：厚労省DPC導入影響評価調査) ValueSet"
+* ^url = $JP_dischargeDisposition_VS
+* ^status = #active
+* ^experimental = false
+* ^date = "2024-02-10"
+* include codes from system  $JP_dischargeDisposition_CS

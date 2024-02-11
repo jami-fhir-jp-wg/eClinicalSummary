@@ -141,5 +141,8 @@ Alias: $JP_ResourceInstanceIdentifier = http://jpfhir.jp/fhir/core/IdSystem/reso
 Alias: $JP_admit_Source_CS = http://jpfhir.jp/fhir/Common/CodeSystem/admit-Source
 Alias: $JP_admit_Source_VS = http://jpfhir.jp/fhir/Common/ValueSet/admit-Source
 
+Alias: $JP_dischargeDisposition_CS = http://jpfhir.jp/fhir/Common/CodeSystem/discharge-disposition
+Alias: $JP_dischargeDisposition_VS = http://jpfhir.jp/fhir/Common/ValueSet/discharge-disposition
+
 Alias: $JP_carePlanCategory_CS = http://jpfhir.jp/fhir/CarePlan/CodeSystem/category
 Alias: $JP_carePlanCategory_VS = http://jpfhir.jp/fhir/CarePlan/ValueSet/category
