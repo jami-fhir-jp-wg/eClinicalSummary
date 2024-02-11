@@ -9,8 +9,8 @@ Description: "CLINS 電子カルテ共有サービス用 検体検査項目セ�
 * ^content = #complete
 * ^caseSensitive = true
 * ^experimental = false
-* ^copyright = "Copyright JAMI. All Rights Reserved."
-
+* ^copyright = "Copyright MHLW and Japanese Society of Laboratory Medicine. All Rights Reserved."
+* ^hierarchyMeaning = #grouped-by
 // ALB
 * #ALB
   * #3A015000001827101   "ALB"  // アルブミン  可視吸光光度法  　全血

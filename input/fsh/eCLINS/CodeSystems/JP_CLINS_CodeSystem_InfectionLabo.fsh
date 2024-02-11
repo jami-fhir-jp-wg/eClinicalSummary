@@ -9,7 +9,8 @@ Description: "CLINS 電子カルテ共有サービス用 感染症検査項目�
 * ^content = #complete
 * ^caseSensitive = true
 * ^experimental = false
-* ^copyright = "Copyright JAMI. All Rights Reserved."
+* ^copyright = "Copyright MHLW and Japanese Society of Laboratory Medicine. All Rights Reserved."
+* ^hierarchyMeaning = #grouped-by
 
 // descendent-of
 //----感染症項目５項目
