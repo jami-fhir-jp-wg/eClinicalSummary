@@ -77,7 +77,7 @@ Description:    "Derived Profile from JP-Core"
 * ^date = "2023-03-31"
 * meta.lastUpdated 0.. MS
 */
-
+/*
 Profile:        JP_MedicationStatement
 Parent:			MedicationStatement
 Id:             JP-MedicationStatement
@@ -94,7 +94,7 @@ Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_MedicationStatement_eCS"
 * ^date = "2023-03-31"
 * meta.lastUpdated 0.. MS
-
+*/
 
 Profile:        JP_Procedure_eCS
 Parent:			JP_Procedure
