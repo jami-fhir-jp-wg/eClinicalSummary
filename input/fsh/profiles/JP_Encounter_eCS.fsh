@@ -54,8 +54,6 @@ Description: "eCS 診療情報・サマリー汎用 Encounterリソース（受�
 * period ^definition = "入院期間。退院時サマリーでは必須。外来では必要な場合を除き省略可。"
 * period.start 1..1 MS
 * period.end 0..1 MS
-
-
 * length 0..1 MS
 * length ^short = "この入院の在院日数"
 * length ^definition = "この入院の在院日数"

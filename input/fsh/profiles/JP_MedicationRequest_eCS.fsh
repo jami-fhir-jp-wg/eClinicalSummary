@@ -41,7 +41,8 @@ Description: "eCS 診療情報・サマリー汎用 MedicationRequestリソー�
 * obeys needs-anyOfStandardCode-medication
 
 * medication[x] ^short = "医薬品コードと医薬品名称。ひとつの 必須のtext 要素と、複数の coding 要素を記述できる。"
-* medication[x] ^definition = "本仕様では、処方オーダ時に選択または入力し、実際に処方箋に印字される文字列を必ず text 要素に格納した上で、coding要素を繰り返すことでHOT9やYJコードなど複数のコード体系で医薬品コードを並記することが可能。coding要素を繰り返すことでHOT9 やYJコードなど複数のコード体系で医薬品コード並記することが可能。\r\n本仕様では、処方オーダ時に選択または入力し、実際に処方箋に印字される文字列を必ずtext要素に格納した上で、それをコード化した情報を1個以上のcoding 要素に記述する。\r\n日本では同じ用法の複数の薬剤をひとつの処方区分とすることがある。複数の薬剤を表記するMedication Resourceのインスタンスを参照する。"
+* medication[x] ^definition = "本仕様では、処方オーダ時に選択または入力し、実際に処方箋に印字される文字列を必ず text 要素に格納した上で、coding要素を繰り返すことでHOT9やYJコードなど複数のコード体系で医薬品コードを並記することが可能。coding要素を繰り返すことで複数のコード体系で医薬品コード並記することが可能。\r\n本仕様では、処方オーダ時に選択または入力し、実際に処方箋に印字される文字列を必ずtext要素に格納した上で、それをコード化した情報を1個以上のcoding 要素に記述する。使用できるコード体系は電子カルテ情報共有サービスに利用されることから、個別医薬品コード（通称YJコード）または厚生労働省一般名処方用医薬品コードのどちらかとする。"
+// YJ, 一般処方用コードを必須、または未コードとするチェックはInvariant R3010 で行う。
 * medication[x] MS
 * medication[x].coding ^slicing.discriminator.type = #value
 * medication[x].coding ^slicing.discriminator.path = "system"
@@ -50,7 +51,7 @@ Description: "eCS 診療情報・サマリー汎用 MedicationRequestリソー�
     codingHOT7 0..1 MS and
     codingHOT9 0..1 MS and
     codingYJ 0..1 MS and
-    codingGS1 0..1 MS and
+//    codingGS1 0..1 MS and
     codingGeneralName 0..1 MS and
     nocoded 0..1
 
@@ -63,15 +64,6 @@ Description: "eCS 診療情報・サマリー汎用 MedicationRequestリソー�
 * medication[x].coding[nocoded].display 1.. MS
   * insert relative_short_definition("標準コードなし")
 
-* medication[x].coding[codingHOT7].system 1.. MS
-* medication[x].coding[codingHOT7].system = $JP_MedicationCodeHOT7_CS (exactly)
-  * insert relative_short_definition("HOT7コードの識別ID")
-* medication[x].coding[codingHOT7].code 1.. MS
-* medication[x].coding[codingHOT7].code from $JP_MedicationCodeHOT7_VS
-  * insert relative_short_definition("HOT7医薬品コード\(HOT9の末尾２桁である販社コードが不明の場合に限る\)")
-* medication[x].coding[codingHOT7].display 1.. MS
-  * insert relative_short_definition("医薬品名称。この名称は使用するコード表において選択したコードに対応する文字列とする。")
-
 * medication[x].coding[codingHOT9].system 1.. MS
 * medication[x].coding[codingHOT9].system = $JP_MedicationCodeHOT9_CS (exactly)
   * insert relative_short_definition("HOT9コードの識別ID")
@@ -81,22 +73,32 @@ Description: "eCS 診療情報・サマリー汎用 MedicationRequestリソー�
 * medication[x].coding[codingHOT9].display 1.. MS
   * insert relative_short_definition("医薬品名称。この名称は使用するコード表において選択したコードに対応する文字列とする。")
 
-* medication[x].coding[codingYJ].system 1.. MS
-* medication[x].coding[codingYJ].system = $JP_MedicationCodeYJ_CS (exactly)
-  * insert relative_short_definition("YJコードを識別するsystem値")
-* medication[x].coding[codingYJ].code 1.. MS
-* medication[x].coding[codingYJ].code from $JP_MedicationCodeYJ_VS
-* medication[x].coding[codingYJ].display 1.. MS
+* medication[x].coding[codingHOT7].system 1.. MS
+* medication[x].coding[codingHOT7].system = $JP_MedicationCodeHOT7_CS (exactly)
+  * insert relative_short_definition("HOT7コードの識別ID")
+* medication[x].coding[codingHOT7].code 1.. MS
+* medication[x].coding[codingHOT7].code from $JP_MedicationCodeHOT7_VS
+  * insert relative_short_definition("HOT7医薬品コード\(HOT9の末尾２桁である販社コードが不明の場合に限る\)")
+* medication[x].coding[codingHOT7].display 1.. MS
   * insert relative_short_definition("医薬品名称。この名称は使用するコード表において選択したコードに対応する文字列とする。")
 
+/*
 * medication[x].coding[codingGS1].system = "urn:oid:2.51.1.1" (exactly)
   * insert relative_short_definition("GS1標準の識別コードを示すsystem値")
 * medication[x].coding[codingGS1].system MS
 * medication[x].coding[codingGS1].code ^definition = "GS1標準の識別コード。医薬品コードおよび医療材料等コードとして、調剤包装単位（最少包装単位、個別包装単位）14桁のフォーマットで使用する。"
 * medication[x].coding[codingGS1].code MS
 * medication[x].coding[codingGS1].code  from $JP_MedicationCodeGS1_VS
-
 * medication[x].coding[codingGS1].display 1.. MS
+  * insert relative_short_definition("医薬品名称。この名称は使用するコード表において選択したコードに対応する文字列とする。")
+*/
+
+* medication[x].coding[codingYJ].system 1.. MS
+* medication[x].coding[codingYJ].system = $JP_MedicationCodeYJ_CS (exactly)
+  * insert relative_short_definition("YJコードを識別するsystem値")
+* medication[x].coding[codingYJ].code 1.. MS
+* medication[x].coding[codingYJ].code from $JP_MedicationCodeYJ_VS
+* medication[x].coding[codingYJ].display 1.. MS
   * insert relative_short_definition("医薬品名称。この名称は使用するコード表において選択したコードに対応する文字列とする。")
 
 * medication[x].coding[codingGeneralName].system = $JP_MedicationCodeCommon_CS (exactly)
