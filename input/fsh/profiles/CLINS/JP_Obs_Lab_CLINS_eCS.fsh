@@ -46,7 +46,7 @@ Description: "CLINS 電子カルテ共有サービス用 Observationリソース
 * meta.tag  ^slicing.discriminator.path = "$this"
 * meta.tag  ^slicing.rules = #open
 * meta.tag contains lts 0..1 MS
-  and uninformed 0..1 MS
+//  and uninformed 0..1 MS
 
 * meta.tag[lts] = $JP_ehrshrs_indication_CS#LTS
   * insert relative_short_definition("電子カルテ情報共有サービスで長期保存情報フラグの設定する場合に使用する。")
