@@ -116,17 +116,21 @@ Alias: $observation-category = $JP_SimpleObservationCategory_VS
 
 Alias: $observation-category-cs = http://terminology.hl7.org/CodeSystem/v3-ObservationCategory
 
-
 Alias: $JP_CLINS_ObsLabResultCode_VS = JP_CLINS_ObsLabResult_UnknownCode_CS#99999999999999999
 
-
-
 Alias: $JP_Disease_MEDIS_Concept_CS = urn:oid:1.2.392.200119.4.101.6    // MEDIS病名交換用コード
-Alias: $JP_Disease_MEDIS_ManagementID_CS_url = urn:oid:1.2.392.200119.4.101.2    // MEDIS病名管理番号
+//Alias: $JP_Disease_MEDIS_ManagementID_CS_url = urn:oid:1.2.392.200119.4.101.2    // MEDIS病名管理番号
 Alias: $JP_Disease_MEDIS_ManagementID_CS = urn:oid:1.2.392.200119.4.101.2    // MEDIS病名管理番号
-Alias: $JP_Disease_Claim_CS = http://jpfhir.jp/fhir/core/mhlw/CodeSystem/masterB-disease
+Alias: $JP_Disease_Claim_CS = http://jpfhir.jp/fhir/core/mhlw/CodeSystem/masterB-disease    // 支払基金	傷病名コード
+
 Alias: $JP_BodySite_MEDIS_Concept_CS = urn:oid:1.2.392.200119.4.201.5   // MEDIS修飾語交換用コード
 Alias: $JP_BodySite_MEDIS_ManagementID_CS = urn:oid:1.2.392.200119.4.201.2 // MEDIS修飾語管理番号
+Alias: $JP_BodySite_Disease_Claim_CS = http://jpfhir.jp/fhir/core/mhlw/CodeSystem/masterZ-disease-modifier //  支払基金	修飾語コード
+
+Alias: $JP_Modifier_MEDIS_Concept_CS = urn:oid:1.2.392.200119.4.201.5   // MEDIS修飾語交換用コード
+Alias: $JP_Modifier_MEDIS_ManagementID_CS = urn:oid:1.2.392.200119.4.201.2 // MEDIS修飾語管理番号
+Alias: $JP_Modifier_Disease_Claim_CS = http://jpfhir.jp/fhir/core/mhlw/CodeSystem/masterZ-disease-modifier //  支払基金	修飾語コード
+
 Alias: $JP_DiseaseCategory_WHO_ICD10_CS = http://jpfhir.jp/fhir/core/mhlw/CodeSystem/ICD10-2013-full  // ICD10  HL7 regisered
 Alias: $JP_DiseaseCategory_WHO_ICD10_CS_oid = urn:oid:2.16.840.1.113883.6.3.1  // ICD10  HL7 regisered
 
@@ -146,3 +150,7 @@ Alias: $JP_dischargeDisposition_VS = http://jpfhir.jp/fhir/Common/ValueSet/disch
 
 Alias: $JP_carePlanCategory_CS = http://jpfhir.jp/fhir/CarePlan/CodeSystem/category
 Alias: $JP_carePlanCategory_VS = http://jpfhir.jp/fhir/CarePlan/ValueSet/category
+
+// From JP-Core 2.0
+Alias: $JP_Condition_DiseasePostfixModifier = http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Condition_DiseasePostfixModifier
+Alias: $JP_Condition_DiseasePrefixModifier = http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Condition_DiseasePrefixModifier

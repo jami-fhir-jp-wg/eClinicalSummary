@@ -76,7 +76,7 @@ Description: "長期保存／未告知診療情報のためのフラグコード
 * ^caseSensitive = false
 * #LTS  "長期保存"
 * #UNINFORMED  "未告知"
-
+* #UNDELIVERED  "未提供"
 
 
 

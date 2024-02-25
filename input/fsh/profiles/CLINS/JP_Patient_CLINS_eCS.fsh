@@ -17,7 +17,7 @@ Description: "CLINS 電子カルテ共有サービス用: Patientリソース（
 
 * ^url = $JP_Patient_CLINS_eCS
 * ^status = #active
-* ^date = "2023-10-15"
+* ^date = "2024-02-25"
 * . ^short = "電子カルテ共有サービスにおける患者情報の記述に使用する。"
 * . ^definition = "電子カルテ共有サービスにおける患者情報の記述に使用する。"
 * . ^comment = "電子カルテ共有サービス以外では別のプロファイル　JP_Patient_eCSが用意されている。本プロファイルは、患者を識別するidentifierとして、被保険者個人識別子を必須としている。また親プロファイルJP_Patient_eCSでは、name.family, name.given, gender, birthDate,address.text, address.city, address.stateを必須としている。"

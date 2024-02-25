@@ -234,3 +234,7 @@ Alias: $JP_ProcedureOutcome_VS = http://jpfhir.jp/fhir/core/ValueSet/JP_Procedur
 Alias: $JP_ProcedurePerformerRole_VS = http://jpfhir.jp/fhir/core/ValueSet/JP_ProcedurePerformerRole_VS
 Alias: $JP_ProcedureReason_VS = http://jpfhir.jp/fhir/core/ValueSet/JP_ProcedureReason_VS
 Alias: $JP_Undefined_VS = http://jpfhir.jp/fhir/core/ValueSet/JP_Undefined_VS
+
+// From JP-Core 2.0
+Alias: $JP_Condition_DiseasePostfixModifier = http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Condition_DiseasePostfixModifier
+Alias: $JP_Condition_DiseasePrefixModifier = http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Condition_DiseasePrefixModifier
