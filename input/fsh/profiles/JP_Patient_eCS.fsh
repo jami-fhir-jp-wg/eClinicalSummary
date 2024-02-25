@@ -16,6 +16,8 @@ Description: "eCS 診療情報・サマリー汎用 Patientリソース（患者
 * ^url = $JP_Patient_eCS
 * ^status = #active
 
+* meta.versionId ^short = "バージョン固有の識別子"
+* meta.versionId ^definition = "バージョン固有の識別子"
 * meta.lastUpdated 0.. MS
 * meta.lastUpdated ^short = "最終更新日"
 * meta.lastUpdated ^definition = "この患者情報の内容がサーバ上で最後に格納または更新された日時、またはこのFHIRリソースが生成された日時"

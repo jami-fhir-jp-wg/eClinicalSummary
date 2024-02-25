@@ -7,16 +7,25 @@ Description: "eCS 診療情報・サマリー汎用 Encounterリソース（受�
 
 * ^url = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Encounter_eCS"
 * ^status = #active
-* ^date = "2023-03-31"
+* ^date = "2024-02-25"
 * . ^short = ""
 * . ^definition = "診療情報提供では、紹介理由を記述する受診時情報. 診療サマリーではサマリー対象となる受診や入院に関する受診時または入院時情報。診療６情報において埋め込みリソースとして記述する場合にも適用できる。"
+
+* meta 1..1 MS
+* meta.versionId ^short = "バージョン固有の識別子"
+* meta.versionId  ^definition = "バージョン固有の識別子"
+* meta.lastUpdated 1..1 MS
+  * insert relative_short_definition("このリソースのデータが最後に作成、更新、複写された日時。最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz　例:2015-02-07T13:28:17.239+09:00")
+  * ^comment = "この要素は、このリソースのデータを取り込んで蓄積していたシステムが、このリソースになんらかの変更があった可能性があった日時を取得し、このデータを再取り込みする必要性の判断をするために使われる。本要素に前回取り込んだ時点より後の日時が設定されている場合には、なんらかの変更があった可能性がある（変更がない場合もある）ものとして判断される。したがって、内容になんらかの変更があった場合、またはこのリソースのデータが初めて作成された場合には、その時点以降の日時（たとえば、このリソースのデータを作成した日時）を設定しなければならない。内容の変更がない場合でも、このリソースのデータが作り直された場合や単に複写された場合にその日時を設定しなおしてもよい。ただし、内容に変更がないのであれば、日時を変更しなくてもよい。また、この要素の変更とmeta.versionIdの変更とは、必ずしも連動しないことがある。"
+* meta.profile 0.. MS
+  * insert relative_short_definition("準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Encounter_eCS　を設定する。電子カルテ情報共有サービスに本リソースデータを送信する場合には、別に定義されるURLを設定すること。")
 
 * identifier 0..1 MS
 * identifier ^short = "この医療機関における患者の受診番号、入院管理番号"
 * identifier ^definition = "この医療機関における患者の受診番号、入院管理番号"
-* identifier.system 1..1 MS
-* identifier.system = $JP_ResourceInstanceIdentifier (exactly)
+
 * identifier.value 1..1 MS
+  * insert relative_short_definition("「リソース一意識別ID」の文字列。URI形式を使う場合には、urn:ietf:rfc:3986に準拠すること。")
 
 * status = #finished (exactly)
 * status ^definition = "finished の固定値を設定する。"

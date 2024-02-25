@@ -12,10 +12,12 @@ Description: "eCS 診療情報・サマリー汎用 Practitionerリソース（�
 
 * ^url = $JP_Practitioner_eCS
 * ^status = #active
-* ^date = "2023-05-27"
+* ^date = "2024-02-25"
 * . ^short = "診療情報サマリーにおける主としてオーダ等の医師情報の格納に使用する"
 * . ^definition = "診療情報サマリー・厚労省6情報などにおける主としてオーダ等の医師情報の格納に使用する"
 
+* meta.versionId ^short = "バージョン固有の識別子"
+* meta.versionId ^definition = "バージョン固有の識別子"
 * meta.lastUpdated 0.. MS
 * meta.lastUpdated ^short = "最終更新日"
 * meta.lastUpdated ^definition = "この情報の内容がサーバ上で最後に格納または更新された日時、またはこのFHIRリソースが生成された日時"

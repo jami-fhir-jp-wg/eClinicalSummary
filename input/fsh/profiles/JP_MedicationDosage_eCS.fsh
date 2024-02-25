@@ -12,7 +12,9 @@ Description: "eCS 診療情報・サマリー汎用 JP_MedicationRequest_eCS の
 
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDosage_eCS"
 * ^status = #active
-* ^date = "2023-10-08"
+* ^date = "2024-02-25"
+* . ^short = "診療情報における処方オーダの１処方薬情報の格納に使用する"
+* . ^definition = "退院時サマリーや診療情報提供書、その他のサマリー文書などに記述する処方オーダ・処方箋情報における１処方薬情報の格納に使用する。"
 // * extension contains
 //     JP_MedicationDosage_PeriodOfUse named periodOfUse ..1 and
 //     JP_MedicationDosage_UsageDuration named usageDuration ..1

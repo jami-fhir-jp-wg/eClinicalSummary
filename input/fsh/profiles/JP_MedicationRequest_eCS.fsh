@@ -16,32 +16,76 @@ Description: "eCS 診療情報・サマリー汎用 MedicationRequestリソー�
 
 * ^url = $JP_MedicationRequest_eCS
 * ^status = #active
-* ^date = "2023-10-18"
+* ^date = "2024-02-25"
 * . ^short = "診療情報として処方オーダの１処方薬情報の格納に使用する"
 * . ^definition = "診療情報として処方オーダの１処方薬情報の格納に使用する"
-* . ^comment = "このプロファイルは、電子カルテ情報共有サービスに送信するために適合したプロファイルではない。電子カルテ情報共有サービスに送信する場合には、このプロファイルから派生した別の専用プロファイルを用いること。"
+* . ^comment = "このプロファイルは、電子カルテ情報共有サービスに送信するために適合したプロファイルではない。電子カルテ情報共有サービスに送信するためにこのプロファイルから派生した別の専用プロファイルが用意されているが、電子カルテ情報共有サービスでは、処方情報の送信は想定されていない。診療情報提供書や退院時サマリーに埋め込まれる"
 
+* meta 1..1 MS
+* meta.versionId ^short = "バージョン固有の識別子"
+* meta.versionId ^definition = "バージョン固有の識別子"
 * meta.lastUpdated 1..1 MS
   * insert relative_short_definition("このリソースのデータが最後に作成、更新、複写された日時。最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz　例:2015-02-07T13:28:17.239+09:00")
   * ^comment = "この要素は、このリソースのデータを取り込んで蓄積していたシステムが、このリソースになんらかの変更があった可能性があった日時を取得し、このデータを再取り込みする必要性の判断をするために使われる。本要素に前回取り込んだ時点より後の日時が設定されている場合には、なんらかの変更があった可能性がある（変更がない場合もある）ものとして判断される。したがって、内容になんらかの変更があった場合、またはこのリソースのデータが初めて作成された場合には、その時点以降の日時（たとえば、このリソースのデータを作成した日時）を設定しなければならない。内容の変更がない場合でも、このリソースのデータが作り直された場合や単に複写された場合にその日時を設定しなおしてもよい。ただし、内容に変更がないのであれば、日時を変更しなくてもよい。また、この要素の変更とmeta.versionIdの変更とは、必ずしも連動しないことがある。"
+
 * meta.profile 0.. MS
   * insert relative_short_definition("準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_MedicationRequest_eCS　を設定する。電子カルテ情報共有サービスに本リソースデータを送信する場合には、別に定義されるURLを設定すること。")
 
-* identifier  MS
-  * insert relative_short_definition("この１処方薬情報を作成した施設内で、この１処方薬情報を他の処方薬情報と一意に区別できるID。このID情報をキーとして１処方薬情報の更新・削除ができる一意性があること。このidentifier以外のIDも追加して複数格納しても構わない。少なくともひとつのidentifierは次の仕様に従う値を設定すること。")
-  * ^comment = "1回の処方オーダで発行されるすべての処方薬情報が処方オーダ番号のように同一のIDでも構わない。この場合、更新や削除は同一IDの情報すべてに対して実施される。"
-* identifier[requestIdentifier] 1..1 MS
-* identifier[requestIdentifier].system ^comment = "この１処方薬情報を作成した施設内で、この１処方薬情報を他の処方薬情報と一意に区別できるIDを発番できる場合にのみ、このsystem値（$JP_ResourceInstanceIdentifier）を使用すること。1回の処方オーダで発行されるすべての処方薬情報が処方オーダ番号のように同一のIDの場合でもこのsystem値を使用する。"
+* meta.tag 0..
+  * insert relative_short_definition("電子カルテ情報共有サービスでは、長期保存フラグの設定する場合に使用する。詳細はJP_MedicationRequest_CLINS_eCSを参照のこと。")
+
+// Patinet、Specimen、オーダ医療機関、は最低限の情報をContainedリソースとして記述する
+* contained ^slicing.discriminator.type = #profile
+* contained ^slicing.discriminator.path = "$this"
+* contained ^slicing.rules = #open
+* contained contains 
+  /* patient 1..1
+    and */
+    encounter 0..1
+    and requester 0..1
+    and order 0..1
+//    and patient 0..1 MS
+
+* contained[encounter] only  JP_Encounter
+  * insert relative_short_definition("処方情報を作成したときの入院外来受診情報をコンパクトに格納したEncounterリソース")
+  * ^comment = "encounter要素から参照される場合には、そのJP_Encounterリソースの実体。JP_Encounterリソースにおける必要最小限の要素だけが含まれればよい。ここで埋め込まれるJP_Encounterリソースでは、Encounter.classにこの情報を記録したときの受診情報（入外区分など）を記述して使用する。"
+
+* contained[requester] only  JP_Practitioner
+  * insert relative_short_definition("処方情報を作成したときの作成医療者情報をコンパクトに格納したPractitionerリソース")
+  * ^comment = "recorder要素から参照される場合には、そのJP_Practitionerリソースの実体。JP_Practitionerリソースにおける必要最小限の要素だけが含まれればよい。"
+
+* contained[order] only  JP_ServiceRequest
+  * insert relative_short_definition("処方オーダ識別番号情報などをコンパクトに格納したServiceRequestリソース")
+  * ^comment = "recorder要素から参照される場合には、そのJP_ServiceRequestリソースの実体。JP_ServiceRequestリソースにおける必要最小限の要素だけが含まれればよい。"
+
+
+* extension[eCS_InstitutionNumber] 0..1 MS
+  * insert relative_short_definition("本情報を作成発行した医療機関の識別番号を記述するために使用する拡張「eCS_InstitutionNumber」。
+本情報は、ServiceRequestの要素として記述することも可能であるが、その場合もこの拡張で記述することとする。")
+  * ^comment = "電子カルテ情報サービスでは、この拡張による記述は必須。医療機関１０桁番号を示すsystem値は\"http://jpfhir.jp/fhir/core/IdSystem/insurance-medical-institution-no\"を使用する。"
+
+* extension[eCS_Department] 0..1 MS
+  * insert relative_short_definition("本情報を作成発行した診療科または作成発行者の診療科情報を記述するために使用する拡張「eCS_Department」")
+  * ^comment = "コード化する場合には、JAMI(SS-MIX2) 診療科コード表のsystem値\"http://jami.jp/SS-MIX2/CodeSystem/ClinicalDepartment\"を使用する。診療科を記述する場合には、そのコード化の有無に関わらずtext要素による記述は必須。"
+
+* identifier MS // JP_MedicationRequestでは2..*が設定されている。 
+  * insert relative_short_definition("このリソース情報の識別ID、および必要であれば処方箋における剤グループ番号、剤グループ内の順序番号などを格納する。")
+  * ^comment = "リソース一意識別IDの仕様は、「診療情報・サマリー汎用リソース一意識別ID仕様」を参照のこと。"
+
+//* identifier contains requestIdentifier 1..1 MS // 上位Profileで定義済み
+* identifier[requestIdentifier].system ^comment = "リソース一意識別IDのsystem値は\"http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier\"　を設定する。"
 * identifier[requestIdentifier].value 1..1 MS
-  * insert relative_short_definition("１処方薬情報を識別するIDの文字列。URI形式を使う場合には、urn:ietf:rfc:3986に準拠すること。例）\"1311234567-2021-00123456\"")
+  * insert relative_short_definition("「リソース一意識別ID」の文字列。URI形式を使う場合には、urn:ietf:rfc:3986に準拠すること。")
+
 
 * status = #completed
 * intent = #order
 
+// * category 薬剤使用区分（外来、院内、院外などの区分）上位Profileで定義済み
 * obeys needs-anyOfStandardCode-medication
 
 * medication[x] ^short = "医薬品コードと医薬品名称。ひとつの 必須のtext 要素と、複数の coding 要素を記述できる。"
-* medication[x] ^definition = "本仕様では、処方オーダ時に選択または入力し、実際に処方箋に印字される文字列を必ず text 要素に格納した上で、coding要素を繰り返すことでHOT9やYJコードなど複数のコード体系で医薬品コードを並記することが可能。coding要素を繰り返すことで複数のコード体系で医薬品コード並記することが可能。\r\n本仕様では、処方オーダ時に選択または入力し、実際に処方箋に印字される文字列を必ずtext要素に格納した上で、それをコード化した情報を1個以上のcoding 要素に記述する。使用できるコード体系は電子カルテ情報共有サービスに利用されることから、個別医薬品コード（通称YJコード）または厚生労働省一般名処方用医薬品コードのどちらかとする。"
+* medication[x] ^definition = "本仕様では、処方オーダ時に選択または入力し、実際に処方箋に印字される文字列を必ず text 要素に格納した上で、coding要素を繰り返すことでHOT9やYJコードなど複数のコード体系で医薬品コードを並記することが可能。coding要素を繰り返すことで複数のコード体系で医薬品コード並記することが可能。\r\n本Profile仕様では、処方オーダ時に選択または入力し、実際に処方箋に印字される文字列を必ずtext要素に格納した上で、それをコード化した情報を1個以上のcoding 要素に記述する。使用できるコード体系は電子カルテ情報共有サービスに利用される場合には、個別医薬品コード（通称YJコード）または厚生労働省一般名処方用医薬品コードのどちらかを必須とする。それ以外のコード体系も記述して構わない。"
 // YJ, 一般処方用コードを必須、または未コードとするチェックはInvariant R3010 で行う。
 * medication[x] MS
 * medication[x].coding ^slicing.discriminator.type = #value
@@ -101,7 +145,7 @@ Description: "eCS 診療情報・サマリー汎用 MedicationRequestリソー�
 * medication[x].coding[codingYJ].display 1.. MS
   * insert relative_short_definition("医薬品名称。この名称は使用するコード表において選択したコードに対応する文字列とする。")
 
-* medication[x].coding[codingGeneralName].system = $JP_MedicationCodeCommon_CS (exactly)
+* medication[x].coding[codingGeneralName].system = $JP_MedicationCodeCommon_CS (exactly) // urn:oid:1.2.392.100495.20.1.81
   * insert relative_short_definition("厚生労働省保険局が定める一般処方名マスターコードを識別するcsystem値")
 * medication[x].coding[codingGeneralName].system MS
 * medication[x].coding[codingGeneralName].code ^definition = "厚生労働省保険局が定める一般処方名マスターコード"
@@ -116,8 +160,8 @@ Description: "eCS 診療情報・サマリー汎用 MedicationRequestリソー�
 // 患者情報
 * subject 1..1   MS
 * subject ^short = "患者のPatientリソース参照記述"
-* subject ^definition = "対象となる患者のFHIRリソースへの参照。Bundleリソースなどで本リソースから参照可能なPatientリソースが同時に存在することを前提に、そのリソースに記述されている被保険者個人識別子や施設内患者IDなどの情報をidentifier要素でLogical Reference記述するか。またはそのリソースのfullUrlを記述する（comment参照のこと）。"
-* subject ^comment = "ContainedリソースによりPatientリソースを本リソースの要素として記述した上で、そのリソースをLiteral 参照する方法をとっても構わない。"
+* subject ^definition = "対象となる患者のFHIRリソースへの参照。Bundleリソースで本リソースから参照可能なPatientリソースが同時に存在する場合には、そのPatientリソースに記述されている被保険者個人識別子や施設内患者IDなどの情報をidentifier要素でLogical Reference記述する。Bundleリソースに含まれるPatientリソースのfullUrlを記述するか、またはContainedリソースをLiteral 参照する（comment参照のこと）こともできる。"
+* subject ^comment = "ContainedリソースによりPatientリソースを本リソースの要素として記述した上で、そのリソースをLiteral 参照する方法(Patient.idを#で記述する)をとっても構わない。"
 
 * encounter 0..1 MS
 * encounter only  Reference(JP_Encounter)

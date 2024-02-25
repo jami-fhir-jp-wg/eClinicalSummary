@@ -14,34 +14,68 @@ Description: "eCS 診療情報・サマリー汎用 Observationリソース（�
 
 * ^url = $JP_Observation_LabResult_eCS
 * ^status = #active
-* ^date = "2023-05-27"
+* ^date = "2024-02-25"
 * . ^short = "診療情報における検体検査結果／感染症検体検査結果の格納に使用する"
 * . ^definition = "診療情報における検体検査結果／感染症検体検査結果の格納に使用する"
 * . ^comment = "このプロファイルは、電子カルテ情報共有サービスに送信するために適合したプロファイルではない。電子カルテ情報共有サービスに送信する場合には、このプロファイルから派生した別の専用プロファイルを用いること。"
 // Patinet、Specimen、オーダ医療機関、は最低限の情報をContainedリソースとして記述する
 
-
+* meta 1..1 MS
+* meta.versionId ^short = "バージョン固有の識別子"
+* meta.versionId ^definition = "バージョン固有の識別子"
 * meta.lastUpdated 1..1 MS
   * insert relative_short_definition("このリソースのデータが最後に作成、更新、複写された日時。最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz　例:2015-02-07T13:28:17.239+09:00")
   * ^comment = "この要素は、このリソースのデータを取り込んで蓄積していたシステムが、このリソースになんらかの変更があった可能性があった日時を取得し、このデータを再取り込みする必要性の判断をするために使われる。本要素に前回取り込んだ時点より後の日時が設定されている場合には、なんらかの変更があった可能性がある（変更がない場合もある）ものとして判断される。したがって、内容になんらかの変更があった場合、またはこのリソースのデータが初めて作成された場合には、その時点以降の日時（たとえば、このリソースのデータを作成した日時）を設定しなければならない。内容の変更がない場合でも、このリソースのデータが作り直された場合や単に複写された場合にその日時を設定しなおしてもよい。ただし、内容に変更がないのであれば、日時を変更しなくてもよい。また、この要素の変更とmeta.versionIdの変更とは、必ずしも連動しないことがある。"
 * meta.profile 0.. MS
   * insert relative_short_definition("準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Observation_LabResult_eCS　を設定する。電子カルテ情報共有サービスに本リソースデータを送信する場合には、別に定義されるURLを設定すること。")
 
+* meta.tag 0..
+  * insert relative_short_definition("電子カルテ情報共有サービスでは、長期保存フラグの設定する場合に使用する。詳細はJP_Observation_LabResult_CLINS_eCSを参照のこと。")
 
-* identifier  MS
-  * insert relative_short_definition("この検査結果情報を作成した施設内で、この検査結果情報を他の処方薬情報と一意に区別できるID。このID情報をキーとして１検査結果情報の更新・削除ができる一意性があること。このidentifier以外のIDも追加して複数格納しても構わない。少なくともひとつのidentifierは次の仕様に従う値を設定すること。")
-  * ^comment = "検査結果情報を他の検査結果情報と一意に区別できるIDを発番できない場合には、省略可能であるが、その場合にはbasedOnで指し示す処方オーダ情報の中に、この処方を作成した施設内で元のオーダを一意に識別できるIDを格納することが望ましい。"
+// Patinet、Specimen、オーダ医療機関、は最低限の情報をContainedリソースとして記述する
+* contained ^slicing.discriminator.type = #profile
+* contained ^slicing.discriminator.path = "$this"
+* contained ^slicing.rules = #open
+* contained contains
+    encounter 0..1  MS
+    and specimen 0..1 MS
+    and order 0..1 MS
+//    and patient 0..1 MS
+
+* contained[encounter] only  JP_Encounter
+  * insert relative_short_definition("検体検査を実施（検体を採取）したときの入院外来受診情報をコンパクトに格納したEncounterリソース")
+  * ^comment = "encounter要素から参照される場合には、そのJP_Encounterリソースの実体。JP_Encounterリソースにおける必要最小限の要素だけが含まれればよい。ここで埋め込まれるJP_Encounterリソースでは、Encounter.classにこの情報を記録したときの受診情報（入外区分など）を記述して使用する。"
+
+* contained[specimen] only  JP_Specimen
+  * insert relative_short_definition("検体材料情報をコンパクトに格納したSpecimenリソース")
+  * ^comment = "specimen要素から参照される場合には、そのJP_Organizationリソースの実体。JP_Organizationリソースにおける必要最小限の要素だけが含まれればよい。specimen要素ではContainedリソースを参照する方法ではなくspecimen要素に検体材料名だけを記述することもできるので、その場合にはこのContainedリソースは不要。
+  "
+* contained[order] only  JP_ServiceRequest
+  * insert relative_short_definition("診療情報におけるオーダ識別番号情報などをコンパクトに格納したServiceRequestリソース")
+  * ^comment = "basedOn要素から参照される場合には、そのJP_ServiceRequestリソースの実体。JP_ServiceRequestリソースにおける必要最小限の要素だけが含まれればよい。"
+
+
+* extension[eCS_InstitutionNumber] 0..1 MS
+  * insert relative_short_definition("本情報を作成発行した医療機関の識別番号を記述するために使用する拡張「eCS_InstitutionNumber」。
+本情報は、ServiceRequestの要素として記述することも可能であるが、その場合もこの拡張で記述することとする。")
+  * ^comment = "電子カルテ情報サービスでは、この拡張による記述は必須。医療機関１０桁番号を示すsystem値は\"http://jpfhir.jp/fhir/core/IdSystem/insurance-medical-institution-no\"を使用する。"
+
+* extension[eCS_Department] 0..1 MS
+  * insert relative_short_definition("本情報を作成発行した診療科または作成発行者の診療科情報を記述するために使用する拡張「eCS_Department」")
+  * ^comment = "コード化する場合には、JAMI(SS-MIX2) 診療科コード表のsystem値\"http://jami.jp/SS-MIX2/CodeSystem/ClinicalDepartment\"を使用する。診療科を記述する場合には、そのコード化の有無に関わらずtext要素による記述は必須。"
+
+* identifier 1..* MS
+  * insert relative_short_definition("このリソース情報の識別ID。")
+  * ^comment = "リソース一意識別IDの仕様は、「診療情報・サマリー汎用リソース一意識別ID仕様」を参照のこと。"
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 
-* identifier contains requestIdentifier 1..1 MS
-* identifier[requestIdentifier].system = $JP_ResourceInstanceIdentifier
-* identifier[requestIdentifier].system ^comment = "この検査結果情報を作成した施設内で、この検査結果情報を他の検査結果情報と一意に区別できるIDを発番できる場合にのみ、このsystem値（$JP_ResourceInstanceIdentifier）を使用すること。"
-* identifier[requestIdentifier].value 1..1 MS
-  * insert relative_short_definition("検査結果情報を識別するIDの文字列。URI形式を使う場合には、urn:ietf:rfc:3986に準拠すること。例）\"1311234567-2021-00123456\"")
-
-
+* identifier contains resourceIdentifier 1..1 MS
+* identifier[resourceIdentifier].system = $JP_ResourceInstanceIdentifier
+* identifier[resourceIdentifier].system ^comment = "リソース一意識別IDのsystem値は\"http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier\"　を設定する。"
+* identifier[resourceIdentifier].value 1..1 MS
+  * insert relative_short_definition("「リソース一意識別ID」の文字列。URI形式を使う場合には、urn:ietf:rfc:3986に準拠すること。")
 
 * basedOn 0..1
 * basedOn only Reference(JP_ServiceRequest)
@@ -70,7 +104,9 @@ Description: "eCS 診療情報・サマリー汎用 Observationリソース（�
 * code.coding  ^slicing.discriminator[=].path = "display"
 * code.coding  ^slicing.rules = #open
 * code.coding  contains
-  localLaboCode 1..1 MS
+ jlac10LaboCode 0..1 MS // jlac10LaboCode　unCoded　coreLaboSet　のいずれかひとつは必須
+ and unCoded 0..1 MS
+ and localLaboCode 0..1 MS
  and coreLabo/abo-bld 0..1 MS
  and coreLabo/alb 0..1 MS
  and coreLabo/alp 0..1 MS
@@ -179,11 +215,10 @@ Description: "eCS 診療情報・サマリー汎用 Observationリソース（�
  and infectionLabo/tpquant 0..1 MS
  and infectionLabo/tphquant 0..1 MS
  and infectionLabo/sts 0..1 MS
- and jlac10LaboCode 0..1 MS // jlac10LaboCode　unCoded　coreLaboSet　のいずれかひとつは必須
- and unCoded 0..1 MS
+
 
 // コードの全体に適用する大原則
-* code from $JP_eCS_ObservationLabResultCode_VS (required)
+// code from $JP_eCS_ObservationLabResultCode_VS (required)
 
 //ローカルコード
 * code.coding[localLaboCode].system = "http://jpfhir.jp/fhir/clins/CodeSystem/JP_CLINS_ObsLabResult_LocalCode_CS" (exactly)
@@ -191,6 +226,7 @@ Description: "eCS 診療情報・サマリー汎用 Observationリソース（�
 // 一般JLAC10コード
 * code.coding[jlac10LaboCode].system = "urn:oid:1.2.392.200119.4.504" (exactly)
 * code.coding[jlac10LaboCode] from $JP_ObservationLabResultCode_VS (required)
+
 // 未標準化コード
 * code.coding[unCoded].system = "http://jpfhir.jp/fhir/clins/CodeSystem/JP_CLINS_ObsLabResult_Uncoded_CS" (exactly)
 * code.coding[unCoded].code = #99999999999999999 (exactly)
@@ -643,8 +679,8 @@ Description: "eCS 診療情報・サマリー汎用 Observationリソース（�
 // 患者情報
 * subject 1..1   MS
 * subject ^short = "患者のPatientリソース参照記述"
-* subject ^definition = "対象となる患者のFHIRリソースへの参照。Bundleリソースなどで本リソースから参照可能なPatientリソースが同時に存在することを前提に、そのリソースに記述されている被保険者個人識別子や施設内患者IDなどの情報をidentifier要素でLogical Reference記述するか。またはそのリソースのfullUrlを記述する（comment参照のこと）。"
-* subject ^comment = "ContainedリソースによりPatientリソースを本リソースの要素として記述した上で、そのリソースをLiteral 参照する方法をとっても構わない。電子カルテ共有サービスでは、別途BundleリソースでPatientリソースが送信されているので、その被保険者個人識別子を明示することにより患者を参照する。"
+* subject ^definition = "対象となる患者のFHIRリソースへの参照。電子カルテ情報共有サービスでは、Bundleリソースで本リソースから参照可能なPatientリソースが同時に存在するので、そのPatientリソースに記述されている被保険者個人識別子や施設内患者IDなどの情報をidentifier要素でLogical Reference記述する。電子カルテ情報共有サービス以外の一般的な利用ではBundleリソースに含まれるPatientリソースのfullUrlを記述するか、またはContainedリソースをLiteral 参照する（comment参照のこと）。"
+* subject ^comment = "ContainedリソースによりPatientリソースを本リソースの要素として記述した上で、そのリソースをLiteral 参照する方法(Patient.idを#で記述する)をとっても構わない。"
 
 
 // OUL^R22.PV1
