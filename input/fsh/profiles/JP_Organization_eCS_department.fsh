@@ -8,7 +8,7 @@ Id: JP-Organization-eCS-department
 
 // * obeys checkOrganizationType0
 // * obeys checkOrganizationType1
-
+ 
 
 Description: "診療情報コアサマリー用　Organizationリソース（診療科情報）プロファイル　（JP_Organizationの派生プロファイル）"
 //* obeys checkPhoneNumberExists
@@ -17,6 +17,9 @@ Description: "診療情報コアサマリー用　Organizationリソース（診
 * ^date = "2023-03-31"
 * . ^short = "診療情報コアサマリーにおける診療科情報の格納に使用する"
 * . ^definition = "診療情報コアサマリー・厚労省6情報などにおける診療科情報の格納に使用する"
+
+* obeys designatedMetaProfile-eCS-department
+
 
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"

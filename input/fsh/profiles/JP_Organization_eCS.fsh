@@ -12,6 +12,8 @@ Description: "診療情報コアサマリー用　Organizationリソース（医
 * . ^definition = "３文書６情報や診療サマリーなどで記録する医療機関(および診療科情報）の格納に使用する"
 * . ^comment = "広義の医療機関すなわち健康医療介護等にかかわる組織（調剤薬局、健診機関などを含む）の格納に使用できる。機関の中の部署、診療科のような部分組織には、本プロファイルを使用しない。機関に所属する診療科や部署・チームの情報を含めて記述する場合には、本プロファイルではJP_eCS_Department拡張を使用して、必ず所属機関の情報の一部とすること。"
 
+* obeys designatedMetaProfile-eCS-organization
+
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^short = "generated| extensions | additional | empty"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"

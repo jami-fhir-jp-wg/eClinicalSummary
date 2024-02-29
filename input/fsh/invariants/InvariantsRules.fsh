@@ -132,6 +132,18 @@ Description: "R0213:BundleはJP-Bundle-CLINSプロファイルに準拠してい
 Severity: #error
 Expression: "meta.profile.where($this ='http://jpfhir.jp/fhir/clins/StructureDefinition/JP_Bundle_clins').exists()"
 
+// 与えられたパラメータに一致するmeta.profileがなくてはならない
+Invariant: designatedMetaProfile-eCS-department
+Description: "meta.profileにeCS-departmentプロファイルがなければならない。"
+Severity: #error
+Expression: "meta.profile.where($this = 'http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS_department').exists()"
+
+
+Invariant: designatedMetaProfile-eCS-organization
+Description: "meta.profileにeCS-organizationプロファイルがなければならない。"
+Severity: #error
+Expression: "meta.profile.where($this = 'http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS').exists()"
+
 // R3010 医薬品コードの妥当性チェック（標準コードなしもOK）
 Invariant: needs-anyOfStandardCode-medication
 Description: "R3010:medicationCodeableConcept は、電子カルテ共有サービスで使用する場合には、YJコード、HOT9またはHOT7コード、厚生労働省一般名コード、標準コードなし、のいずれかを必須とする。"
@@ -147,6 +159,8 @@ Expression: "(medication.ofType(CodeableConcept).coding.where(system = 'urn:oid:
 
 // R4011 アレルギー情報と薬剤禁忌とを区別するため、電子カルテ情報サービスでは、薬剤禁忌情報として本リソース種別を使用する場合には、必ず本要素は"medication"として存在しなければならず、criticality要素は"high"を設定しなければならない。これ以外の場合には、本リソースの情報はや薬剤禁忌以外のアレルギー情報として取り扱われる。
 // Invariant: needs-anyOfStandardCode-medication
+
+
 
 
 //========= 以下、未整理 =========
